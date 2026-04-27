@@ -1,0 +1,1 @@
+![[phased-array-antenna-patterns-part-1-linear-array-beam-characteristics-and-array-factor.pdf]]![[phased-array-antenna-patterns-part-2-grating-lobes-and-beam-squint.pdf]]
