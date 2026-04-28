@@ -21,6 +21,7 @@ aliases:
 无论是传统相控阵还是 DMA，其远场辐射方向图 $F(\theta, \phi)$ 均遵循以下乘积定理：
 
 $$F(\theta, \phi) = \underbrace{\mathbf{w}^H}_{\text{数字端主观施加的权重}} \times \underbrace{EF(\theta, \phi)}_{\text{单天线客观存在的辐射包络}} \odot \underbrace{\mathbf{v}(\theta, \phi)}_{\text{阵元物理位置决定的空间相位延迟}}$$
+V和EF是耦合还是独立的
 ### 视角一：算法与信号处理（导向矢量逻辑）
 
 **算法**的角度，物理世界的东西打包在一起，作为环境给的已知量：
