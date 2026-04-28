@@ -19,7 +19,7 @@
 | --------------------------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | **【身份验证缺失】**<br><br>报错：`Author identity unknown`          | Git 不知道你是谁，没有你的签名，系统拒绝帮你打包存档。    | 打开终端 (Terminal)，依次输入并回车（双引号保留，填你自己的）：<br><br>`git config --global user.name "github用户名"`<br>`git config --global user.email "GitHub的注册邮箱"` |
 | **【寻址失败】**<br><br>报错：`fatal: bad revision 'origin/main'`  | 在 GitHub 建的是个纯空仓库，找不到 main 分支；   | 终端，输入 `cd` (加空格)，把访达里的笔记文件夹(需要注意这里的文件夹是在GitHub中设置的那个)拖进终端并回车。进入后执行：<br>  `git branch -M main`                                              |
-| **【网络连接超时】**<br> <br>Push 进度卡死不动，或提示 `Connection Timeout` | 终端默认是不走🪜，被墙拦住了。                 | 在终端强制挂载本地代理端口：<br><br>`export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890`        |
+| **【网络连接超时】**<br> <br>Push 进度卡死不动，或提示 `Connection Timeout` | 终端默认是不走🪜，被墙拦住了。                 | 在终端强制挂载本地代理端口：<br><br>git config --global http.proxy http://127.0.0.1:7890<br>git config --global https.proxy http://127.0.0.1:7890        |
 | **【第一次手动上传】**<br><br>解决完报错，完成第一次上云                        | 直接使用终端进行强行上传输                    | `git push -u origin main`<br><br>_(注：若提示输入密码，必须填 GitHub Token)_![[Pasted image 20260427153829.png]]                                        |
 | **【obsidian内同步】**<br><br>  <br><br>                       | 以后直接在软件内容操作，可以设置git插件自动同步也可以手动更新 | 在 Obsidian 内按 `Cmd + P`：<br>第一步输入执行：`Git: Commit all changes`<br>第二步输入执行：`Git: Push`                                                       |
 
