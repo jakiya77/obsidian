@@ -10,7 +10,7 @@ $$h_{k,m} = \underbrace{\mathbf{f}_{k,m}^H}_{1 \times L} \times \underbrace{\mat
     1.  $\mathbf{f}_{k,m}^H \iff \mathbf{v}$ 导向矢量，$\mathbf{q}_m$是天线的位置$\mathbf{q}_m = [x_m, y_m, z_m]^T \in \mathbb{R}^{3 \times 1}$
 	2. $\mathbf{G}(\mathbf{A}_m) \iff \mathbf{EF}$ 天线辐射包络，硬件自身的电磁特性
 	3. $\mathbf{a_{k,m}}$ 想当于是一个空间多径的复数响应
-	4. $\mathbf{A}_m = [U_m, V_m] \in \mathbb{R}^{3 \times 2}$ : 当下正缘
+	4. $\mathbf{A}_m = [U_m, V_m] \in \mathbb{R}^{3 \times 2}$ : 当下阵元的位姿态，两组orthogonal vector
 ![[Pasted image 20260430130957.png|364]]
 在这个信道模型中特别关注EF的定义
 $$[G_{k,m}(A_m)]_{l,l} = \frac{\lambda}{4\pi d_{k,m}} \sqrt{\hat{g}_{k,m}^l(A_m) \bar{g}_{k,m}^l(A_m)}$$
