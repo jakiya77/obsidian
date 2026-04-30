@@ -9,4 +9,5 @@ $$h_{k,m} = \underbrace{\mathbf{f}_{k,m}^H}_{1 \times L} \times \underbrace{\mat
 	4. $$y = \underbrace{\mathbf{w}^H}_{\text{数字基带}} \times \left( \underbrace{\mathbf{EF} \odot \mathbf{v}}_{\text{射频硬件阵列响应}} \right) \times \underbrace{\alpha}_{\text{大自然信道衰落}} \times \underbrace{s}_{\text{发射符号}}$$
 在这个信道模型中特别关注EF的定义
 $$[G_{k,m}(A_m)]_{l,l} = \frac{\lambda}{4\pi d_{k,m}} \sqrt{\hat{g}_{k,m}^l(A_m) \bar{g}_{k,m}^l(A_m)}$$
-1. $G_{k,m}$ 是一个对角阵列，他里面的元素
+1. $G_{k,m}$ 是一个对角阵列，他里面的元素$$\hat{g}_{k,m}^l(A_m) \triangleq \hat{g}(\mathbf{u}_m; \psi_{k,m}^l) = \max \{ \mathbf{d}(\psi_{k,m}^l)^T \mathbf{u}_m, 0 \}$$
+2. 
