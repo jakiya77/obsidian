@@ -37,7 +37,7 @@ tags:
 	- $\mathbf{a}_{k,m}$：大自然传输的 $L$ 条多径的本征信道衰落向量 ($L \times 1$)。
 	- $\mathbf{G}_{k,m}$：单天线对这 $L$ 个不同到达角分别产生的增益对角阵 ($L \times L$)，等价于 $EF$ 的集合。
 	- $\mathbf{f}_{k,m}^H$：天线位置引起的 $L$ 条多径的几何相位差向量 ($1 \times L$)，兼顾求和算子功能。$$\mathbf{f}_{k,m}(\mathbf{q}_m) = e^{j \frac{2\pi}{\lambda} \mathbf{d}(\psi_{k,m}^l)^T \mathbf{q}_m} \in \mathbb{C}^{L_{k,m} \times 1}$$
-	- $\mathbf{d}(\psi_{k,m}^l) = [\cos \theta_{k,m}^l \cos \varphi_{k,m}^l, \cos \theta_{k,m}^l \sin \varphi_{k,m}^l, \sin \theta_{k,m}^l]^T \in \mathbb{R}^{3 \times 1}$ 
+	- $\mathbf{d}(\psi_{k,m}^l) = [\cos \theta_{k,m}^l \cos \varphi_{k,m}^l, \cos \theta_{k,m}^l \sin \varphi_{k,m}^l, \sin \theta_{k,m}^l]^T \in \mathbb{R}^{3 \times 1}\iff$ 3D位置向量类似线阵的$sin\theta$ 
 	- $\mathbf{q}_m = [x_m, y_m, z_m]^T \in \mathbb{R}^{3 \times 1}$
 	- $\mathbf{A}_m = [U_m, V_m] \in \mathbb{R}^{3 \times 2}$ 
 	
