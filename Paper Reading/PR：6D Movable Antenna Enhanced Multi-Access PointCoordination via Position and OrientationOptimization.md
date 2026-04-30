@@ -1,6 +1,8 @@
 
 针对接收信道的建模：
 $$h_{k,m}(q_m, A_m) = \mathbf{f}_{k,m}^H(q_m) \mathbf{G}_{k,m}(A_m) \mathbf{a}_{k,m}$$
+$$h_{k,m} = \underbrace{\mathbf{f}_{k,m}^H}_{1 \times L} \times \underbrace{\mathbf{G}_{k,m}}_{L \times L} \times \underbrace{\mathbf{a}_{k,m}}_{L \times 1}$$
+
 	1. $\mathbf{f}_{k,m}^H \iff \mathbf{v}$ 导向矢量，$\mathbf{q}_m$是天线的位置$\mathbf{q}_m = [x_m, y_m, z_m]^T \in \mathbb{R}^{3 \times 1}$
 	2. $\mathbf{G}(\mathbf{A}_m) \iff \mathbf{EF}$ 天线辐射包络，硬件自身的电磁特性
 	3. $a_{k,m}$ 想当于是一个空间多径的复数响应
