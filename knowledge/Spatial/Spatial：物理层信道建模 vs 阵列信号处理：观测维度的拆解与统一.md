@@ -32,16 +32,15 @@ tags:
 - **核心假设**：空间中只有一个发射源，但信号经过周围环境（建筑、墙壁等）的反射和散射，变成了 $L$ 条不同的射线（多径）到达基站。
 - **观测方式**：先不看整个阵列，只关注**第 $m$ 根天线**。这 1 根单天线同时接收到了这 $L$ 条射线的信号，这 $L$ 条射线各自带有不同的角度和衰减，叠加在这根天线上最终变成了什么样？
 - **数学表达**：在单根天线上，利用 $1 \times L$ 的矩阵乘以 $L \times 1$ 的向量，将 $L$ 条射线的能量组合成一个标量信道系数 $h_{k,m}$。
-- $$h_{k,m} = \underbrace{\mathbf{f}_{k,m}^H}_{1 \times L} \times \underbrace{\mathbf{G}_{k,m}}_{L \times L} \times \underbrace{\mathbf{a}_{k,m}}_{L \times 1}$$
+- $$h_{k,m}(q_m, A_m) = \mathbf{f}_{k,m}^H(q_m) \mathbf{G}_{k,m}(A_m) \mathbf{a}_{k,m}$$$$h_{k,m} = \underbrace{\mathbf{f}_{k,m}^H}_{1 \times L} \times \underbrace{\mathbf{G}_{k,m}}_{L \times L} \times \underbrace{\mathbf{a}_{k,m}}_{L \times 1}$$
 - 
 	- $\mathbf{a}_{k,m}$：大自然传输的 $L$ 条多径的本征信道衰落向量 ($L \times 1$)。
 	- $\mathbf{G}_{k,m}$：单天线对这 $L$ 个不同到达角分别产生的增益对角阵 ($L \times L$)，等价于 $EF$ 的集合。
-	- $\mathbf{f}_{k,m}^H$：天线位置引起的 $L$ 条多径的几何相位差向量 ($1 \times L$)，兼顾求和算子功能。$$\mathbf{f}_{k,m}(\mathbf{q}_m) = e^{j \frac{2\pi}{\lambda} \mathbf{d}(\psi_{k,m}^l)^T \mathbf{q}_m} \in \mathbb{C}^{L_{k,m} \times 1}$$           $\mathbf{d}(\psi_{k,m}^l) = [\cos \theta_{k,m}^l \cos \varphi_{k,m}^l, \cos \theta_{k,m}^l \sin \varphi_{k,m}^l, \sin \theta_{k,m}^l]^T \in \mathbb{R}^{3 \times 1}$
-	- 
-	- 
-	- 
-	- 
-	- 
+	- $\mathbf{f}_{k,m}^H$：天线位置引起的 $L$ 条多径的几何相位差向量 ($1 \times L$)，兼顾求和算子功能。$$\mathbf{f}_{k,m}(\mathbf{q}_m) = e^{j \frac{2\pi}{\lambda} \mathbf{d}(\psi_{k,m}^l)^T \mathbf{q}_m} \in \mathbb{C}^{L_{k,m} \times 1}$$
+	- $\mathbf{d}(\psi_{k,m}^l) = [\cos \theta_{k,m}^l \cos \varphi_{k,m}^l, \cos \theta_{k,m}^l \sin \varphi_{k,m}^l, \sin \theta_{k,m}^l]^T \in \mathbb{R}^{3 \times 1}$ 
+	- $\mathbf{q}_m = [x_m, y_m, z_m]^T \in \mathbb{R}^{3 \times 1}$
+	- $\mathbf{A}_m = [U_m, V_m] \in \mathbb{R}^{3 \times 2}$ 
+	
 - **优化目的**：精确证明 6DMA 等动态天线的微观物理优势。天线一旦发生旋转（改变姿态 $\mathbf{A}_m$），它对这 $L$ 条射线的接收增益 $\mathbf{G}_{k,m}$ 就会发生重构，从而影响多径叠加的总能量。
 
 ---
