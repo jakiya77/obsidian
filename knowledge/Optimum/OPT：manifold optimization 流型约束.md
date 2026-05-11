@@ -9,7 +9,7 @@
     
 2. **黎曼梯度（Riemannian Gradient）**：将欧式梯度投影到当前点 $q$ 的切空间（Tangent Space）上，以保证搜索方向与流形相切。在复斜流形上，投影公式为：
     
-    $$\text{grad} f(q) = \nabla f(q) - \Re\{\nabla f(q) \odot q^*\} \odot q$$
+   $$\text{grad} f(q) = \underbrace{\nabla f(q)}_{\text{普通梯度}} - \underbrace{\Re\{\nabla f(q) \odot q^*\} \odot q}_{\text{需要剔除的、破坏恒模约束的法向分量}}$$
     
     _(对应代码：`Rieman_gradient = gradient - real(gradient.*conj(q)).*q`)_
     
