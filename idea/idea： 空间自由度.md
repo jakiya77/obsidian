@@ -5,3 +5,6 @@
 ![[Pasted image 20260511100250.png|447]]
 根据这个优化问题 使用二次流型约束 来解
 
+$$\min_v \sum_{k=1}^{K} |v^H a_1(\theta_J^k)|^2$$
+
+$$\text{s.t.} \quad |v(n_e)| = 1, \quad n_e = 1, 2, ..., N_E$$
