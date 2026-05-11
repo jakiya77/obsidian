@@ -12,8 +12,8 @@
    $$\text{grad} f(q) = \underbrace{\nabla f(q)}_{\text{普通梯度}} - \underbrace{\Re\{\nabla f(q) \odot q^*\} \odot q}_{\text{需要剔除的、破坏恒模约束的法向分量}}$$
     
     _(对应代码：`Rieman_gradient = gradient - real(gradient.*conj(q)).*q`)_
-    
-3. **收回操作（Retraction）**：沿着切空间的切向量（搜索方向）移动后，点会离开流形，需要将其“拉回”到流形上（即归一化操作）。
+    [[Math：黎曼梯度的推导]]
+1. **收回操作（Retraction）**：沿着切空间的切向量（搜索方向）移动后，点会离开流形，需要将其拉回到流形上（即归一化操作）。
     
     $$R_q(d) = \frac{q + d}{|q + d|}$$
     
