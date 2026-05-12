@@ -1,4 +1,4 @@
->[!tldr]+ 
+43>[!tldr]+ 
 >1. 3 types of functions
 >2. label ; model ; feature ;weight; bias
 >3. Loss function definition and optimization process
