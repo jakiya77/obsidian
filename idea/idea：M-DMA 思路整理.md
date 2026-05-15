@@ -11,4 +11,18 @@ $$K \le \frac{N_{\text{RF}}(N_M + 3)}{2} - 1$$
 
 ### Step 1 优化问题第一步是在波域对干扰进行对齐处理
 
----
+**【优化问题 $\mathcal{P}_1$】：**
+
+$$\min_{\mathbf{u}, \mathbf{v}, \mathbf{q}} \sum_{j=1}^J |\mathbf{q}^H \mathbf{h}_j(\mathbf{u}, \mathbf{v})|^2$$
+
+$$\text{s.t.} \quad \|\mathbf{q}\|^2 = 1 \quad \text{(防止产生无意义的全 0 解)}$$
+
+$$\quad \quad |v_{n,m}| = 1, \forall n, m \quad \text{(超表面相位恒模约束)}$$
+
+$$\quad \quad 0 \le u_n \le L_{\max}, \forall n \quad \text{(波导管物理滑轨边界约束)}$$
+
+1. **固定 $\mathbf{u}, \mathbf{v}$ 求 $\mathbf{q}$**：此时干扰矩阵 $\mathbf{R}_J = \mathbf{H}_J\mathbf{H}_J^H$ 是确定的。使得 $\mathbf{q}^H \mathbf{R}_J \mathbf{q}$ 最小的 $\mathbf{q}$，**就是 $\mathbf{R}_J$ 最小特征值对应的特征向量！** （这就是你代码里 `eig` 分解求 `w_null` 的数学依据，瑞利商定理）。
+    
+2. **固定 $\mathbf{q}, \mathbf{u}$ 求 $\mathbf{v}$**：变成了一个标准的二次型最小化问题，直接丢给黎曼流形优化。
+    
+3. **固定 $\mathbf{q}, \mathbf{v}$ 求 $\mathbf{u}$**：直接计算一阶梯度下降。
