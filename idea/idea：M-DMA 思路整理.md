@@ -26,3 +26,14 @@ $$\quad \quad 0 \le u_n \le L_{\max}, \forall n \quad \text{(波导管物理滑�
 2. **固定 $\mathbf{q}, \mathbf{u}$ 求 $\mathbf{v}$**：变成了一个标准的二次型最小化问题，直接丢给黎曼流形优化。
     
 3. **固定 $\mathbf{q}, \mathbf{v}$ 求 $\mathbf{u}$**：直接计算一阶梯度下降。
+#### 第二阶段：数字域最优迫零 (Digital-Domain Optimal Nulling)
+
+现在，等效信道已经被我们重塑完毕，变成了常量 $\mathbf{h}_d^* = \mathbf{h}_d(\mathbf{u}^*, \mathbf{v}^*)$ 和 $\mathbf{H}_J^* = \mathbf{H}_J(\mathbf{u}^*, \mathbf{v}^*)$。
+
+此时，问题退化为最经典的数字基带滤波。
+
+**【优化问题 $\mathcal{P}_2$】：**
+
+$$\max_{\mathbf{w}} \frac{P_d |\mathbf{w}^H \mathbf{h}_d^*|^2}{P_J \|\mathbf{w}^H \mathbf{H}_J^*\|^2 + \sigma^2 \|\mathbf{w}\|^2}$$
+
+因为 $\mathbf{H}_J^*$ 的秩已经被第一阶段强行压到了 $\le N_{\text{RF}} - 1$，此时 MVDR 算法可以极其轻松地给出一个闭式解 $\mathbf{w}^* = (\mathbf{R}_{JN}^*)^{-1} \mathbf{h}_d^*$，在不消耗额外物理自由度的情况下，
