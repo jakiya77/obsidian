@@ -15,20 +15,20 @@ $$K \le \frac{N_{\text{RF}}(N_M + 3)}{2} - 1$$
 
 $$\min_{\mathbf{u}, \mathbf{v}, \mathbf{q}} \sum_{j=1}^J |\mathbf{q}^H \mathbf{h}_j(\mathbf{u}, \mathbf{v})|^2$$
 
-$$\text{s.t.} \quad \|\mathbf{q}\|^2 = 1 \quad \text{(防止产生无意义的全 0 解)}$$
+$$\text{s.t.} \quad \|\mathbf{q}\|^2 = 1 \quad$$
 
 $$\quad \quad |v_{n,m}| = 1, \forall n, m \quad \text{(超表面相位恒模约束)}$$
 
 $$\quad \quad 0 \le u_n \le L_{\max}, \forall n \quad \text{(波导管物理滑轨边界约束)}$$
 
-1. **固定 $\mathbf{u}, \mathbf{v}$ 求 $\mathbf{q}$**：此时干扰矩阵 $\mathbf{R}_J = \mathbf{H}_J\mathbf{H}_J^H$ 是确定的。使得 $\mathbf{q}^H \mathbf{R}_J \mathbf{q}$ 最小的 $\mathbf{q}$，**就是 $\mathbf{R}_J$ 最小特征值对应的特征向量！** （这就是你代码里 `eig` 分解求 `w_null` 的数学依据，瑞利商定理）。
+1. **固定 $\mathbf{u}, \mathbf{v}$ 求 $\mathbf{q}$**：此时干扰矩阵 $\mathbf{R}_J = \mathbf{H}_J\mathbf{H}_J^H$ 是确定的。使得 $\mathbf{q}^H \mathbf{R}_J \mathbf{q}$ 最小的 $\mathbf{q}$，**就是 $\mathbf{R}_J$ 最小特征值对应的特征向量
     
-2. **固定 $\mathbf{q}, \mathbf{u}$ 求 $\mathbf{v}$**：变成了一个标准的二次型最小化问题，直接丢给黎曼流形优化。
+2. **固定 $\mathbf{q}, \mathbf{u}$ 求 $\mathbf{v}$**：变成了一个标准的二次型最小化问题，丢给黎曼流形优化。
     
 3. **固定 $\mathbf{q}, \mathbf{v}$ 求 $\mathbf{u}$**：直接计算一阶梯度下降。
 #### 第二阶段：数字域最优迫零 (Digital-Domain Optimal Nulling)
 
-现在，等效信道已经被我们重塑完毕，变成了常量 $\mathbf{h}_d^* = \mathbf{h}_d(\mathbf{u}^*, \mathbf{v}^*)$ 和 $\mathbf{H}_J^* = \mathbf{H}_J(\mathbf{u}^*, \mathbf{v}^*)$。
+现在，等效信道变成了常量 $\mathbf{h}_d^* = \mathbf{h}_d(\mathbf{u}^*, \mathbf{v}^*)$ 和 $\mathbf{H}_J^* = \mathbf{H}_J(\mathbf{u}^*, \mathbf{v}^*)$。
 
 此时，问题退化为最经典的数字基带滤波。
 
@@ -36,4 +36,6 @@ $$\quad \quad 0 \le u_n \le L_{\max}, \forall n \quad \text{(波导管物理滑�
 
 $$\max_{\mathbf{w}} \frac{P_d |\mathbf{w}^H \mathbf{h}_d^*|^2}{P_J \|\mathbf{w}^H \mathbf{H}_J^*\|^2 + \sigma^2 \|\mathbf{w}\|^2}$$
 
-因为 $\mathbf{H}_J^*$ 的秩已经被第一阶段强行压到了 $\le N_{\text{RF}} - 1$，此时 MVDR 算法可以极其轻松地给出一个闭式解 $\mathbf{w}^* = (\mathbf{R}_{JN}^*)^{-1} \mathbf{h}_d^*$，在不消耗额外物理自由度的情况下，
+因为 $\mathbf{H}_J^*$ 的秩已经被第一阶段强行压到了 $\le N_{\text{RF}} - 1$，此时 MVDR 算法可以给出一个闭式解 $\mathbf{w}^* = (\mathbf{R}_{JN}^*)^{-1} \mathbf{h}_d^*$，在不消耗额外物理自由度的情况下，
+
+![[Pasted image 20260520095624.png]]
