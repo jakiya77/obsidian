@@ -78,4 +78,477 @@ $$ \quad \quad |p_i - p_j| \geq d_{\min}, \forall i \neq j \quad (\text{避免�
 
 “在存在强干扰机（Jammer）的环境中，主干 LoS 径可能正好处于干扰机的波束范围内或被阻挡。此时，我们利用 MA 构造出不规则的双波束，不仅把 LoS 和 Multipath 叠加起来增强信号，**同时还在干扰机的方向 $\theta_J$ 处生成一个极深的零陷（Nulling）**。”
 
-这就把“信号增强”和“干扰抑制”完美统合在了一起。
+
+
+可以。下面这三块可以直接扩展成论文里的理论分析、鲁棒性分析和仿真实验设计。
+
+**1. Theorem 部分：相干位置、有限孔径和 `d_min` 上界**
+
+设
+
+```math
+s_0=\sin\theta_0,\quad s_1=\sin\theta_1,\quad \Delta s=s_0-s_1,
+```
+
+```math
+\Delta\phi=\phi_1-\phi_0,\quad k=\frac{2\pi}{\lambda}.
+```
+
+第 `i` 个天线处的双径信道为：
+
+```math
+h_i(p_i)=
+\alpha_0 e^{-j\phi_0}e^{jkp_i s_0}
++
+\alpha_1 e^{-j\phi_1}e^{jkp_i s_1}.
+```
+
+于是
+
+```math
+|h_i(p_i)|^2
+=
+\alpha_0^2+\alpha_1^2
++
+2\alpha_0\alpha_1
+\cos(kp_i\Delta s+\Delta\phi).
+```
+
+因此总接收功率为：
+
+```math
+\|\mathbf h(\mathbf p)\|^2
+=
+N(\alpha_0^2+\alpha_1^2)
++
+2\alpha_0\alpha_1
+\sum_{i=1}^N
+\cos(kp_i\Delta s+\Delta\phi).
+```
+
+**Theorem 1: Coherence lattice**
+
+如果 `\Delta s \neq 0`，第 `i` 个天线实现完全建设性叠加的充要条件是：
+
+```math
+kp_i\Delta s+\Delta\phi=2\pi m_i,\quad m_i\in\mathbb Z.
+```
+
+因此建设性相干位置集合为：
+
+```math
+p_i
+=
+\frac{\lambda}{\Delta s}
+\left(
+m_i-\frac{\Delta\phi}{2\pi}
+\right).
+```
+
+相邻建设性位置的周期为：
+
+```math
+T_{\rm coh}
+=
+\frac{\lambda}{|\Delta s|}
+=
+\frac{\lambda}{|\sin\theta_0-\sin\theta_1|}.
+```
+
+如果所有天线都落在该 lattice 上，则
+
+```math
+\|\mathbf h(\mathbf p)\|^2_{\max}
+=
+N(\alpha_0+\alpha_1)^2.
+```
+
+如果所有天线都落在破坏性 lattice 上：
+
+```math
+kp_i\Delta s+\Delta\phi=(2m_i+1)\pi,
+```
+
+则
+
+```math
+\|\mathbf h(\mathbf p)\|^2_{\min}
+=
+N(\alpha_0-\alpha_1)^2.
+```
+
+这个 theorem 就是文章的第一个核心 insight：**MA 的最优相干位置不是黑盒结果，而是由 AoA 差和路径相位差决定的空间 lattice。**
+
+**Theorem 2: 有限孔径和 `d_min` 可行性**
+
+设移动区域为：
+
+```math
+\mathcal C=[p_{\min},p_{\max}],\quad A=p_{\max}-p_{\min}.
+```
+
+落在移动区域内的建设性 lattice 点数量为 `M_c`。定义：
+
+```math
+q=\left\lceil \frac{d_{\min}}{T_{\rm coh}}\right\rceil.
+```
+
+为了保证任意两个相邻选中 lattice 点间距不小于 `d_min`，至少需要间隔 `q` 个 lattice index。因此在有限孔径和最小间距约束下，最多可以放置的完全相干天线数为：
+
+```math
+N_{\rm coh}^{\max}
+=
+\left\lfloor
+\frac{M_c-1}{q}
+\right\rfloor+1.
+```
+
+如果
+
+```math
+N\leq N_{\rm coh}^{\max},
+```
+
+则存在一组位置 `\mathbf p`，使得所有天线都实现完全建设性双径叠加。
+
+特别地，因为
+
+```math
+|\sin\theta_0-\sin\theta_1|\leq 2,
+```
+
+所以
+
+```math
+T_{\rm coh}\geq \frac{\lambda}{2}.
+```
+
+因此当工程上采用常见安全距离
+
+```math
+d_{\min}\leq \frac{\lambda}{2}
+```
+
+时，有
+
+```math
+q=1.
+```
+
+也就是说：**最小间距约束通常不会破坏相干 lattice，可行性主要由移动孔径内能容纳多少个 lattice 点决定。**
+
+**Theorem 3: 近似相干下界**
+
+如果第 `i` 个天线不能精确落在相干 lattice 上，而是存在相位误差：
+
+```math
+\epsilon_i=
+kp_i\Delta s+\Delta\phi-2\pi m_i,
+```
+
+且
+
+```math
+|\epsilon_i|\leq \epsilon_{\max},
+```
+
+则
+
+```math
+\|\mathbf h(\mathbf p)\|^2
+\geq
+N(\alpha_0^2+\alpha_1^2)
++
+2N\alpha_0\alpha_1\cos(\epsilon_{\max}).
+```
+
+相对于理想完全相干功率的下界为：
+
+```math
+\frac{\|\mathbf h(\mathbf p)\|^2}
+{N(\alpha_0+\alpha_1)^2}
+\geq
+\frac{
+\alpha_0^2+\alpha_1^2
++
+2\alpha_0\alpha_1\cos(\epsilon_{\max})
+}
+{(\alpha_0+\alpha_1)^2}.
+```
+
+这个 theorem 可以支撑后面的鲁棒性分析。
+
+**2. 鲁棒性分析**
+
+鲁棒性可以统一写成“相干相位误差”模型。
+
+实际误差来自 AoA、路径相位、位置量化：
+
+```math
+\epsilon_i
+\approx
+k p_i \delta_s
++
+\delta_\phi
++
+k\Delta s\,\delta p_i,
+```
+
+其中
+
+```math
+\delta_s
+=
+(\sin\theta_0-\sin\theta_1)
+-
+(\sin\hat\theta_0-\sin\hat\theta_1),
+```
+
+```math
+\delta_\phi
+=
+(\phi_1-\phi_0)-(\hat\phi_1-\hat\phi_0).
+```
+
+如果角度误差较小，用弧度表示：
+
+```math
+|\delta_s|
+\lesssim
+|\cos\theta_0||\delta\theta_0|
++
+|\cos\theta_1||\delta\theta_1|.
+```
+
+如果移动区域以 0 为中心，且
+
+```math
+|p_i|\leq A/2,
+```
+
+则有保守界：
+
+```math
+|\epsilon_i|
+\leq
+k\frac{A}{2}|\delta_s|
++
+|\delta_\phi|
++
+k|\Delta s||\delta p_i|.
+```
+
+如果位置量化步长为 `\Delta p_q`，则
+
+```math
+|\delta p_i|\leq \frac{\Delta p_q}{2}.
+```
+
+所以：
+
+```math
+\epsilon_{\max}
+=
+k\frac{A}{2}|\delta_s|
++
+|\delta_\phi|
++
+k|\Delta s|\frac{\Delta p_q}{2}.
+```
+
+然后直接代入 Theorem 3，就得到 SNR 鲁棒下界。
+
+这部分可以形成一个很清楚的结论：
+
+- AoA 误差会随着孔径 `A` 放大；
+- 路径相位误差会整体平移 coherence lattice；
+- 位置量化误差与 `|\Delta s|` 成正比；
+- 大孔径有利于方向图分辨率，但也更敏感于角度估计误差。
+
+互耦可以这样建模：
+
+```math
+\mathbf h_{\rm c}(\mathbf p)
+=
+\mathbf C(\mathbf p)\mathbf h(\mathbf p),
+```
+
+其中 `C(p)` 是位置相关互耦矩阵。如果
+
+```math
+\|\mathbf C(\mathbf p)-\mathbf I\|_2\leq \epsilon_c,
+```
+
+则
+
+```math
+(1-\epsilon_c)^2\|\mathbf h\|^2
+\leq
+\|\mathbf h_{\rm c}\|^2
+\leq
+(1+\epsilon_c)^2\|\mathbf h\|^2.
+```
+
+对于双波束零陷，互耦会导致零陷泄漏：
+
+```math
+|w^H(\mathbf C-\mathbf I)a(\theta_J)|
+\leq
+\|w\|\epsilon_c\|a(\theta_J)\|.
+```
+
+所以 `||w||^2` 越大，零陷越不鲁棒。这也解释了为什么仿真里要画 `||w||^2` 和 `cond(A_c^H A_c)`。
+
+双波束部分还可以加入宽零陷设计。如果干扰角度有误差：
+
+```math
+\theta_J \rightarrow \theta_J+\delta\theta_J,
+```
+
+则
+
+```math
+w^H a(\theta_J+\delta\theta_J)
+\approx
+w^H a(\theta_J)
++
+\delta\theta_J w^H a'(\theta_J).
+```
+
+普通零陷只保证第一项为 0。如果想鲁棒，可以额外加 derivative null：
+
+```math
+w^H a'(\theta_J)=0.
+```
+
+这样牺牲一个自由度，但零陷对角度误差更稳定。
+
+**3. 完整仿真设计**
+
+建议至少补这些图。
+
+第一组：相干增益验证。
+
+横轴可以是 `N`、孔径 `A/lambda` 或角度间隔 `|\sin\theta_0-\sin\theta_1|`。
+
+比较方法：
+
+- Fixed ULA
+- Random feasible MA
+- Black-box PGD / PSO MA
+- Proposed coherence-lattice MA
+- Proposed coherence-lattice + local refinement
+
+指标：
+
+```math
+{\rm SNR}=10\log_{10}\frac{\|\mathbf h(\mathbf p)\|^2}{\sigma^2}
+```
+
+```math
+C_{\rm mean}
+=
+\frac{1}{N}
+\sum_i
+\cos(kp_i\Delta s+\Delta\phi)
+```
+
+预期结果：
+
+- Proposed coherence-lattice MA 接近理论上界 `N(\alpha_0+\alpha_1)^2`；
+- Fixed ULA 随相位和角度出现起伏；
+- 当角度差很小时，`T_coh` 很大，有限孔径内容纳的相干点变少，MA 增益下降。
+
+第二组：有限孔径和 `d_min` 可行性。
+
+画：
+
+```math
+N_{\rm coh}^{\max}
+=
+\left\lfloor
+\frac{M_c-1}{q}
+\right\rfloor+1
+```
+
+随 `A/lambda`、`d_min/lambda`、`|\Delta s|` 的变化。
+
+这张图很重要，因为它把 theorem 和仿真连起来：什么时候能让所有天线完全相干，什么时候只能部分相干。
+
+第三组：双波束/零陷方向图。
+
+比较：
+
+- Fixed ULA + LCMV
+- Sparse fixed aperture
+- Coherence-lattice MA + LCMV
+- Proposed MA dual-beam synthesis
+
+指标：
+
+```math
+{\rm PSL}=\max_{\theta\in\Theta_{\rm side}} |w^Ha(\theta,p)|^2
+```
+
+```math
+{\rm ISL}=\frac{1}{|\Theta_{\rm side}|}
+\int_{\Theta_{\rm side}} |w^Ha(\theta,p)|^2d\theta
+```
+
+```math
+{\rm NullDepth}
+=
+10\log_{10}|w^Ha(\theta_J,p)|^2.
+```
+
+同时画：
+
+```math
+\|w\|^2,\quad
+\kappa(A_c^H A_c).
+```
+
+第四组：鲁棒性。
+
+横轴分别扫：
+
+- AoA 误差标准差 `sigma_theta`
+- 路径相位误差 `sigma_phi`
+- 位置量化步长 `Delta p_q`
+- 互耦强度 `epsilon_c`
+- 干扰角误差 `delta theta_J`
+
+指标：
+
+- SNR loss
+- Mean coherence
+- Null depth degradation
+- PSL / ISL
+- Outage probability，比如 `Pr(SNR loss > 3 dB)`
+
+第五组：复杂度。
+
+比较：
+
+- Black-box PGD
+- PSO
+- Coherence-lattice closed-form construction
+- Coherence-lattice initialization + local search
+- Dual-beam random/local search
+
+复杂度可以写成：
+
+```text
+Coherence lattice: O(M_c log M_c)
+PGD: O(I N)
+PSO: O(P I N)
+Dual-beam search: O(I R (N G + K^3))
+```
+
+其中 `G` 是角度网格数，`K` 是约束方向数，`R` 是每轮随机候选数。
+
+最后论文主线可以这样收束：
+
+```text
+The proposed method first exploits the closed-form coherence lattice to obtain interpretable and low-complexity MA positions for multipath coherent combining. Then, by using these positions as geometry-aware initialization, the array can be further refined for dual-beam synthesis and interference nulling. This bridges channel-gain maximization and beampattern shaping under a unified movable-antenna framework.
+```
