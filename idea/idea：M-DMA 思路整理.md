@@ -1,5 +1,6 @@
 ## 模拟计算 扫不同的角度看能收进来就是信号 强干扰饱和
 稀疏阵列
+multipath的个数 2条 加上可移动之后的增益 移动一个位置利用两个波束 折中
 ## 1. 物理架构
 ![[png：Dynamic Metasurface Antennas for  6G Extreme Massive MIMO Communications.png]]横向一排波导上嵌有若干个element，每一个波导连接着一个RF chain，设计每一个波导由电机驱动可以左右移动，即 $x_{n,m} = u_n + d_m$。
 ![[png：Modeling and Performance Analysis for Movable Antenna Enabled Wireless Communications.png]]
