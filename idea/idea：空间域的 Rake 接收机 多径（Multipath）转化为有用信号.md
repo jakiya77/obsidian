@@ -552,3 +552,28 @@ Dual-beam search: O(I R (N G + K^3))
 ```text
 The proposed method first exploits the closed-form coherence lattice to obtain interpretable and low-complexity MA positions for multipath coherent combining. Then, by using these positions as geometry-aware initialization, the array can be further refined for dual-beam synthesis and interference nulling. This bridges channel-gain maximization and beampattern shaping under a unified movable-antenna framework.
 ```
+
+## 目录
+I. Introduction
+
+II. System Model and Problem Formulation
+    A. Two-Path Movable-Antenna Channel Model
+    B. Received Power Maximization Problem
+
+III. Coherence-Lattice Analysis for Multipath Combining
+    A. Channel Power Decomposition
+    B. Constructive Coherence Lattice
+    C. Finite-Aperture and Minimum-Spacing Feasibility
+
+IV. Placement Optimization and Beamforming Extension
+    A. Placement Optimization
+    B. LCMV Beam Synthesis with Optimized MA Positions
+
+V. Robustness Analysis
+    A. AoA and Phase Perturbation
+    B. Position Quantization
+    C. Mutual Coupling / Null Mismatch
+
+VI. Simulation Results
+
+VII. Conclusion
