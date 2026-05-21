@@ -584,7 +584,7 @@ VII. Conclusion
 
 更准确地说：
 
-### 1. “移动天线通过位置调相，让多径建设性叠加”已经有人做过
+### 1. 移动天线通过位置调相，让多径建设性叠加已经有人做过
 
 这个不能说是你的原创。已有 MA 文献已经明确讲过：MA 位置优化可以调节不同路径的相位，使多径分量建设性叠加，从而提高 channel power gain。比如 MA tutorial 里就直接说，MA 位置可以调节多径复系数的相位，使其 constructively superimpose；单路径时只改变相位，不带来 SNR gain，多路径时才有 gain。([arXiv](https://arxiv.org/html/2502.17905v1 "A Tutorial on Movable Antennas for Wireless Networks"))
 
@@ -596,7 +596,7 @@ VII. Conclusion
 
 ---
 
-### 2. “two-path channel gain 展开成 cosine periodic function”也有人做过
+### 2. two-path channel gain 展开成 cosine periodic function也有人做过
 
 Zhu, Ma, Zhang 的 TWC 2024 **Modeling and Performance Analysis for Movable Antenna Enabled Wireless Communications** 已经分析了 deterministic two-path 情况。他们指出 two-path channel gain 在空间中因为 cosine function 呈现 periodic character，而且 AoA 差越大，周期越小；他们还给出了最大 channel gain 的 tight upper bound 以及达到 upper bound 的位置条件。([arXiv](https://arxiv.org/html/2210.05325v2 "Modeling and Performance Analysis for Movable Antenna Enabled Wireless Communications"))
 
@@ -618,7 +618,7 @@ $$
 
 ---
 
-### 3. “coherence lattice”这个名字本身我没看到是主流叫法，但不能只靠改名字算创新
+### 3. coherence lattice这个名字本身我没看到是主流叫法，但不能只靠改名字算创新
 
 我没有看到 MA 文献普遍把这个叫 **coherence lattice**。已有工作更多叫：
 
