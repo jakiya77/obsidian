@@ -1,3 +1,5 @@
+
+## 1. idea draft
 导师这个思路非常有前瞻性。本质上，这是一个**空间域的 Rake 接收机（Spatial Rake Receiver）**，也就是把原本可能造成频率选择性衰落或破坏性干涉的“多径（Multipath）”，转化为可以提供空间分集和能量增益的“有用信号”。
 
 引入可移动天线（Movable Antennas, MA）作为辅佐，是这个方案的破局点。传统的固定阵列（如 ULA 或 UPA）在形成双波束并进行相位对齐时，受限于固定的天线间距（通常为 $\lambda/2$），其空间分辨率和波束赋形能力是受限的。而 MA 可以通过灵活改变天线位置，重塑阵列流型（Array Manifold），从而完美捕获并合并这两条路径的能量。
@@ -553,7 +555,7 @@ Dual-beam search: O(I R (N G + K^3))
 The proposed method first exploits the closed-form coherence lattice to obtain interpretable and low-complexity MA positions for multipath coherent combining. Then, by using these positions as geometry-aware initialization, the array can be further refined for dual-beam synthesis and interference nulling. This bridges channel-gain maximization and beampattern shaping under a unified movable-antenna framework.
 ```
 
-## 目录
+## 2. Paper outlines
 I. Introduction
 
 II. System Model and Problem Formulation
@@ -577,3 +579,185 @@ V. Robustness Analysis
 VI. Simulation Results
 
 VII. Conclusion
+## 3. relative work research
+结论：**这个思想的底层原理有人做过，但你现在这个写法不一定完全撞；关键看你怎么 claim。**
+
+更准确地说：
+
+### 1. “移动天线通过位置调相，让多径建设性叠加”已经有人做过
+
+这个不能说是你的原创。已有 MA 文献已经明确讲过：MA 位置优化可以调节不同路径的相位，使多径分量建设性叠加，从而提高 channel power gain。比如 MA tutorial 里就直接说，MA 位置可以调节多径复系数的相位，使其 constructively superimpose；单路径时只改变相位，不带来 SNR gain，多路径时才有 gain。([arXiv](https://arxiv.org/html/2502.17905v1 "A Tutorial on Movable Antennas for Wireless Networks"))
+
+所以这句话不能作为强 claim：
+
+> We are the first to reveal that MA improves SNR by coherent multipath combining.
+
+这不安全。
+
+---
+
+### 2. “two-path channel gain 展开成 cosine periodic function”也有人做过
+
+Zhu, Ma, Zhang 的 TWC 2024 **Modeling and Performance Analysis for Movable Antenna Enabled Wireless Communications** 已经分析了 deterministic two-path 情况。他们指出 two-path channel gain 在空间中因为 cosine function 呈现 periodic character，而且 AoA 差越大，周期越小；他们还给出了最大 channel gain 的 tight upper bound 以及达到 upper bound 的位置条件。([arXiv](https://arxiv.org/html/2210.05325v2 "Modeling and Performance Analysis for Movable Antenna Enabled Wireless Communications"))
+
+他们还进一步分析了 three-path 和 multi-path 情况：three-path 最大点是若干线的交点，multi-path channel gain 类似 2D DTFT，并讨论了 period / approximate period。([arXiv](https://arxiv.org/html/2210.05325v2 "Modeling and Performance Analysis for Movable Antenna Enabled Wireless Communications"))
+
+所以你这个公式：
+
+ $$
+|\mathbf h(\mathbf p)|^2
+
+N(\alpha_0^2+\alpha_1^2)  
++  
+2\alpha_0\alpha_1  
+\sum_i  
+\cos(kp_i\Delta s+\Delta\phi)  
+$$
+
+里面的 **cosine 展开、周期性、建设性叠加位置**，本质上和已有 MA performance analysis 很接近。
+
+---
+
+### 3. “coherence lattice”这个名字本身我没看到是主流叫法，但不能只靠改名字算创新
+
+我没有看到 MA 文献普遍把这个叫 **coherence lattice**。已有工作更多叫：
+
+- periodic character of channel gain；
+    
+- maximum-gain positions；
+    
+- position satisfying phase alignment；
+    
+- constructive superposition positions。
+    
+
+所以你叫 coherence lattice 是可以的，而且听起来比“periodic maximum points”更有结构感。
+
+但是注意：**不能把换名字包装成主要 novelty。**  
+更稳的写法是：
+
+> Motivated by the periodic channel-gain structure of MA channels, we characterize the constructive-combining positions as a coherence lattice and further analyze its feasibility under finite aperture and minimum-spacing constraints.
+
+这样既承认已有周期性分析，又把你的扩展放出来。
+
+---
+
+### 4. 你真正可能有新意的是后面这几件事
+
+你的强点不应该是“发现 cosine periodicity”，而应该是：
+
+#### A. 从单 MA channel gain 扩展到 (N)-element MA placement
+
+已有经典分析更多偏 single receive MA 的 channel gain map。你这里是
+
+$$
+ 
+|\mathbf h(\mathbf p)|^2
+
+\sum_{i=1}^N |h_i(p_i)|^2  
+
+$$
+
+也就是多个可移动阵元分别选 lattice points。这个可以写成：
+
+> Unlike single-MA channel-gain maximization, we characterize the number of array elements that can be simultaneously placed at constructive-combining locations.
+
+这比单点最大化更有阵列设计味道。
+
+---
+
+#### B. 有限孔径 + 最小间距下最多能放几个 coherent antennas
+
+这个是你比较有价值的部分：
+
+ 
+$$
+T_{\rm coh}
+
+\frac{\lambda}{|\sin\theta_0-\sin\theta_1|}  
+
+$$
+$$
+q=  
+\left\lceil  
+\frac{d_{\min}}{T_{\rm coh}}  
+\right\rceil  
+$$
+$$
+N_{\rm coh}^{\max}
+
+\left\lfloor  
+\frac{M_c-1}{q}  
+\right\rfloor+1.  
+$$
+
+
+这个比单纯说“最大点周期存在”更进一步，因为你把它变成了 **array placement feasibility condition**。
+
+这里可以 claim：
+
+> We derive an explicit feasibility condition for the number of movable antennas that can simultaneously achieve constructive LoS-NLoS combining under finite-aperture and inter-element spacing constraints.
+
+这个相对安全，也更像 TVT contribution。
+
+---
+
+#### C. 和 anti-jamming / LCMV / overloaded nulling 结合
+
+如果你的主论文方向是 DMA/MA-enabled anti-jamming，那你的新意应该落在：
+
+> coherence lattice is not only used for SNR enhancement, but also provides additional spatial degrees of freedom for overloaded anti-jamming and dual-beam/null synthesis.
+
+也就是说，你不是单纯做 MA channel gain maximization，而是把 lattice-based multipath combining 放进抗干扰框架里。
+
+这才是和已有 MA performance analysis 拉开距离的地方。
+
+---
+
+### 5. 所以这部分在论文里该怎么写 claim？
+
+不建议写：
+
+```latex
+We first derive the coherence lattice of movable antennas for multipath coherent combining.
+```
+
+这个太危险，因为 two-path maximum-gain condition 已经有人做过。
+
+更建议写：
+
+```latex
+We characterize the constructive LoS-NLoS combining positions of an MA array as a spatial coherence lattice. Different from existing single-MA channel-gain analyses, the proposed characterization is further used to quantify how many movable antenna elements can be simultaneously placed at constructive-combining locations under finite-aperture and minimum-spacing constraints.
+```
+
+或者更强一点：
+
+```latex
+Building upon the periodic channel-gain structure of MA channels, we derive an explicit coherence-lattice feasibility condition for multi-element MA placement, which reveals the joint impact of angular separation, aperture size, and inter-element spacing on achievable coherent combining gain.
+```
+
+这个表述比较安全，因为它没有否认已有工作。
+
+---
+
+### 6. 我的判断
+
+| 内容                                            |     是否已有 |                 你能不能用 |
+| --------------------------------------------- | -------: | --------------------: |
+| 多径通过 MA 位置实现建设性叠加                             |       已有 | 可以作为背景，不要 claim first |
+| two-path channel gain 的 cosine periodicity    |       已有 |         可以引用后再改写成你的模型 |
+| 最大点/相干点的周期性位置                                 |   已有类似结果 |      可以用，但要避免过度 claim |
+| “coherence lattice”这个命名                       |     不算主流 |            可以作为你的分析语言 |
+| (N) 个 MA 同时选 lattice points                   |    可能有新意 |     可以作为 contribution |
+| 有限孔径 + (d_{\min}) 下 (N_{\rm coh}^{\max})      |    比较有价值 |                 建议重点写 |
+| 和 anti-jamming / LCMV / overloaded nulling 结合 | 最可能形成差异化 |                应该作为主线 |
+
+---
+
+最终建议：**这个部分可以保留，而且应该写，但不要把它包装成“首次发现 MA 的多径相干增益”。**
+
+你应该把它定位成：
+
+> 已有 MA 文献发现了 channel gain 的空间周期性；本文进一步将其结构化为 coherence lattice，并用于多阵元 placement feasibility、有限孔径分析、以及抗干扰 beam synthesis。
+
+这样既不会撞已有工作，又能把你的理论部分立住。
