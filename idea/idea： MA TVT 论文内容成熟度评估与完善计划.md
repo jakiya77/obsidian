@@ -7,9 +7,8 @@ tags:
 date: 2026-05-21
 ---
 
-# 📝 
 > [!summary] 核心结论
-> 论文骨架已经完整。按照 TVT 标准，目前不是“缺部分”，而是要将现有内容**正规化**。最强主贡献是 Coherence Lattice 解析；有限孔径和鲁棒性足以支撑独立章节；Beamforming 的物理 Insight 需要重点提炼。
+> 论文骨架已经完整。按照 TVT 标准，目前不是缺部分，而是要将现有内容**正规化**。最强主贡献是 Coherence Lattice 解析；有限孔径和鲁棒性足以支撑独立章节；Beamforming 的物理 Insight 需要重点提炼。
 
 ## 📊 各模块成熟度概览
 
