@@ -28,6 +28,7 @@ Coherence-Lattice Movable Antenna Design for Joint LoS/NLoS Combining and Interf
 论文里可以说：
 
 > The MA gain originates from element-wise LoS/NLoS phase alignment, not from random aperture enlargement.
+![[Pasted image 20260522154154.png]]
 
 **第二组：什么时候能找到足够多的相干位置**
 
