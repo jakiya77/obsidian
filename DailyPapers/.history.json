@@ -1,8 +1,23 @@
 [
   {
-    "id": "2605.22361",
+    "id": "2605.21831",
     "date": "2026-05-22",
-    "title": "Propagation-Consistent Wireless Environment Digital Twin Construction Under Sparse Measurements"
+    "title": "Site-Specific Beamforming for Full-Duplex Massive MIMO Systems via Implicit Channel Estimation"
+  },
+  {
+    "id": "2605.21895",
+    "date": "2026-05-22",
+    "title": "Rotatable Antenna-Enhanced Wireless Sensing with Uniform Sparse Array via Tensor Decomposition"
+  },
+  {
+    "id": "2605.22085",
+    "date": "2026-05-22",
+    "title": "Distributed Near-Field Channel Estimation for U6G XL-MIMO Systems under Beam Squint"
+  },
+  {
+    "id": "2605.22117",
+    "date": "2026-05-22",
+    "title": "Beyond Spherical Wavefront: Near-Field Channel Estimation Under Wavefront Anisotropy"
   },
   {
     "id": "2605.22288",
@@ -15,28 +30,78 @@
     "title": "Low-Complexity Tensor Beamforming for RIS-Aided Multiuser Multistream MIMO Systems"
   },
   {
-    "id": "2605.22117",
+    "id": "2605.22361",
     "date": "2026-05-22",
-    "title": "Beyond Spherical Wavefront: Near-Field Channel Estimation Under Wavefront Anisotropy"
-  },
-  {
-    "id": "2605.22085",
-    "date": "2026-05-22",
-    "title": "Distributed Near-Field Channel Estimation for U6G XL-MIMO Systems under Beam Squint"
-  },
-  {
-    "id": "2605.21831",
-    "date": "2026-05-22",
-    "title": "Site-Specific Beamforming for Full-Duplex Massive MIMO Systems via Implicit Channel Estimation"
-  },
-  {
-    "id": "2605.21895",
-    "date": "2026-05-22",
-    "title": "Rotatable Antenna-Enhanced Wireless Sensing with Uniform Sparse Array via Tensor Decomposition"
+    "title": "Propagation-Consistent Wireless Environment Digital Twin Construction Under Sparse Measurements"
   },
   {
     "id": "2605.22508",
     "date": "2026-05-22",
     "title": "Fluid RIS (FRIS)-Assisted Index Modulation for 6G Wireless Communications"
+  },
+  {
+    "id": "2605.16907",
+    "date": "2026-05-23",
+    "title": "Performance Analysis of Movable Antenna Arrays"
+  },
+  {
+    "id": "2605.16920",
+    "date": "2026-05-23",
+    "title": "Analysis of Fluid Antenna Systems with Continuous Positioning and Spatial Correlation"
+  },
+  {
+    "id": "2605.17009",
+    "date": "2026-05-23",
+    "title": "Design and Practical Validation of a Novel Modulation Scheme for RIS Detection and Identification"
+  },
+  {
+    "id": "2605.17629",
+    "date": "2026-05-23",
+    "title": "DL-Driven Optimization for ISAC System Equipped With Pinching and Movable Antennas"
+  },
+  {
+    "id": "2605.18099",
+    "date": "2026-05-23",
+    "title": "Movable Antenna-Aided Secure LEO Satellite Networks: Joint Antenna Position and Beamforming Optimization"
+  },
+  {
+    "id": "2605.18486",
+    "date": "2026-05-23",
+    "title": "Movable Antenna-Enabled Integrated Sensing and Communication in Low-Altitude UAV Networks"
+  },
+  {
+    "id": "2605.19455",
+    "date": "2026-05-23",
+    "title": "Sparse Fluid Antenna Arrays: Continuous Position Design Beyond Classical DOF Limits"
+  },
+  {
+    "id": "2605.19489",
+    "date": "2026-05-23",
+    "title": "DJSCC-Enabled Multi-User Semantic CSI Feedback for Hybrid Beamforming in Dual-Polarized cmWave Massive MIMO"
+  },
+  {
+    "id": "2605.19612",
+    "date": "2026-05-23",
+    "title": "How Many Independent Modes Does a Fluid Antenna Have? A Closed-Form Outage Analysis via Equivalent Degrees of Freedom"
+  },
+  {
+    "id": "2605.19790",
+    "date": "2026-05-23",
+    "title": "Channel Estimation for Beyond Diagonal RIS-Aided Multi-User mmWave Systems"
+  },
+  {
+    "id": "2605.20560",
+    "date": "2026-05-23",
+    "title": "Flexible Coupler Antenna for Wireless Networks: Opportunities and Challenges"
+  },
+  {
+    "id": "2605.22040",
+    "date": "2026-05-23",
+    "title": "Finite-Aperture Planar Fluid Antenna Array"
+  },
+  {
+    "id": "2605.22053",
+    "date": "2026-05-23",
+    "title": "Stacked Intelligent Metasurface-Assisted Fluid Antenna Systems: Outage Probability"
   }
 ]
