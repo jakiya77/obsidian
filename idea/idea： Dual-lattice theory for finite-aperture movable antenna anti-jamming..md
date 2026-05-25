@@ -44,3 +44,12 @@ $$
 所以这张图支撑的结论是：
 
 > movable antenna 可以利用位置域的 constructive/destructive 结构，把天线移动到 dual-favorable regions；而 fixed ULA 由于位置固定、均匀，可能错过这些有利位置。
+
+Fig. X. Position-domain mechanism of the proposed dual-lattice MA selection. 
+The desired normalized power $H_n(p)$, jammer suppression score $1-G_n(p)$, 
+and dual-lattice score $\eta(p)$ are plotted over the movable aperture. 
+The selected MA positions are concentrated around high-score regions, where the desired signal is reasonably strong and the jammer leakage is suppressed. 
+In contrast, the fixed ULA positions are uniformly placed and are not aligned with the position-domain dual-favorable regions. 
+The position markers are vertically shifted only for visualization.
+
+这张图展示了所提出 dual-lattice MA 选择方法的位置域机制。蓝色曲线表示期望信号的归一化功率 Hn(p)H_n(p)Hn​(p)，其峰值对应 desired constructive regions；橙色虚线表示干扰抑制得分 1−Gn(p)1-G_n(p)1−Gn​(p)，其峰值对应 jammer destructive regions。绿色曲线为 dual-lattice score η(p)\eta(p)η(p)，用于同时刻画期望信号增强和干扰泄漏抑制。可以看到，所选 MA 位置并非均匀分布，而是集中在 dual-lattice score 较高的位置附近。相比之下，fixed ULA 的位置是均匀固定的，因此无法主动利用这些位置域峰谷结构。
