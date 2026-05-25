@@ -103,5 +103,85 @@
     "id": "2605.22053",
     "date": "2026-05-23",
     "title": "Stacked Intelligent Metasurface-Assisted Fluid Antenna Systems: Outage Probability"
+  },
+  {
+    "id": "2605.22856",
+    "date": "2026-05-25",
+    "title": "PilotWiMAE: Pilot-Native Representation Learning for Wireless Channels Using Masked Autoencoders"
+  },
+  {
+    "id": "2605.22857",
+    "date": "2026-05-25",
+    "title": "JointHRRP-Net: A Statistically Constrained Decoupling Network for Joint Target/Jamming Recognition in Composite Jamming Environment"
+  },
+  {
+    "id": "2605.22886",
+    "date": "2026-05-25",
+    "title": "Resilience Characterization of AI-Native Wireless Receivers via Persistent Homology"
+  },
+  {
+    "id": "2605.22961",
+    "date": "2026-05-25",
+    "title": "OctCGS: A Channel Knowledge Map Construction Method Based on 3D Gaussian Splatting"
+  },
+  {
+    "id": "2605.23062",
+    "date": "2026-05-25",
+    "title": "AFDM as a Software Upgrade of OFDM: Time-Varying Channels, Multi-Window Chirp Signal Waveforms, and Beyond"
+  },
+  {
+    "id": "2605.23140",
+    "date": "2026-05-25",
+    "title": "Self-Calibration DOA Estimation for Movable Antenna Systems with Antenna Position Errors"
+  },
+  {
+    "id": "2605.23155",
+    "date": "2026-05-25",
+    "title": "Physics-Informed Digital Twins for Channel Estimation in Non-Terrestrial Networks"
+  },
+  {
+    "id": "2605.23260",
+    "date": "2026-05-25",
+    "title": "MISO Downlink With Fluid Antenna Multiple Access: Sum-Rate Maximization and Transmit Power Minimization"
+  },
+  {
+    "id": "2605.23366",
+    "date": "2026-05-25",
+    "title": "CUMA-Enabled Cellular Networks: A Stochastic Geometry Framework"
+  },
+  {
+    "id": "2605.23468",
+    "date": "2026-05-25",
+    "title": "ComHymba: A Low-Complexity Domain-Informed Foundation Model for Wireless Communications"
+  },
+  {
+    "id": "2605.23498",
+    "date": "2026-05-25",
+    "title": "Constant-Envelope Quantized Precoding and Power Control for Cell-Free Massive MIMO-OFDM Systems"
+  },
+  {
+    "id": "2605.23502",
+    "date": "2026-05-25",
+    "title": "Distributed Two-Phase Processing for Modular XL-MIMO under Wireless Fronthaul and Hardware Impairments"
+  },
+  {
+    "id": "2605.23642",
+    "date": "2026-05-25",
+    "title": "Fast Fluid Antenna Multiple Access"
+  },
+  {
+    "id": "2605.23682",
+    "date": "2026-05-25",
+    "title": "Tri-Domain Multiuser MIMO Precoding Optimization and Channel Estimation with Spatial-EM Reconfigurable Antenna"
+  },
+  {
+    "id": "2605.23683",
+    "date": "2026-05-25",
+    "title": "Multi-User MIMO with Rotatable Antennas and IRS: System Design and Performance Optimization"
+  },
+  {
+    "id": "2605.23851",
+    "date": "2026-05-25",
+    "title": "Manifold-Based Framework for Coupling-Aware Surrogate Optimization of Antenna Arrays Using Characteristic Modes"
   }
 ]
