@@ -25,8 +25,8 @@ $$
 
 
 ## Fig 1 
-![[png：figure 1.png]]
-Position-domain mechanism of dual-lattice MA selection
+
+![[png：Figure_1 1.png|633]]Position-domain mechanism of dual-lattice MA selection
 蓝色曲线 Hn(p)表示 desired normalized power。蓝色高峰对应 desired constructive regions，也就是期望信号两径相干增强的位置。
 橙色虚线 1−Gn(p)表示 jammer suppression score。因为 Gn(p)是 jammer normalized power，所以 1−Gn(p)越高，说明 jammer leakage 越低，也就是 jammer destructive regions。
 绿色曲线 η(p) 是 dual-lattice score：
