@@ -53,3 +53,10 @@ In contrast, the fixed ULA positions are uniformly placed and are not aligned wi
 The position markers are vertically shifted only for visualization.
 
 这张图展示了所提出 dual-lattice MA 选择方法的位置域机制。蓝色曲线表示期望信号的归一化功率 Hn(p)H_n(p)Hn​(p)，其峰值对应 desired constructive regions；橙色虚线表示干扰抑制得分 1−Gn(p)1-G_n(p)1−Gn​(p)，其峰值对应 jammer destructive regions。绿色曲线为 dual-lattice score η(p)\eta(p)η(p)，用于同时刻画期望信号增强和干扰泄漏抑制。可以看到，所选 MA 位置并非均匀分布，而是集中在 dual-lattice score 较高的位置附近。相比之下，fixed ULA 的位置是均匀固定的，因此无法主动利用这些位置域峰谷结构。
+
+Fig.~X illustrates the position-domain mechanism of the proposed dual-lattice MA selection. 
+The desired normalized power $H_n(p)$ and the jammer-suppression score $1-G_n(p)$ exhibit different spatial lattice patterns over the movable aperture. 
+The resulting dual-lattice score $\eta(p)$ becomes large at positions where the jammer leakage is strongly suppressed while the desired-channel gain remains non-negligible. 
+Therefore, the selected MA elements are concentrated around the high-score regions, whereas the fixed ULA elements are uniformly placed and cannot adapt to the position-domain dual-favorable structure.
+
+图 X 展示了 dual-lattice MA 选择的位置域机制。期望信号功率 Hn(p)H_n(p)Hn​(p) 和干扰抑制得分 1−Gn(p)1-G_n(p)1−Gn​(p) 在可移动孔径内呈现不同的空间晶格结构。由二者共同形成的 dual-lattice score η(p)\eta(p)η(p) 会在干扰泄漏较低且期望信号增益不弱的位置处变大。因此，所选 MA 阵元集中在这些高分区域附近，而 fixed ULA 阵元均匀放置，无法自适应利用这种位置域有利结构。
