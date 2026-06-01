@@ -40,14 +40,15 @@
 ### C. 有限孔径下 Dual-Favorable 可用性
 
 接下来分析 finite aperture 对 dual-favorable positions 可用性的影响。前文已经定义 strict dual-favorable region：
-
-# [  
+ 
+$$
 \Omega_{\rm dual}(A;\tau_s,\tau_j)
 
 {p\in\mathcal A:H(p)\ge\tau_s,;G(p)\le\tau_j}.  
-]
+$$
 
-为了衡量该区域是否能够容纳多个满足最小间距约束的 MA 位置，引入 dual-favorable packing number (N_{\rm dual}^{\rm pack})。该指标表示 strict dual-favorable region 内在几何上最多能够放置多少个满足 (d_{\min}) 的 MA 位置。
+
+为了衡量该区域是否能够容纳多个满足最小间距约束的 MA 位置，引入 dual-favorable packing number ($N_{\rm dual}^{\rm pack}$)。该指标表示 strict dual-favorable region 内在几何上最多能够放置多少个满足 (d_{\min}) 的 MA 位置。
 
 仿真中可以通过 heatmap 展示 (N_{\rm dual}^{\rm pack}) 随 (A/\lambda) 和 (T_j/T_s) 的变化。该图的目的在于说明：即使 desired constructive region 和 jammer weak-response region 在理论上存在，它们在有限孔径内也不一定充分重合，或者不一定足够容纳全部 (N) 个 MA。特别是在 aperture 较小、period mismatch 明显或相位对齐不利时，可能出现 (N_{\rm dual}^{\rm pack}<N) 的情况。
 
