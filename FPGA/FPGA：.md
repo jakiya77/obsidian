@@ -80,7 +80,18 @@ endmodule
 ## 3、vector replication and sign-extending
 ```verilog
 assign out = { {4{in[3]}}, in }; //4'b**1**101 (-3) to 8 bits results in 8'b**1111**1101
+```
+## 4、Pairwise Comparison
+![[png：Pasted image 20260605203957.png]]
+```verilog
+module top_module (
+    input a, b, c, d, e,
+    output [24:0] out );//
 
+    assign out = ~({5{a,b,c,d,e}})^{{5{a}},{5{b}},{5{c}},{5{d}},{5{e}}};
 
+endmodule
 
 ```
+
+# III、Modules
