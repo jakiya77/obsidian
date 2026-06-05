@@ -1,5 +1,6 @@
 https://hdlbits.01xz.net/
-# 1. concatenation 
+# I Basics
+## 1. concatenation 
 ![[pngPasted image 20260605153511.png|661]]
 ```verilog
 module top_module( 
@@ -8,7 +9,7 @@ module top_module(
     assign {w,x,y,z} = {a,b,b,c};
 endmodule
 ```
-# 2. Gate（notgate andgat）
+## 2. Gate（notgate andgat）
 ![[png：Pasted image 20260605153725.png|346]]![[png：Pasted image 20260605154307.png|355]]
 ![[png：Pasted image 20260605154644.png|350]]![[png：Pasted image 20260605155805.png|338]]
 Verilog has separate bitwise-NOT (~) and logical-NOT (!) operators
@@ -20,7 +21,7 @@ The bitwise-XOR operator is `^`. There is no logical-XOR operator.
 | ----------- | ------------------- | ------------ | -------------------------- | --------------------------- |
 | **Bitwise** | `~`, `&`, `\|`, `^` | 数据的**每一位**   | 保持原数据的位宽                   | 硬件连线、掩码操作、总线信号按位处理          |
 | **Logical** | `!`, `&&`, `\|\|``  | 整个数据的**真/假** | 输出永远只有 **1 位** (`0` 或 `1`) | `if` 语句或 `case` 语句的**条件判断** |
-# 3 wire declaration 
+## 3 wire declaration 
 ![[pngPasted image 20260605162303.png|487]]
 ```verilog
 `default_nettype none
@@ -46,6 +47,9 @@ endmodule
 ```
 >[!hint] Be aware of the number of wires.
 
-# 4 7458
+## 4 7458
 
-![[png：Pasted image 20260605165630.png|717]]
+![[png：Pasted image 20260605165630.png|235]]
+
+# II、Vectors
+## 1、
