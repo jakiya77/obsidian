@@ -70,3 +70,8 @@ endmodule
 ```
 >[!hint] + assign out = my_vector[10]; // Part-select one bit out of the vector
 
+## 2、Vectors debug
+>[!tldr]+ 
+> 1. The endianness of a vector is normmally defined as  [upper:lower] `wire [3:0] vec;`
+> 2. default_nettype none     // Disable implicit nets. Reduces some types of bugs.
+> 3.  
