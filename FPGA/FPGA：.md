@@ -76,3 +76,6 @@ endmodule
 >2. default_nettype none     // Disable implicit nets. Reduces some types of bugs.
 >3.  reg [7:0] mem [255:0];   // 256 unpacked elements, each of which is a 8-bit packed vector of reg. just a 8$\times$ 256 matrix  
 >4.Part-Select: 
+
+## 3、vector replication
+{num{vector}}
