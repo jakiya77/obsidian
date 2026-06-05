@@ -96,7 +96,7 @@ endmodule
 
 # III、Modules
 ---
-## 1.Instantiation
+## 1. Instantiation
 在设计层次化电路时，将子模块（小芯片）引入到顶层模块（大电路板）的操作叫做**例化（Instantiation）**。根据子模块引脚的定义方式，连线分为以下两种情况：
 
 ---
@@ -124,4 +124,28 @@ Verilog
 // 假设子模块声明为：module mod_a (output, output, input, input, input, input);
 
 mod_a uut (out1, out2, a, b, c, d); 
+```
+
+## 2. Module shift
+![[png：Pasted image 20260605223203.png]]
+```verilog
+module top_module ( input clk, input d, output q );
+    wire w1 ;
+    wire w2;
+    my_dff uut1 (
+        .clk(clk),
+        .d(d),
+        .q(w1)
+    );
+    my_dff uut2 (
+        .clk(clk),
+        .d(w1),
+        .q(w2)
+    );
+    my_dff uut3 (
+        .clk(clk),
+        .d(w2),
+        .q(q)
+    );
+endmodule
 ```
