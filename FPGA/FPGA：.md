@@ -74,4 +74,4 @@ endmodule
 >[!tldr]+ 
 > 1. The endianness of a vector is normmally defined as  [upper:lower] `wire [3:0] vec;`
 > 2. default_nettype none     // Disable implicit nets. Reduces some types of bugs.
-> 3.  
+> 3.  reg [7:0] mem [255:0];   // 256 unpacked elements, each of which is a 8-bit packed vector of reg.
