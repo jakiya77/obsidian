@@ -22,3 +22,26 @@ The bitwise-XOR operator is `^`. There is no logical-XOR operator.
 | **Logical** | `!`, `&&`, `\|\|``  | 整个数据的**真/假** | 输出永远只有 **1 位** (`0` 或 `1`) | `if` 语句或 `case` 语句的**条件判断** |
 # 3 wire declaration 
 ![[pngPasted image 20260605162303.png|487]]
+```verilog
+`default_nettype none
+module top_module(
+    input a,
+    input b,
+    input c,
+    input d,
+    output out,
+    output out_n   ); 
+    wire and_1;
+    wire and_2;
+
+   
+    assign and_1 = a & b;
+    assign and_2 = c & d;
+    assign out =  and_1|and_2;
+    assign out_n = ~(and_1|and_2);
+    
+   
+endmodule
+
+```
+>[!hint] Be aware of the number of wires.
