@@ -77,5 +77,10 @@ endmodule
 >3.  reg [7:0] mem [255:0];   // 256 unpacked elements, each of which is a 8-bit packed vector of reg. just a 8$\times$ 256 matrix  
 >4.Part-Select: 
 
-## 3、vector replication
-{num{vector}}
+## 3、vector replication and sign-extending
+```verilog
+assign out = { {4{in[3]}}, in }; //4'b**1**101 (-3) to 8 bits results in 8'b**1111**1101
+
+
+
+```
