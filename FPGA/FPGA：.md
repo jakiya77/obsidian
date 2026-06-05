@@ -95,3 +95,33 @@ endmodule
 ```
 
 # III、Modules
+---
+## 1.Instantiation
+在设计层次化电路时，将子模块（小芯片）引入到顶层模块（大电路板）的操作叫做**例化（Instantiation）**。根据子模块引脚的定义方式，连线分为以下两种情况：
+
+---
+
+### Named Ports
+
+ 语法格式
+`.子模块引脚名(你大板子的导线名)`
+```verilog
+// 假设子模块声明为：module mod_a (input in1, input in2, output out);
+
+mod_a uut (
+    .in1(a),      // 把大板子的 a 导线，插进芯片的 in1 引脚
+    .in2(b),      // 把大板子的 b 导线，插进芯片的 in2 引脚
+    .out(out_sig) // 把大板子的 out_sig 导线，插进芯片的 out 引脚
+);
+```
+
+### Positional Ports
+🔹 语法格式
+`子模块名 实例名 (导线1, 导线2, 导线3, ...);`
+Verilog
+
+```verilog
+// 假设子模块声明为：module mod_a (output, output, input, input, input, input);
+
+mod_a uut (out1, out2, a, b, c, d); 
+```
