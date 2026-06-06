@@ -149,4 +149,4 @@ module top_module ( input clk, input d, output q );
     );
 endmodule
 ```
-![[png：Pasted image 20260606140606.png]]
+![[png：Pasted image 20260606140606.png|565]]
