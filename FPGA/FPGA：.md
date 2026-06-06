@@ -193,3 +193,6 @@ module top_module (
 endmodule
 
 ```
+
+## 2. Module add
+![[png：Pasted image 20260606142425.png]]
