@@ -276,3 +276,5 @@ endmodule
 
 ```
 >[!warning] + ⚠️ input vector width
+
+![[png：Pasted image 20260606212400.png]]
