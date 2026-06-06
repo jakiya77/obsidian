@@ -316,3 +316,11 @@ endmodule
 >- Clocked: always @(posedge clk)
 >- The left-hand-side of an assign statement must be a _net_ type (e.g., wire)
 >- The left-hand-side of a procedural assignment (in an always block) must be a _variable_ type (e.g., reg)
+
+## 2、Alwaysblock2
+#### Blocking vs. Non-Blocking Assignment
+There are three types of assignments in Verilog:
+- **Continuous** assignments (assign x = y;). Can only be used when **not** inside a procedure ("always block").
+- Procedural **blocking** assignment: (x = y;). Can only be used inside a procedure.
+- Procedural **non-blocking** assignment: (x <= y;). Can only be used inside a procedure.
+![[png：Pasted image 20260606220653.png|411]]
