@@ -314,3 +314,5 @@ endmodule
 >[!hint]+ 
 >- Combinational: always @(*) 
 >- Clocked: always @(posedge clk)
+>- The left-hand-side of an assign statement must be a _net_ type (e.g., wire)
+>- The left-hand-side of a procedural assignment (in an always block) must be a _variable_ type (e.g., reg)
