@@ -227,3 +227,5 @@ endmodule
 >[!hint]- debug log
 >1. the width of the vector is 16 
 >2. the input of the adder is not 32 
+
+![[png：Pasted image 20260606151114.png]]
