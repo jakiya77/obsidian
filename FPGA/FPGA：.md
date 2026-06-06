@@ -229,3 +229,4 @@ endmodule
 >2. the input of the adder is not 32 
 
 ![[png：Pasted image 20260606151114.png]]
+![[png：Pasted image 20260606203335.png]]
