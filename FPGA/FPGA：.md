@@ -278,3 +278,39 @@ endmodule
 >[!warning] + ⚠️ input vector width
 
 ![[png：Pasted image 20260606212400.png]]
+```verilog
+module top_module(
+    input [31:0] a,
+    input [31:0] b,
+    input sub,
+    output [31:0] sum
+);
+    wire w1;wire [15:0] s1;wire [15:0] s2;
+    add16 u_add16_1(
+        .a(a[15:0]),
+        .b(w_xorout[15:0]),
+        .cin(sub),
+        .cout(w1),
+        .sum(s1)
+    );
+    add16 u_add16_2(
+        .a(a[31:16]),
+        .b(w_xorout[31:16]),
+        .cin(w1),
+        .sum(s2)
+    );
+    
+    wire [31:0] w_xorout;
+    assign w_xorout = b^{32{sub}};
+    assign sum = {s2,s1};
+
+endmodule
+
+
+```
+
+# IV、Procedures
+## 1、Alwaysblock1
+>[!hint]+ 
+>- Combinational: always @(*) 
+>- Clocked: always @(posedge clk)
