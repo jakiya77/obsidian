@@ -229,6 +229,11 @@ endmodule
 >2. the input of the adder is not 32 
 
 ![[png：Pasted image 20260606151114.png|290]]![[png：Pasted image 20260606203335.png|408]]
+
+>[!hint]- Full adder equations
+sum = a ^ b ^ cin  
+cout = a&b | a&cin | b&cin
+
 ``` verilog
 
 module top_module(
@@ -271,4 +276,3 @@ endmodule
 
 ```
 >[!warning] + ⚠️ input vector width
-》
