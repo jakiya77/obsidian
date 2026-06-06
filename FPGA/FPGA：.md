@@ -228,5 +228,47 @@ endmodule
 >1. the width of the vector is 16 
 >2. the input of the adder is not 32 
 
-![[png：Pasted image 20260606151114.png]]
-![[png：Pasted image 20260606203335.png]]
+![[png：Pasted image 20260606151114.png|290]]![[png：Pasted image 20260606203335.png|408]]
+``` verilog
+
+module top_module(
+    input [31:0] a,
+    input [31:0] b,
+    output [31:0] sum
+);
+    wire w1;wire w2;
+    wire [15:0] s1;wire [15:0] s2;wire [15:0] s3;wire [15:0] s4;
+    
+    add16 u_add16_1(
+        .a(a[15:0]),
+        .b(b[15:0]),
+        .cin(1'b0),
+        .cout(w1),
+        .sum(s1)
+    );
+    add16 u_add16_2(
+        .a(a[31:16]),
+        .b(b[31:16]),
+        .cin(1'b0),
+        .sum(s2)
+    );
+    add16 u_add16_3(
+        .a(a[31:16]),
+        .b(b[31:16]),
+        .cin(1'b1),
+        .sum(s3)
+    );
+    
+    always@(*)begin
+        case(w1)
+            1'b0:s4 = s2;
+            1'b1:s4 = s3;
+        endcase
+    end
+    assign sum = {s4,s1};
+                
+endmodule
+
+```
+>[!warning] + ⚠️ input vector width
+》
