@@ -308,7 +308,14 @@ endmodule
 
 
 ```
+## 4. 1 bit adder
+```verilog
+assign sum = a^b^cin;
+assign cout = (a & b) | (a & cin) | (b & cin);
 
+assign {cout, sum} = a + b + cin;//自取高低位
+
+```
 # IV、Procedures
 ## 1、Alwaysblock1
 >[!hint]+ 
@@ -476,4 +483,42 @@ module top_module(
     end
 
 endmodule
+```
+## 4 instance array
+```verilog
+
+module top_module( 
+    input [99:0] a, b,
+    input cin,
+    output [99:0] cout,
+    output [99:0] sum 
+);
+    
+    wire [99:0] middle_wire;
+    assign middle_wire = {cout[98:0], cin}; // ‼️⚠️
+    
+    fadd u_fadd[99:0](
+        .a(a),
+        .b(b),
+        .cin(middle_wire),
+        .cout(cout),
+        .sum(sum)
+    );
+
+endmodule 
+
+
+
+module fadd(
+    input a, b,
+    input cin,
+    output cout,
+    output sum 
+);
+        
+    
+    assign sum = a ^ b ^ cin;
+    assign cout = (a & b) | (a & cin) | (b & cin);
+        
+endmodule 
 ```
