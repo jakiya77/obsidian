@@ -555,3 +555,25 @@ assign f = (~x3 &  x2 & ~x1) |
            ( x3 &  x2 &  x1);
 
 ![[png：Pasted image 20260607170102.png|497]]
+```verilog
+module top_module (input x, input y, output z);
+    wire w1;wire w2; wire w3;wire w4;
+    IA_module u_IA_module_1(.x(x),.y(y),.z(w1));
+    IB_module u_IB_module_1(.x(x),.y(y),.z(w2));
+    IA_module u_IA_module_2(.x(x),.y(y),.z(w3));
+    IB_module u_IB_module_2(.x(x),.y(y),.z(w4));
+    
+    assign z = (w1|w2)^(w3&w4);
+
+
+endmodule
+
+module IA_module (input x, input y, output z);
+    assign z = (x^y) & x;
+endmodule
+
+module IB_module (input x, input y, output z);
+    assign z = ~(x^y);
+endmodule
+```
+>[!hint]+ jakiya bravo!
