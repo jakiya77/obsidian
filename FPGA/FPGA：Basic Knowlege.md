@@ -776,3 +776,10 @@ endmodule
 ![[png：Pasted image 20260607232359.png]]
 
 ![[png：Pasted image 20260607232446.png]]
+
+同步复位：`always @(posedge clk)`，只有时钟上升沿到来时才检查 `reset`，所以 `reset=1` 后不会立刻清零，要等下一个时钟沿。
+
+异步复位：`always @(posedge clk or posedge reset)`，`reset` 自己也能触发 always 块，所以 `reset` 一变高，`q` 立刻清零。
+
+题目要求同步复位，所以不能把 `reset` 写进敏感列表，否则仿真里 `q` 会提前清零，和参考波形 mismatch。
+
