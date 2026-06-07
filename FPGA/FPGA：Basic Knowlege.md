@@ -604,7 +604,7 @@ assign out_different = in ^ {in[0], in[3:1]};
 ```
 
 ## 3、Multiplexer
-#### 1 vetor  Mux256to1v
+### 1 vetor  Mux256to1v
 ```verilog
 // vector[start +: width] 
 //从 start 开始，往高位取 width 位
@@ -613,7 +613,62 @@ in[8 +: 4]   // in[11:8]`
 //从 start 开始，往低位取 width 位`
 in[11 -: 4]  // in[11:8]`
 ```
+### 2 Full Adder -> 3bit adder
+#debug
 
+![[png：Pasted image 20260607211053.png|299]]
 
+```verilog
+module top_module( 
+    input [2:0] a, b,
+    input cin,
+    output [2:0] cout,
+    output [2:0] sum );
+    
+    wire w1;wire w2;
+    wire s1;wire w3;wire s2;wire s3;
+    
+    // 报错关键
+    fadd u_fadd_1(.a(a),.b(b),.cin(cin),.cout(w1),.sum(s1));
+    fadd u_fadd_2(.a(a),.b(b),.cin(w1),.cout(w2),.sum(s2));
+    fadd u_fadd_3(.a(a),.b(b),.cin(w2),.cout(w3),.sum(s3));
+    
+    //需要修改成 按位给就行了
+    
+     fadd u0 (
+        .a(a[0]),
+        .b(b[0]),
+        .cin(cin),
+        .cout(cout[0]),
+        .sum(sum[0])
+    );
 
+    fadd u1 (
+        .a(a[1]),
+        .b(b[1]),
+        .cin(cout[0]),
+        .cout(cout[1]),
+        .sum(sum[1])
+    );
 
+    fadd u2 (
+        .a(a[2]),
+        .b(b[2]),
+        .cin(cout[1]),
+        .cout(cout[2]),
+        .sum(sum[2])
+    );
+    //
+    assign cout = w3;
+    assign sum = s1+s2+s3;
+
+endmodule
+
+module fadd( 
+    input a, b, cin,
+    output cout, sum );
+    assign{cout,sum} = a+b+cin;
+endmodule
+```
+>[!warning]+ 又一次 由于width出错了！！
+>fulladder是一位的 不能直接给
