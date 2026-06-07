@@ -194,7 +194,7 @@ endmodule
 
 ```
 
-## 2. Module add
+## 3. Module add
 ![[png：Pasted image 20260606142425.png]]
 ```verilog
 
