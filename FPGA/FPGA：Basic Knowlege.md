@@ -731,4 +731,4 @@ endmodule
 
 ```
 
-## 4、
+## 4、 Karnaugh map to circuit
