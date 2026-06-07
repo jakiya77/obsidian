@@ -604,6 +604,15 @@ assign out_different = in ^ {in[0], in[3:1]};
 ```
 
 ## 3、Multiplexer
+#### 1 vetor  Mux256to1v
+```verilog
+// vector[start +: width] 
+//从 start 开始，往高位取 width 位
+in[8 +: 4]   // in[11:8]`
+// vector[start -: width] 
+//从 start 开始，往低位取 width 位`
+in[11 -: 4]  // in[11:8]`
+```
 
 
 
