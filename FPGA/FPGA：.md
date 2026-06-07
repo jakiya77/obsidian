@@ -421,3 +421,8 @@ always @(*) begin
     endcase
 end
 ```
+
+# V、More Vrilog Features
+## 1 Conditional
+>[!hint]+ (condition ? if_true : if_false)
+
