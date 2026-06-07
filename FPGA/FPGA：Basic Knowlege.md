@@ -731,4 +731,6 @@ endmodule
 
 ```
 
-## 4、 Karnaugh map to circuit
+## 4、 Karnaugh map to circuit 卡诺图化简
+
+![[png：Pasted image 20260607222858.png]]
