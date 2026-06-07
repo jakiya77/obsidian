@@ -524,7 +524,7 @@ endmodule
 ```
 ![[png：ChatGPT Image 2026年6月7日 16_17_40.png]]![[png：Pasted image 20260607162259.png]]
 
-# VI、 Circuit
+# VI、 Circuit - combination logic
 ## 1、通过真值表写电路
 1. 找 f=1 的行  
 2. 每一行写一个 AND  0 写取反，1 写原变量  
@@ -734,3 +734,45 @@ endmodule
 ## 4、 Karnaugh map to circuit 卡诺图化简
 
 ![[png：Pasted image 20260607222858.png]]
+
+# VII、Circuit - Sequential Logic
+
+```verilog
+module top_module (
+    input clk,
+    input reset,            // Synchronous reset
+    input [7:0] d,
+    output [7:0] q
+);
+    always@(posedge clk or posedge reset)begin
+        if(reset)begin
+            q = 0;
+        end
+        else begin
+        q = d;
+    end
+    end
+
+endmodule
+
+module top_module (
+    input clk,
+    input reset,            // Synchronous reset
+    input [7:0] d,
+    output [7:0] q
+);
+    always@(posedge clk )begin //只有这里写法不一样 差了一个时钟
+        if(reset)begin
+            q = 0;
+        end
+        else begin
+        q = d;
+    end
+    end
+
+endmodule
+
+```
+![[png：Pasted image 20260607232359.png]]
+
+![[png：Pasted image 20260607232446.png]]
