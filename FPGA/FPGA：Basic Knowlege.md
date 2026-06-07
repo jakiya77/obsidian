@@ -524,7 +524,7 @@ endmodule
 ```
 ![[png：ChatGPT Image 2026年6月7日 16_17_40.png]]![[png：Pasted image 20260607162259.png]]
 
-# VI、 Combination circuit
+# VI、 Circuit
 ## 1、通过真值表写电路
 1. 找 f=1 的行  
 2. 每一行写一个 AND  0 写取反，1 写原变量  
@@ -730,3 +730,5 @@ module FA (
 endmodule
 
 ```
+
+## 4、
