@@ -577,7 +577,7 @@ module IB_module (input x, input y, output z);
 endmodule
 ```
 >[!hint]+ jakiya bravo!
-## 2 例题
+## 2、vector的灵活运用 错位求值
 >[!example]+ You are given a four-bit input vector in[3:0]. We want to know some relationships between each bit and its neighbour:
 >- **out_both**: Each bit of this output vector should indicate whether _both_ the corresponding input bit and its neighbour to the **left** (higher index) are '1'. For example, out_both[2] should indicate if in[2] and in[3] are both 1. Since in[3] has no neighbour to the left, the answer is obvious so we don't need to know out_both[3].
 >- **out_any**: Each bit of this output vector should indicate whether _any_ of the corresponding input bit and its neighbour to the **right** are '1'. For example, out_any[2] should indicate if either in[2] or in[1] are 1. Since in[0] has no neighbour to the right, the answer is obvious so we don't need to know out_any[0].
@@ -603,6 +603,7 @@ assign out_any  = in[3:1] | in[2:0];
 assign out_different = in ^ {in[0], in[3:1]};
 ```
 
+## 3、Multiplexer
 
 
 
