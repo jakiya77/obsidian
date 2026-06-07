@@ -435,3 +435,14 @@ end
 
 ## 3 for-loop
 
+``` Verilog
+integer i; // 👈 必须在块外面（或者块开头）声明一个整数型变量 i
+
+always @(*) begin
+    for (i = 0; i < 100; i = i + 1) begin
+        // 👈 在这里写你要批量复制的连线逻辑
+    end
+end
+```
+ Given a 100-bit input vector [99:0], reverse its bit ordering.
+ 
