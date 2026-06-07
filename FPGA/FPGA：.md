@@ -522,4 +522,4 @@ module fadd(
         
 endmodule 
 ```
-![[png：ChatGPT Image 2026年6月7日 16_17_40.png]]
+![[png：ChatGPT Image 2026年6月7日 16_17_40.png]]![[png：Pasted image 20260607162259.png]]
