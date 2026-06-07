@@ -346,3 +346,5 @@ module top_module(
 endmodule
 ```
 ## 3 Always casez
+
+## 4  Always nolatches
