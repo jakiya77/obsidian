@@ -615,8 +615,7 @@ in[11 -: 4]  // in[11:8]`
 ```
 ### 2 Full Adder -> 3bit adder
 #debug
-
-![[png：Pasted image 20260607211053.png|299]]
+![[png Pasted image 20260607211555.png|453]]![[png：Pasted image 20260607211053.png|216]]
 
 ```verilog
 module top_module( 
@@ -672,3 +671,4 @@ endmodule
 ```
 >[!warning]+ 又一次 由于width出错了！！
 >fulladder是一位的 不能直接给
+
