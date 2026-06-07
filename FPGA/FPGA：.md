@@ -346,5 +346,98 @@ module top_module(
 endmodule
 ```
 ## 3 Always casez
+```verilog
+// synthesis verilog_input_version verilog_2001
+module top_module (
+    input [7:0] in,
+    output reg [2:0] pos 
+);
 
+    always @(*) begin
+        casez(in) // 👈 必须用 casez，开启模糊通配符功能
+            8'b???????1: pos = 3'd0; // 只要最低位 in[0] 是 1，位置就是 0
+            8'b??????10: pos = 3'd1; // in[0]=0 且 in[1]=1，位置就是 1
+            8'b?????100: pos = 3'd2; // 位置 2
+            8'b????1000: pos = 3'd3; // 位置 3
+            8'b???10000: pos = 3'd4; // 位置 4
+            8'b??100000: pos = 3'd5; // 位置 5
+            8'b?1000000: pos = 3'd6; // 位置 6
+            8'b10000000: pos = 3'd7; // 最高位 in[7]=1，位置就是 7
+            default:     pos = 3'd0; // 全 0 或其他情况，按题目要求输出 0
+        endcase
+    end
+    
+endmodule
+```
 ## 4  Always nolatches
+>[!hint]+ 把默认值写在前面而不是通过default，能 100% 避免意外生成Latch且大幅减少代码量
+
+```Verilog
+always @(*) begin
+    // 1. 先给出所有输出的默认安全状态
+    up = 1'b0; down = 1'b0; left = 1'b0; right = 1'b0;
+    
+    // 2. 然后根据条件，覆盖特定的值
+    case (scancode)
+        16'hE075: up = 1'b1;     // 只需要写发生变化的那一项
+        16'hE072: down = 1'b1;
+    endcase
+end
+```
+
+**为什么好？**
+
+- **兜底保障：** 在代码执行进入 `case` 之前，所有变量都已经有了明确的值（全 0）。当匹配到 `16'hE075` 时，只有 `up` 被重新赋值为 `1`。至于 `down`、`left`、`right`，综合器会向前追溯，发现它们在开头已经被赋值为 `0` 了。
+    
+- 这样一来，**所有输出在任何情况下都有确定的值**，综合器会完美地为你生成纯组合逻辑电路，绝不会产生 Latch。
+    
+
+### 2. 只写在 `default` 里：极易掉入 Latch 陷阱
+
+如果你觉得“反正 `default` 也是兜底”，把那 4 行移到 `default` 里，代码通常会变成这样：
+
+Verilog
+
+```
+always @(*) begin
+    case (scancode)
+        16'hE075: up = 1'b1;        // 危险！这里没有给 down, left, right 赋值
+        16'hE072: down = 1'b1;      // 危险！这里没有给 up, left, right 赋值
+        default: begin
+            up = 1'b0; down = 1'b0; left = 1'b0; right = 1'b0;
+        end
+    endcase
+end
+```
+
+**这里发生了什么可怕的事情？**
+
+- 当 `scancode` 是 `16'hE075` 时，综合器看到了 `up = 1'b1`。
+    
+- 然后它会问：“那在这个条件下，`down`、`left`、`right` 应该是什么状态？”
+    
+- 因为你在这个分支里没写，Verilog 的硬件映射规则是：**保持原值**。
+    
+- 为了在纯组合逻辑中“保持原值”，综合器只能被迫为你生成 3 个透明锁存器（Latches）来记住上一个时钟周期的状态。这在组合逻辑设计中通常是致命的，会导致毛刺（Glitch）和时序分析失败。
+    
+
+### 3. 如果硬要用 `default` 做到等效？
+
+如果非要只用 `case` 来写且不生成 Latch，你必须在**每一个** `case` 分支里，把**所有**变量都写全：
+
+Verilog
+
+```
+always @(*) begin
+    case (scancode)
+        16'hE075: begin up = 1'b1; down = 1'b0; left = 1'b0; right = 1'b0; end // 极其繁琐
+        16'hE072: begin up = 1'b0; down = 1'b1; left = 1'b0; right = 1'b0; end
+        // ... 中间省略几十个按键 ...
+        default:  begin up = 1'b0; down = 1'b0; left = 1'b0; right = 1'b0; end
+    endcase
+end
+```
+
+看到了吗？这就绝对不是 4 行代码的问题了！如果你的多路复用器或者解码器有几十个分支，你需要把这些冗余的复位状态复制粘贴几十遍，不仅容易写错，代码也极难维护。
+
+**总结：** 先赋初始值，再用 `case` 或 `if-else` 去覆盖（Override）特定状
