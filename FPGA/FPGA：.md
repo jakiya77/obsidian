@@ -553,3 +553,5 @@ assign f = (~x3 &  x2 & ~x1) |
            (~x3 &  x2 &  x1) |
            ( x3 & ~x2 &  x1) |
            ( x3 &  x2 &  x1);
+
+![[png：Pasted image 20260607170102.png|497]]
