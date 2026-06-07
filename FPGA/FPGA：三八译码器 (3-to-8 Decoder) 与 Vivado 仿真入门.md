@@ -35,32 +35,56 @@ Verilog
 
 ```
 `timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 2026/06/01 21:27:32
+// Design Name: 
+// Module Name: a38decoder
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
 
-module decoder_3to8 (
-    input  wire       en,   // 1位使能信号
-    input  wire [2:0] in,   // 3位输入信号 (位宽规范：[MSB:LSB])
-    output reg  [7:0] out   // 8位输出信号
-);
 
-    // 组合逻辑：敏感列表包含所有输入信号，任何输入变化都会触发重新计算
-    always @(*) begin
-        if (en == 1'b0) begin
-            out = 8'b0000_0000; // 未使能时全灭
-        end else begin
-            case(in)
-                3'b000: out = 8'b0000_0001; // 十进制 0
-                3'b001: out = 8'b0000_0010; // 十进制 1
-                3'b010: out = 8'b0000_0100; // 十进制 2
-                3'b011: out = 8'b0000_1000; // 十进制 3
-                3'b100: out = 8'b0001_0000; // 十进制 4
-                3'b101: out = 8'b0010_0000; // 十进制 5
-                3'b110: out = 8'b0100_0000; // 十进制 6
-                3'b111: out = 8'b1000_0000; // 十进制 7
-                default: out = 8'b0000_0000; // 硬件好习惯：必须加 default 兜底，防止生成锁存器(Latch)
-            endcase
-        end
-    end
-endmodule
+module a38decoder(
+input  clk,
+input [2:0] in,
+output [7 :0]out_wire,
+output reg [7 :0] out_reg,
+input rst_n
+    );
+    
+ always@ (posedge clk or negedge rst_n ) begin
+ if (!rst_n) begin
+ out_reg <= 8'd0;
+ end else begin
+ case(in)
+   3'b000:out_reg <= 8'b00000001;
+  3'b001:out_reg  <= 8'b00000010;
+  3'b010:out_reg  <= 8'b00000100;
+  3'b011:out_reg  <= 8'b00001000;
+  3'b100:out_reg  <= 8'b00010000;
+  3'b101:out_reg  <= 8'b00100000;
+  3'b110:out_reg  <= 8'b01000000;
+  3'b111:out_reg <= 8'b10000000;
+ default :out_reg <= 8'b00000000;
+ endcase
+ end
+ end
+ 
+ assign  out_wire = (8'b00000001 << in );
+ 
+ endmodule
 ```
 
 ### 2. 核心语法解析
