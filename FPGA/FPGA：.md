@@ -445,4 +445,17 @@ always @(*) begin
 end
 ```
  Given a 100-bit input vector [99:0], reverse its bit ordering.
- 
+```verilog
+module top_module( 
+    input [99:0] in,
+    output [99:0] out
+);
+    int i;
+    always@(*)begin
+        for(i = 0;i<100;i=i+1)begin
+            out[99-i] = in[i];
+        end
+    end
+endmodule
+
+```
