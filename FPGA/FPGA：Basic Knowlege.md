@@ -803,3 +803,9 @@ module top_module (
 endmodule
 ```
 ![[png：Pasted image 20260608095319.png]]![[png：Pasted image 20260608095333.png]]
+```verilog
+
+
+
+```
+![[png：Pasted image 20260608100015.png]]
