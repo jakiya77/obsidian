@@ -785,7 +785,7 @@ endmodule
 
 题目要求同步复位，所以不能把 `reset` 写进敏感列表，否则仿真里 `q` 会提前清零，和参考波形 mismatch。
 
-## 2、Edgedetect
+## 2、Edge
 ### 2.1 Edgedetect
 ```verilog
 module top_module (
@@ -860,5 +860,55 @@ module top_module (
     assign q = clk ? q_pos : q_neg; //很巧妙
 
 endmodule
+
+```
+
+## 3、counter
+Make a decade counter that counts 1 through 10, inclusive. The reset input is synchronous, and should reset the counter to 1.
+![[png：Pasted image 20260608104501.png|495]]
+>[!caution]+ 我写的太绕了
+
+```verilog
+//我写的
+module top_module (
+    input clk,
+    input reset,        // Synchronous active-high reset
+    output reg [3:0] q
+);
+
+    always @(posedge clk) begin
+        if (reset) begin
+            q <= 4'd0;
+        end
+        //这个部分有点绕
+        else if (q < 9) begin
+            q <= q + 4'd1;
+        else begin
+            q <= q - 10 + 1;
+       //可以直接写成q == 4'd9 清零
+        end
+    end
+    
+    //修改版的
+module top_module (
+    input clk,
+    input reset,        // Synchronous active-high reset
+    output reg [3:0] q
+);
+
+    always @(posedge clk) begin
+        if (reset) begin
+            q <= 4'd0;
+        end
+        else if (q == 4'd9) begin
+            q <= 4'd0;
+        end
+        else begin
+            q <= q + 4'd1;
+        end
+    end
+
+endmodule
+
 
 ```
