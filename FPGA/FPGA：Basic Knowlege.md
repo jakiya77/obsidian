@@ -833,4 +833,10 @@ module top_module (
 endmodule
 
 ```
-![[png：Pasted image 20260608100015.png]]
+![[png：Pasted image 20260608100015.png
+
+### 2.3 Dualedge
+Build a circuit that functionally behaves like a dual-edge triggered flip-flop:
+![[png：Pasted image 20260608101730.png|476]]
+>[!warning]+  @(posedge clk or negedge clk) is illegal
+
