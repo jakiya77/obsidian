@@ -737,6 +737,8 @@ endmodule
 
 # VII、Circuit - Sequential Logic
 
+## 1、同、异步复位
+
 ```verilog
 module top_module (
     input clk,
@@ -783,3 +785,20 @@ endmodule
 
 题目要求同步复位，所以不能把 `reset` 写进敏感列表，否则仿真里 `q` 会提前清零，和参考波形 mismatch。
 
+## 2、Edgedetect
+```verilog
+module top_module (
+    input clk,
+    input [7:0] in,
+    output [7:0] pedge，// pose edge only
+    output [7:0] anyedge//both edge
+    );
+    reg [7:0]in_last;
+    always@(posedge clk)begin
+        pedge <= ~in_last & in;
+        anyedge <= in_last^in;
+        in_last <= in;
+    end
+
+endmodule
+```
