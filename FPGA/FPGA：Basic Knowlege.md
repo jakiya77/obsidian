@@ -978,3 +978,141 @@ module top_module (
 
 endmodule
 ```
+### 3.2 4 digit decimal counter
+Build a 4-digit BCD (binary-coded decimal) counter. Each decimal digit is encoded using 4 bits: q[3:0] is the ones digit, q[7:4] is the tens digit, etc. For digits [3:1], also output an enable signal indicating when each of the upper three digits should be incremented.
+
+You may want to instantiate or modify some one-digit [decade counters](https://hdlbits.01xz.net/wiki/Count10 "Count10").
+
+![[png：Pasted image 20260608121223.png]]
+```verilog
+module top_module (
+    input clk,
+    input reset,   // Synchronous active-high reset
+    output [3:1] ena,
+    output [15:0] q
+);
+
+    assign ena[1] = (q[3:0] == 4'd9);
+    assign ena[2] = (q[3:0] == 4'd9) && (q[7:4] == 4'd9);
+    assign ena[3] = (q[3:0] == 4'd9) && (q[7:4] == 4'd9) && (q[11:8] == 4'd9);
+
+    one_digit u0 (
+        .clk(clk),
+        .reset(reset),
+        .ena(1'b1),
+        .q(q[3:0])
+    );
+
+    one_digit u1 (
+        .clk(clk),
+        .reset(reset),
+        .ena(ena[1]),
+        .q(q[7:4])
+    );
+
+    one_digit u2 (
+        .clk(clk),
+        .reset(reset),
+        .ena(ena[2]),
+        .q(q[11:8])
+    );
+
+    one_digit u3 (
+        .clk(clk),
+        .reset(reset),
+        .ena(ena[3]),
+        .q(q[15:12])
+    );
+
+endmodule
+
+
+module one_digit (
+    input clk,
+    input reset,
+    input ena,
+    output reg [3:0] q
+);
+
+    always @(posedge clk) begin
+        if (reset)
+            q <= 4'd0;
+        else if (ena)
+            q <= (q == 4'd9) ? 4'd0 : q + 4'd1;
+    end
+
+endmodule
+
+```
+
+### 3.3 12h clock
+Create a set of counters suitable for use as a 12-hour clock (with am/pm indicator). Your counters are clocked by a fast-running clk, with a pulse on ena whenever your clock should increment (i.e., once per second).
+
+reset resets the clock to 12:00 AM. pm is 0 for AM and 1 for PM. hh, mm, and ss are two **BCD** (Binary-Coded Decimal) digits each for hours (01-12), minutes (00-59), and seconds (00-59). Reset has higher priority than enable, and can occur even when not enabled.
+
+The following timing diagram shows the rollover behaviour from 11:59:59 AM to 12:00:00 PM and the synchronous reset and enable behaviour.
+
+![[png：Pasted image 20260608121109.png]]
+```verilog
+module top_module(
+    input clk,
+    input reset,
+    input ena,
+    output reg pm,
+    output reg [7:0] hh,
+    output reg [7:0] mm,
+    output reg [7:0] ss
+); 
+
+    always @(posedge clk) begin
+        if (reset) begin
+            hh <= 8'h12;
+            mm <= 8'h00;
+            ss <= 8'h00;
+            pm <= 1'b0;      // AM
+        end
+        else if (ena) begin
+
+            // seconds
+            if (ss == 8'h59) begin
+                ss <= 8'h00;
+
+                // minutes
+                if (mm == 8'h59) begin
+                    mm <= 8'h00;
+
+                    // hours
+                    if (hh == 8'h11) begin
+                        hh <= 8'h12;
+                        pm <= ~pm;      // 11:59:59 -> 12:00:00 时 AM/PM 翻转
+                    end
+                    else if (hh == 8'h12) begin
+                        hh <= 8'h01;
+                    end
+                    else if (hh[3:0] == 4'h9) begin
+                        hh <= {hh[7:4] + 4'h1, 4'h0};  // 09 -> 10
+                    end
+                    else begin
+                        hh <= hh + 8'h01;
+                    end
+
+                end
+                else begin
+                    if (mm[3:0] == 4'h9)
+                        mm <= {mm[7:4] + 4'h1, 4'h0};
+                    else
+                        mm <= mm + 8'h01;
+                end
+
+            end
+            else begin
+                if (ss[3:0] == 4'h9)
+                    ss <= {ss[7:4] + 4'h1, 4'h0};
+                else
+                    ss <= ss + 8'h01;
+            end
+        end
+    end
+
+endmodule
+```
