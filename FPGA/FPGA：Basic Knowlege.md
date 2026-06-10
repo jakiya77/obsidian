@@ -1058,6 +1058,7 @@ Note that 11:59:59 PM advances to 12:00:00 AM, and 12:59:59 PM advances to�
 ss 59- mm hh 
 
 reset --> 12:00am [ss=0;mm=0;pm-->0]
+clk+ena --> increment
 
 ![[png：Pasted image 20260608121109.png]]
 ```verilog
