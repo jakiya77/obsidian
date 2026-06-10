@@ -1052,8 +1052,12 @@ reset resets the clock to 12:00 AM. pm is 0 for AM and 1 for PM. hh, mm, an
 
 The following timing diagram shows the rollover behaviour from 11:59:59 AM to 12:00:00 PM and the synchronous reset and enable behaviour.
 
+Note that 11:59:59 PM advances to 12:00:00 AM, and 12:59:59 PM advances to 01:00:00 PM. There is no 00:00:00.
 #### 题目拆解 
-12小时制的钟：分上午和下午 am and pm
+12小时制的钟：分上午和下午 pm=0-->am pm=1-->pm
+ss 59- mm hh 
+
+reset --> 12:00am [ss=0;mm=0;pm-->0]
 
 ![[png：Pasted image 20260608121109.png]]
 ```verilog
