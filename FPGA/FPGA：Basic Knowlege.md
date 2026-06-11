@@ -1129,7 +1129,7 @@ endmodule
 ```
 
 ## 4、Shift Register
-### 4.1、4 bit shift register
+### 4.1 4 bit shift register
 Build a 4-bit shift register (right shift), with asynchronous reset, synchronous load, and enable.
 
 - areset: Resets shift register to zero.
@@ -1161,7 +1161,7 @@ end
 endmodule
 ```
 
-### 4.2、Rotate100
+### 4.2 Rotate100
 Build a 100-bit left/right rotator, with synchronous load and left/right enable. A rotator shifts-in the shifted-out bit from the other end of the register, unlike a shifter that discards the shifted-out bit and shifts in a zero. If enabled, a rotator rotates the bits around and does not modify/discard them.
 
 - load: Loads shift register with data[99:0] instead of rotating.
@@ -1198,7 +1198,7 @@ endmodule
 
 ```
 
-### 4.3、shift18
+### 4.3 shift18
 Build a 64-bit _arithmetic_ shift register, with synchronous load. The shifter can shift both left and right, and by 1 or 8 bit positions, selected by amount.
 
 An _arithmetic_ right shift shifts in the sign bit of the number in the shift register (q[63] in this case) instead of zero as done by a _logical_ right shift. Another way of thinking about an arithmetic right shift is that it assumes the number being shifted is signed and preserves the sign, so that arithmetic right shift divides a signed number by a power of two.
@@ -1213,3 +1213,31 @@ There is no difference between logical and arithmetic _left_ shifts.
     - 2'b10: shift right by 1 bit.
     - 2'b11: shift right by 8 bits.
 - q: The contents of the shifter.
+
+```verilog
+module top_module(
+    input clk,
+    input load,
+    input ena,
+    input [1:0] amount,
+    input [63:0] data,
+    output reg [63:0] q); 
+
+    always @(posedge clk ) begin
+        if(load)begin
+            q <= data ;
+        end
+        else if(ena)begin
+            case (amount)
+                2'b00: q <= {q[62:0], 1'b0};              // left shift by 1
+                2'b01: q <= {q[55:0], 8'b0};              // left shift by 8
+                2'b10: q <= {q[63], q[63:1]};             // arithmetic right shift by 1
+                2'b11: q <= {{8{q[63]}}, q[63:8]};        // arithmetic right shift by 8
+            endcase
+        end
+    end
+
+endmodule
+```
+>[!hint]+ only right shift should consider the sign 
+
