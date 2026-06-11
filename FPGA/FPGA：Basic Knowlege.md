@@ -1171,3 +1171,45 @@ Build a 100-bit left/right rotator, with synchronous load and left/right enable.
     - 2'b00 and 2'b11 do not rotate.
 - q: The contents of the rotator.
 
+```verilog
+module top_module(
+    input clk,
+    input load,
+    input [1:0] ena,
+    input [99:0] data,
+    output reg [99:0] q); 
+
+    always@(posedge clk)begin
+        if(load)begin
+            q <= data;
+        end
+        else begin
+            case (ena)
+            2'b01: q <= {q[0], q[99:1]};
+            2'b10: q <= {q[98:0], q[99]};
+            default: q <= q;
+        endcase
+        end
+        
+    end
+
+endmodule
+
+
+```
+
+### 4.3、shift18
+Build a 64-bit _arithmetic_ shift register, with synchronous load. The shifter can shift both left and right, and by 1 or 8 bit positions, selected by amount.
+
+An _arithmetic_ right shift shifts in the sign bit of the number in the shift register (q[63] in this case) instead of zero as done by a _logical_ right shift. Another way of thinking about an arithmetic right shift is that it assumes the number being shifted is signed and preserves the sign, so that arithmetic right shift divides a signed number by a power of two.
+
+There is no difference between logical and arithmetic _left_ shifts.
+
+- load: Loads shift register with data[63:0] instead of shifting.
+- ena: Chooses whether to shift.
+- amount: Chooses which direction and how much to shift.
+    - 2'b00: shift left by 1 bit.
+    - 2'b01: shift left by 8 bits.
+    - 2'b10: shift right by 1 bit.
+    - 2'b11: shift right by 8 bits.
+- q: The contents of the shifter.
