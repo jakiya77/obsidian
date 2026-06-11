@@ -1128,4 +1128,46 @@ module top_module(
 endmodule
 ```
 
-## 4、counter
+## 4、Shift Register
+### 4.1、4 bit shift register
+Build a 4-bit shift register (right shift), with asynchronous reset, synchronous load, and enable.
+
+- areset: Resets shift register to zero.
+- load: Loads shift register with data[3:0] instead of shifting.
+- ena: Shift right (q[3] becomes zero, q[0] is shifted out and disappears).
+- q: The contents of the shift register.
+
+If both the load and ena inputs are asserted (1), the load input has higher priority.
+
+```verilog
+module top_module(
+input clk,
+input areset, // async active-high reset to zero
+input load,
+input ena,
+input [3:0] data,
+output reg [3:0] q);
+
+always@(posedge clk or posedge areset)begin
+if(areset)begin
+q <= 4'b0;
+end
+else if (load)begin
+q <= data;
+end
+else if(ena)begin
+q <= {1'b0,q[3:0]};
+end
+endmodule
+```
+
+### 4.2、Rotate100
+Build a 100-bit left/right rotator, with synchronous load and left/right enable. A rotator shifts-in the shifted-out bit from the other end of the register, unlike a shifter that discards the shifted-out bit and shifts in a zero. If enabled, a rotator rotates the bits around and does not modify/discard them.
+
+- load: Loads shift register with data[99:0] instead of rotating.
+- ena[1:0]: Chooses whether and which direction to rotate.
+    - 2'b01 rotates right by one bit
+    - 2'b10 rotates left by one bit
+    - 2'b00 and 2'b11 do not rotate.
+- q: The contents of the rotator.
+
