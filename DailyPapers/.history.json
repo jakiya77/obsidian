@@ -243,5 +243,45 @@
     "id": "2606.09753",
     "date": "2026-06-09",
     "title": "Jamming-Resilient Sparse Delay-Doppler NOMA: A Framework for Random Access and Passive Activity Detection"
+  },
+  {
+    "id": "2606.10164",
+    "date": "2026-06-14",
+    "title": "Curved Beam Enabled Wireless Communications: Modeling, Analysis and Optimization"
+  },
+  {
+    "id": "2606.10190",
+    "date": "2026-06-14",
+    "title": "Optimal Illumination via Joint Movement and Phase Optimization for Movable Antenna-RIS Configuration"
+  },
+  {
+    "id": "2606.11519",
+    "date": "2026-06-14",
+    "title": "Joint Movable Antenna Positioning and RIS Partitioning for Sum-Rate Maximization"
+  },
+  {
+    "id": "2606.11829",
+    "date": "2026-06-14",
+    "title": "Parametric Channel Estimation with Hardware Impaired Hybrid Beamformers: Sensing, Communications, and Power Efficiency Tradeoffs"
+  },
+  {
+    "id": "2606.12024",
+    "date": "2026-06-14",
+    "title": "Unlocking the Potential of Movable Antennas: General and Practical Antenna Position Optimization"
+  },
+  {
+    "id": "2606.12139",
+    "date": "2026-06-14",
+    "title": "Reconfigurable Antennas for Next-generation Mobile Communication Networks: A Comprehensive Survey and Tutorial"
+  },
+  {
+    "id": "2606.12321",
+    "date": "2026-06-14",
+    "title": "Bending the Rules of Propagation: Caustic Beamforming for Next-Generation Wireless Systems"
+  },
+  {
+    "id": "2606.12831",
+    "date": "2026-06-14",
+    "title": "Sub-array Selection Optimization for Joint Self-Interference and Multi-User Interference Suppression in FD mMIMO"
   }
 ]
