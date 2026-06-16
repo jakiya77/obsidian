@@ -1,0 +1,107 @@
+{
+  "nodes": [
+    {
+      "id": "index",
+      "type": "file",
+      "file": "obsidian note/Research/FADLS/FADLS 问题索引.md",
+      "x": 0,
+      "y": 0,
+      "width": 300,
+      "height": 90
+    },
+    {
+      "id": "system-model",
+      "type": "text",
+      "text": "# 系统模型\n- array / DMA / FADLS 设定\n- desired 与 jammer channel\n- feasible 坐标集合",
+      "x": -520,
+      "y": 180,
+      "width": 320,
+      "height": 160,
+      "color": "1"
+    },
+    {
+      "id": "dual-lattice",
+      "type": "text",
+      "text": "# dual-lattice 物理动机\n- desired constructive lattice\n- jammer destructive lattice\n- exact intersection 稀疏性\n- spatial frequency 解释",
+      "x": -160,
+      "y": 180,
+      "width": 340,
+      "height": 180,
+      "color": "2"
+    },
+    {
+      "id": "algorithm",
+      "type": "text",
+      "text": "# 算法设计\n- FADLS heuristic\n- FADLS post-MMSE\n- SINR-greedy full-grid\n- 复杂度与公平性",
+      "x": 240,
+      "y": 180,
+      "width": 340,
+      "height": 180,
+      "color": "3"
+    },
+    {
+      "id": "simulation",
+      "type": "text",
+      "text": "# 仿真实验\n- paths 数量\n- JSR sweep\n- small-scale global optimum\n- beam pattern 解释",
+      "x": -340,
+      "y": 440,
+      "width": 340,
+      "height": 170,
+      "color": "4"
+    },
+    {
+      "id": "writing",
+      "type": "text",
+      "text": "# 论文写作\n- TVT 创新性\n- 复杂度分析\n- figure placement\n- reviewer 可能质疑点",
+      "x": 80,
+      "y": 440,
+      "width": 340,
+      "height": 170,
+      "color": "5"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-index-system",
+      "fromNode": "index",
+      "fromSide": "bottom",
+      "toNode": "system-model",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-index-lattice",
+      "fromNode": "index",
+      "fromSide": "bottom",
+      "toNode": "dual-lattice",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-index-algorithm",
+      "fromNode": "index",
+      "fromSide": "bottom",
+      "toNode": "algorithm",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-lattice-simulation",
+      "fromNode": "dual-lattice",
+      "fromSide": "bottom",
+      "toNode": "simulation",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-algorithm-simulation",
+      "fromNode": "algorithm",
+      "fromSide": "bottom",
+      "toNode": "simulation",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-algorithm-writing",
+      "fromNode": "algorithm",
+      "fromSide": "bottom",
+      "toNode": "writing",
+      "toSide": "top"
+    }
+  ]
+}
