@@ -1,3 +1,28 @@
+---
+codex_dataview: true
+type: idea
+project: FADLS / TVT论文
+area: idea
+category: idea
+parent: 研究想法
+status: active
+priority: high
+created: '2026-03-24'
+updated: '2026-03-31'
+summary: 1. 重新构建基于导频的联合 MMSE 目标函数
+tags:
+- idea
+- MMSE
+- DMA
+- Movable-Antenna
+- AO
+- RIS
+- ADC
+- Interference
+- Pilot
+aliases:
+- 基于导频的双迭代 MMSE 优化问题
+---
 ### 1. 重新构建基于导频的联合 MMSE 目标函数
 
 根据原论文的模型，接收端在天线阵面的信号矩阵为 $Y \in \mathbb{C}^{N_e \times K}$ ：

@@ -1,3 +1,27 @@
+---
+codex_dataview: true
+type: draft
+project: Word排版 / 论文写作
+area: Draft
+category: Draft
+parent: 论文草稿
+status: active
+priority: medium
+created: '2026-03-24'
+updated: '2026-03-24'
+summary: II. SYSTEM MODEL
+tags:
+- Draft
+- draft
+- MMSE
+- DMA
+- Movable-Antenna
+- MIMO
+- ADC
+- Pilot
+aliases:
+- paper writing
+---
 ### II. SYSTEM MODEL
 
 Consider an adversary suppressive jamming scenario where a single-antenna transmitter communicates with a legitimate receiver in the presence of a single-antenna jammer. To achieve high-accuracy channel estimation and robust jamming mitigation with low hardware overhead, the receiver is equipped with a single-RF dynamic metasurface antenna (DMA) consisting of $N_e$ metamaterial elements.

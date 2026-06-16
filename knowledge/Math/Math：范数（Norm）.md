@@ -1,3 +1,28 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-31'
+updated: '2026-03-31'
+summary: 在处理多天线或多流信号误差矩阵 $\mathbf{E}$ 时，范数的选择决定了算法的物理走向。
+tags:
+- knowledge
+- Math
+- MMSE
+- MIMO
+- ADMM
+- RIS
+- Beamforming
+- Anti-Jamming
+- Interference
+aliases:
+- 范数（Norm）
+---
 [[Math：迹（Trace）]]
 
 在处理多天线或多流信号误差矩阵 $\mathbf{E}$ 时，范数的选择决定了算法的物理走向。

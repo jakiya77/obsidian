@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: tool-note
+project: 工具与工作流
+area: Tools
+category: Tools
+parent: Obsidian / 工具
+status: reference
+priority: low
+created: '2026-03-30'
+updated: '2026-03-30'
+summary: 视觉颜色 | 推荐类型 (Type) | 适用场景
+tags:
+- Tools
+- tool-note
+aliases:
+- Callout
+---
 | **视觉颜色** | **推荐类型 (Type)**                       | **适用场景**        |
 | -------- | ------------------------------------- | --------------- |
 | **蓝色**   | note, info                            | 普通笔记、补充信息       |

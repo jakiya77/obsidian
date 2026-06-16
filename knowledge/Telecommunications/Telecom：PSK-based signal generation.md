@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-03-02'
+updated: '2026-03-03'
+summary: 1. QPSK，Quadrature Phase Shift Keying
+tags:
+- knowledge
+- Telecommunications
+aliases:
+- PSK-based signal generation
+---
 
 ## 1. QPSK，Quadrature Phase Shift Keying
 

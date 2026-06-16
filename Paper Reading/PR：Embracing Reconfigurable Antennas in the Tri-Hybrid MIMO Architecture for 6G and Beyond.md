@@ -1,3 +1,26 @@
+---
+codex_dataview: true
+type: paper
+project: 论文阅读
+area: Paper Reading
+category: Paper Reading
+parent: 论文阅读
+status: reference
+priority: high
+created: '2026-04-15'
+updated: '2026-04-15'
+summary: Metadata
+tags:
+- Paper-Reading
+- paper
+- DMA
+- Movable-Antenna
+- MIMO
+- Tri-Hybrid
+- Far-Field
+aliases:
+- Embracing Reconfigurable Antennas in the Tri-Hybrid MIMO Architecture for 6G and Beyond
+---
 
 > [!info] Metadata
 > 

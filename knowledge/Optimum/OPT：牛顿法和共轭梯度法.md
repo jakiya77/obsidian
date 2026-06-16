@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Optimum
+parent: 优化算法
+status: reference
+priority: medium
+created: '2026-05-16'
+updated: '2026-05-16'
+summary: 在无约束非线性优化问题 $\min_{x \in \mathbb{R}^n} f(x)$ 中，牛顿法（Newton's Method） 与 共轭梯度法（Conjugate Gradient Method, CG） 代表了两种不同的进化路线。
+tags:
+- knowledge
+- Optimum
+aliases:
+- 牛顿法和共轭梯度法
+---
 
 
 

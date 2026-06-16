@@ -1,3 +1,23 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-01-27'
+updated: '2026-01-27'
+summary: 1. 为什么矢量（和复数）不能直接比大小？
+tags:
+- knowledge
+- Math
+- LCMV
+- Beamforming
+aliases:
+- vector and scale
+---
 
 
 ### 1. 为什么矢量（和复数）不能直接比大小？

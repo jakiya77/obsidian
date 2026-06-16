@@ -1,3 +1,26 @@
+---
+codex_dataview: true
+type: idea
+project: FADLS / TVT论文
+area: idea
+category: idea
+parent: 研究想法
+status: active
+priority: high
+created: '2026-05-20'
+updated: '2026-05-21'
+summary: 1. idea draft
+tags:
+- idea
+- Movable-Antenna
+- AO
+- PGD
+- Beamforming
+- Anti-Jamming
+- Interference
+aliases:
+- 空间域的 Rake 接收机 多径（Multipath）转化为有用信号
+---
 
 ## 1. idea draft
 导师这个思路非常有前瞻性。本质上，这是一个**空间域的 Rake 接收机（Spatial Rake Receiver）**，也就是把原本可能造成频率选择性衰落或破坏性干涉的“多径（Multipath）”，转化为可以提供空间分集和能量增益的“有用信号”。

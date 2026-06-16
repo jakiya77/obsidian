@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-03-05'
+updated: '2026-03-05'
+summary: 因为信道 $h(p)$ 是复高斯分布（Complex Gaussian），而复高斯变量的模的平方（即功率）在数学上严格服从指数分布。
+tags:
+- knowledge
+- Telecommunications
+- Rayleigh
+aliases:
+- 接收功率服从指数分布
+---
 **因为信道 $h(p)$ 是复高斯分布（Complex Gaussian），而复高斯变量的模的平方（即功率）在数学上严格服从指数分布。**
 
 我们可以通过严谨的数学推导来一步步证明，这个过程非常优美。

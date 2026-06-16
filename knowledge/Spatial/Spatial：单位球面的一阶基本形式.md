@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2025-10-12'
+updated: '2025-10-12'
+summary: 如果把 θ 定义为“纬度”（从赤道起算，北正南负）
+tags:
+- knowledge
+- Spatial
+aliases:
+- 单位球面的一阶基本形式
+---
 
 ## 如果把 θ 定义为“**纬度**”（从赤道起算，北正南负）
 

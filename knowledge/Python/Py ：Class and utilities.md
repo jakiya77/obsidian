@@ -1,3 +1,23 @@
+---
+codex_dataview: true
+type: knowledge
+project: Python工具
+area: knowledge
+category: Python
+parent: Python
+status: reference
+priority: medium
+created: '2026-04-08'
+updated: '2026-04-09'
+summary: utility
+tags:
+- knowledge
+- Python
+- Anti-Jamming
+- Interference
+aliases:
+- Class and utilities
+---
 ## utility
 
 - **无状态 (Stateless) 

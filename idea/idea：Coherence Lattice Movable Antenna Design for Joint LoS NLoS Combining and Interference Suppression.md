@@ -1,3 +1,26 @@
+---
+codex_dataview: true
+type: idea
+project: FADLS / TVT论文
+area: idea
+category: idea
+parent: 研究想法
+status: active
+priority: high
+created: '2026-05-22'
+updated: '2026-05-22'
+summary: Coherence-Lattice Movable Antenna Design for Joint LoS/NLoS Combining and Interference Suppression
+tags:
+- idea
+- SINR
+- LCMV
+- Movable-Antenna
+- PGD
+- Beamforming
+- Interference
+aliases:
+- Coherence Lattice Movable Antenna Design for Joint LoS NLoS Combining and Interference Suppression
+---
 Coherence-Lattice Movable Antenna Design for Joint LoS/NLoS Combining and Interference Suppression
 
 先利用 LoS/NLoS 两条主导路径的相位结构，把多径从“衰落源”变成“相干增益”；再在有干扰时，把 coherence-lattice 设计扩展成 interference-aware wide-null MA，实现相干合并和干扰抑制的折中。

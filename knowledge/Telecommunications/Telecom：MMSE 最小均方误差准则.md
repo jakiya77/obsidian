@@ -1,3 +1,28 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-01-27'
+updated: '2026-01-27'
+summary: 当系统具备“指纹”信息（如训练序列、导频或特定的扩频码），但天线阵列姿态未知或存在阵元位置扰动时，MMSE（Minimum Mean Square Error）提供了一种无需方向信息的“自动对焦”能力。
+tags:
+- knowledge
+- Telecommunications
+- SINR
+- MMSE
+- LCMV
+- Beamforming
+- Anti-Jamming
+- Interference
+- Pilot
+aliases:
+- MMSE 最小均方误差准则
+---
 
 当系统具备“指纹”信息（如训练序列、导频或特定的扩频码），但天线阵列姿态未知或存在阵元位置扰动时，MMSE（Minimum Mean Square Error）提供了一种无需方向信息的“自动对焦”能力。
 

@@ -1,3 +1,30 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-01-31'
+updated: '2026-03-23'
+summary: Bit-Limited ADC
+tags:
+- knowledge
+- Telecommunications
+- MVDR
+- MIMO
+- BCD
+- SDR
+- ADC
+- Bussgang
+- Beamforming
+- Anti-Jamming
+- Interference
+aliases:
+- bit-limited ADC
+---
 ##  Bit-Limited ADC
 **Bit-Limited ADC**（受限比特模数转换器），通常指的是**低分辨率模数转换器**（Low-resolution ADC），即量化位数（Bit Depth）被人为限制在非常低的水平（通常为 1-bit 到 4-bit）。
 

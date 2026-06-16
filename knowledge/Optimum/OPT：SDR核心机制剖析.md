@@ -1,11 +1,27 @@
 ---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Optimum
+parent: 优化算法
+status: reference
+priority: medium
+created: '2026-05-06'
+updated: '2026-05-06'
+summary: Optimization
 tags:
-  - Optimization
-  - SDR
-  - Manifold-Optimization
-  - Beamforming
-  - Algorithm
-date: {{date}}
+- knowledge
+- Optimum
+- MVDR
+- BCD
+- SDR
+- AO
+- Beamforming
+- Anti-Jamming
+- Interference
+aliases:
+- SDR核心机制剖析
 ---
 ---
 tags:

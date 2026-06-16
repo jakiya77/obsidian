@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-04-15'
+updated: '2026-04-15'
+summary: 通信代际 | 天线架构与阵元数量 | 站间距 (ISD) 与部署密度 | 定量原因 (物理驱动力 & 数学结论)
+tags:
+- knowledge
+- Telecommunications
+- MIMO
+- Rayleigh
+- Beamforming
+- Far-Field
+aliases:
+- 5G和6G 平面波和球面波
+---
 
 
 | **通信代际**   | **天线架构与阵元数量**                                                                                                            | **站间距 (ISD) 与部署密度**                                                                             | **定量原因 (物理驱动力 & 数学结论)**                                                                                                                                                                                                                                                                                                                                                   |

@@ -1,3 +1,29 @@
+---
+codex_dataview: true
+type: project
+project: FADLS / TVT论文
+area: Doing
+category: Doing
+parent: 进行中
+status: active
+priority: high
+created: '2026-03-24'
+updated: '2026-03-24'
+summary: 1. 核心概念：什么是 Tri-hybrid 架构？
+tags:
+- Doing
+- project
+- MMSE
+- DMA
+- Movable-Antenna
+- MIMO
+- ADMM
+- AO
+- Beamforming
+- Interference
+aliases:
+- Tri-hybrid architecture
+---
 ### 1. 核心概念：什么是 Tri-hybrid 架构？
 
 Tri-hybrid 架构是面向 6G 和超大规模 MIMO 提出的一种新型收发机物理层架构。它在传统的“基带数字”和“射频模拟”两层波束赋形的基础上，赋予了天线阵面电磁重构的能力，从而引入了平级的**第三层：电磁波束赋形（Electromagnetic Beamforming）**。

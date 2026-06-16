@@ -1,3 +1,30 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Optimum
+parent: 优化算法
+status: reference
+priority: medium
+created: '2026-03-24'
+updated: '2026-03-24'
+summary: 'Tags: #阵列信号处理 #自适应滤波 #Frost算法 #LCMV #数学推导 #最优化理论 #算法工程化'
+tags:
+- knowledge
+- Optimum
+- MMSE
+- MVDR
+- LCMV
+- Frost
+- DMA
+- Movable-Antenna
+- Beamforming
+- Anti-Jamming
+- Interference
+aliases:
+- Frost 算法 (约束 LMS) 从几何直觉到数学推导
+---
 
 **Tags:** #阵列信号处理 #自适应滤波 #Frost算法 #LCMV #数学推导 #最优化理论 #算法工程化
 

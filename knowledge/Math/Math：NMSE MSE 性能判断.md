@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-02-25'
+updated: '2026-02-25'
+summary: MSE 是绝对误差，而 NMSE 是相对误差。
+tags:
+- knowledge
+- Math
+- SINR
+- DMA
+- Interference
+- Pilot
+aliases:
+- NMSE MSE 性能判断
+---
 **MSE 是绝对误差，而 NMSE 是相对误差。**
 
 

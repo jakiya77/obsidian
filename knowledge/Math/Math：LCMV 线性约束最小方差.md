@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-01-27'
+updated: '2026-04-20'
+summary: LCMV 线性约束最小方差算法原理 优缺点
+tags:
+- knowledge
+- Math
+- MVDR
+- LCMV
+- Beamforming
+- Interference
+aliases:
+- LCMV 线性约束最小方差
+---
 ## LCMV 线性约束最小方差算法原理 优缺点
 
 **LCMV (Linear Constraint Minimum Variance)** 是阵列信号处理中最为经典且应用最广的波束形成准则之一。

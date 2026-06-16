@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-03-09'
+updated: '2026-03-23'
+summary: 1. 为什么高斯分布的“信息熵”最大？
+tags:
+- knowledge
+- Telecommunications
+aliases:
+- 香农信息论（Shannon Information Theory）
+---
 
 
 ### 1. 为什么高斯分布的“信息熵”最大？

@@ -1,3 +1,26 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-02-18'
+updated: '2026-02-18'
+summary: 假设基站有 $2$ 根可移动天线（MA），要服务 $2$ 个单天线用户。
+tags:
+- knowledge
+- Spatial
+- SINR
+- Movable-Antenna
+- Beamforming
+- Anti-Jamming
+- Interference
+aliases:
+- 发射和接收的对偶问题
+---
 
 假设基站有 $2$ 根可移动天线（MA），要服务 $2$ 个单天线用户。
 

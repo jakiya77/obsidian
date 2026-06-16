@@ -1,3 +1,29 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-04-15'
+updated: '2026-04-15'
+summary: 天线所在轴：X轴，天线的可变位置记为 $x$。
+tags:
+- knowledge
+- Spatial
+- Movable-Antenna
+- MIMO
+- Fourier
+- Beamforming
+- Anti-Jamming
+- Interference
+- Near-Field
+- Far-Field
+aliases:
+- 远场和近场的信道模型
+---
 [[Spatial：MAs and PASS 可移动天线和捏合天线]]
 
 - **天线所在轴**：X轴，天线的可变位置记为 $x$。

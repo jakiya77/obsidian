@@ -1,3 +1,23 @@
+---
+codex_dataview: true
+type: paper
+project: 论文阅读
+area: Paper Reading
+category: Paper Reading
+parent: 论文阅读
+status: reference
+priority: medium
+created: '2026-03-02'
+updated: '2026-03-19'
+summary: 首先我接到了发射端发来的信号，子发射端信号被分成了四份，每一段都自带一个预先设置好的旋转相位，我确定sinr或者snr最好的那段作为基准，以此计算出来剩下三个的旋转角度$\theta_k$ 然后在接下来的操作中,把这个$\theta_k$反相加到接收信号里 那就会出现两个情况
+tags:
+- Paper-Reading
+- paper
+- SINR
+- Interference
+aliases:
+- Anti-Interference Communication Using Computational Antenna
+---
 >**🐻：**
 >首先我接到了发射端发来的信号，子发射端信号被分成了四份，每一段都自带一个预先设置好的旋转相位，我确定sinr或者snr最好的那段作为基准，以此计算出来剩下三个的旋转角度$\theta_k$ 然后在接下来的操作中,把这个$\theta_k$反相加到接收信号里 那就会出现两个情况 ：
 >

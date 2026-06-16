@@ -1,3 +1,27 @@
+---
+codex_dataview: true
+type: idea
+project: FADLS / TVT论文
+area: idea
+category: idea
+parent: 研究想法
+status: active
+priority: high
+created: '2026-05-15'
+updated: '2026-05-20'
+summary: 模拟计算 扫不同的角度看能收进来就是信号 强干扰饱和
+tags:
+- idea
+- MVDR
+- DMA
+- Movable-Antenna
+- MIMO
+- RIS
+- Beamforming
+- Interference
+aliases:
+- M-DMA 思路整理
+---
 ## 模拟计算 扫不同的角度看能收进来就是信号 强干扰饱和
 稀疏阵列
 multipath的个数 2条 加上可移动之后的增益 移动一个位置利用两个波束 折中

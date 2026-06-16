@@ -1,9 +1,26 @@
 ---
+codex_dataview: true
+type: idea
+project: FADLS / TVT论文
+area: idea
+category: idea
+parent: 研究想法
+status: active
+priority: high
+created: '2026-06-14'
+updated: '2026-06-14'
+summary: 动天线选择算法复杂度分析笔记 (FADLS vs. SINR-Greedy)
 tags:
-  - Wireless-Communication
-  - Movable-Antenna
-  - Algorithm-Complexity
-  - FADLS
+- Wireless-Communication
+- Movable-Antenna
+- Algorithm-Complexity
+- FADLS
+- idea
+- SINR
+- MMSE
+- Interference
+aliases:
+- FADLS复杂度计算
 date: 2026-06-14
 ---
 

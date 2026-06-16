@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-04'
+updated: '2026-03-23'
+summary: 复变量求导法则
+tags:
+- knowledge
+- Math
+aliases:
+- 矩阵论
+---
 ### 复变量求导法则
 ##### 1. 原理：在求导时，把复数向量 $\mathbf{w}$ 和它的共轭转置 $\mathbf{w}^H$ 当作两个完全独立、互不相干的变量。
 ##### 2. 求导规则

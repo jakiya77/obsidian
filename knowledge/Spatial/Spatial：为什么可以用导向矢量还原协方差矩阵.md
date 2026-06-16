@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-04-17'
+updated: '2026-04-17'
+summary: 第一步：物理定律 —— 信号的线性叠加
+tags:
+- knowledge
+- Spatial
+- Interference
+aliases:
+- 为什么可以用导向矢量还原协方差矩阵
+---
 
 ### 第一步：物理定律 —— 信号的线性叠加
 

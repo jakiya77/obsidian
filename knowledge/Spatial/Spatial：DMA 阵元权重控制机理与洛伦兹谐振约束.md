@@ -1,13 +1,33 @@
 ---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-04-16'
+updated: '2026-04-16'
+summary: 传统相控阵（MIMO）拥有双旋钮（可变放大器 + 移相器），能够实现幅度和相位的独立解耦控制。
 tags:
-  - #DMA
-  - #硬件架构
-  - #电路基础
-  - #洛伦兹谐振
-  - #波束赋形
+- DMA
+- 硬件架构
+- 电路基础
+- 洛伦兹谐振
+- 波束赋形
+- knowledge
+- Spatial
+- Movable-Antenna
+- MIMO
+- BCD
+- ADMM
+- SDR
+- Beamforming
 aliases:
-  - DMA权重控制机理
-  - 洛伦兹约束推导
+- DMA权重控制机理
+- 洛伦兹约束推导
+- DMA 阵元权重控制机理与洛伦兹谐振约束
 ---
 
 

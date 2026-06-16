@@ -1,3 +1,27 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-03-31'
+updated: '2026-03-31'
+summary: 区分模拟与数字波束成形的核心准则
+tags:
+- knowledge
+- Spatial
+- FPGA
+- AO
+- PGD
+- ADC
+- Beamforming
+- Pilot
+aliases:
+- 模拟控制和AGC
+---
 
 
 ---

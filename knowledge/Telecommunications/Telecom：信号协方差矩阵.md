@@ -1,3 +1,23 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-01-27'
+updated: '2026-01-27'
+summary: 1. 对角线元素：各天线的独立功率
+tags:
+- knowledge
+- Telecommunications
+- LCMV
+- Interference
+aliases:
+- 信号协方差矩阵
+---
 
 
 ### 1. 对角线元素：各天线的独立功率

@@ -1,3 +1,23 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-01-23'
+updated: '2026-01-23'
+summary: ==1. STFT Short-Time Fourier Transform 短时傅里叶变换==
+tags:
+- knowledge
+- Telecommunications
+- Fourier
+- Interference
+aliases:
+- 循环谱密度
+---
 ## ==1. STFT Short-Time Fourier Transform 短时傅里叶变换==
 ###  1. 问题的引出：从全局到局部
 

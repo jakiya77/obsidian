@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-24'
+updated: '2026-03-24'
+summary: 'Tags: #数学细节 #复梯度 #Wirtinger微积分 #自适应滤波 #LMS'
+tags:
+- knowledge
+- Math
+- Frost
+aliases:
+- 复梯度与偏导数的关系
+---
 
 
 **Tags:** #数学细节 #复梯度 #Wirtinger微积分 #自适应滤波 #LMS

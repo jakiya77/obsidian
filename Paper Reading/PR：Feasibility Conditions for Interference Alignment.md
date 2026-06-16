@@ -1,3 +1,23 @@
+---
+codex_dataview: true
+type: paper
+project: 论文阅读
+area: Paper Reading
+category: Paper Reading
+parent: 论文阅读
+status: reference
+priority: high
+created: '2026-05-12'
+updated: '2026-05-15'
+summary: '标题: Feasibility Conditions for Interference Alignment'
+tags:
+- Paper-Reading
+- paper
+- MIMO
+- Interference
+aliases:
+- Feasibility Conditions for Interference Alignment
+---
 
 
 - **标题**: Feasibility Conditions for Interference Alignment

@@ -1,3 +1,24 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2025-10-20'
+updated: '2025-10-20'
+summary: 使用最小二乘投影法
+tags:
+- knowledge
+- Spatial
+- SINR
+- Interference
+- Pilot
+aliases:
+- 计算恢复信号的输出sinr
+---
 ## 使用最小二乘投影法
 
 **原理和公式：**

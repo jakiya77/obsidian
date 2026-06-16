@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-02-27'
+updated: '2026-02-27'
+summary: 维纳–霍夫方程（Wiener-Hopf Equation）的推导是统计信号处理中的经典内容。要推导这个最优解，通常有两种方法：代数展开求导法和正交原理（Orthogonality Principle）。
+tags:
+- knowledge
+- Math
+aliases:
+- 维纳–霍夫方程的推导
+---
 维纳–霍夫方程（Wiener-Hopf Equation）的推导是统计信号处理中的经典内容。要推导这个最优解，通常有两种方法：**代数展开求导法**和**正交原理（Orthogonality Principle）**。
 
 为了清晰起见，我们以实数域的有限长冲激响应（FIR）滤波器为例进行推导。

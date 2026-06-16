@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-04-13'
+updated: '2026-04-14'
+summary: 在无线电通信（如 5G、Wi-Fi、广播）的领域里，确实是波长越长（频率越低），穿透和绕过障碍物的能力越强。
+tags:
+- knowledge
+- Telecommunications
+aliases:
+- 波长和穿透力
+---
 
 
 ![[gif：电磁波传输.gif|271]]![[gif：高频信号损耗.gif|258]]

@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2025-12-08'
+updated: '2025-12-08'
+summary: Rank one ambiguities
+tags:
+- knowledge
+- Spatial
+aliases:
+- 模糊DOA估计的定义 ambiguous DOA
+---
 
 **Rank one ambiguities**
 

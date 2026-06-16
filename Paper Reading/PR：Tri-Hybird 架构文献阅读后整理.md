@@ -1,3 +1,29 @@
+---
+codex_dataview: true
+type: paper
+project: 论文阅读
+area: Paper Reading
+category: Paper Reading
+parent: 论文阅读
+status: reference
+priority: high
+created: '2026-04-15'
+updated: '2026-04-15'
+summary: 1 国内外研究现状调研
+tags:
+- Paper-Reading
+- paper
+- DMA
+- Movable-Antenna
+- MIMO
+- Tri-Hybrid
+- Beamforming
+- Anti-Jamming
+- Interference
+- Near-Field
+aliases:
+- Tri-Hybird 架构文献阅读后整理
+---
 ## 1 国内外研究现状调研
 #### 📊 国内外 6G 灵活天线与三混合架构研究现状汇总表
 

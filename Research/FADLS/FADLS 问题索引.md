@@ -1,8 +1,25 @@
 ---
+codex_dataview: true
 type: project-index
-project: FADLS
-created: 2026-06-16
-tags: [FADLS, question-index]
+project: FADLS / TVT论文
+area: Research
+category: Research
+parent: 问题索引
+status: active
+priority: high
+created: '2026-06-16'
+updated: '2026-06-16'
+summary: Canvas：obsidian note/Research/FADLS/FADLS 问题地图.canvas
+tags:
+- FADLS
+- question-index
+- Research
+- project-index
+- SINR
+- MMSE
+aliases:
+- FADLS 问题索引
+previous_project: FADLS
 ---
 # FADLS 问题索引
 

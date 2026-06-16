@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-10'
+updated: '2026-03-23'
+summary: '![rectangular pulse function，AI 生成](https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcSOtCJWA3Z1FHL7wKVYoMQvN-n5EBjqG8-UZvsxyL8m7jFIV2q43jl0inqB0KibvudSwRBPH332JUZ_wSO-'
+tags:
+- knowledge
+- Math
+- Fourier
+aliases:
+- 门函数 (gate function)
+---
 
 [[Math：门函数的傅里叶变换是Sa函数]]
 ![rectangular pulse function，AI 生成](https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcSOtCJWA3Z1FHL7wKVYoMQvN-n5EBjqG8-UZvsxyL8m7jFIV2q43jl0inqB0KibvudSwRBPH332JUZ_wSO-hCfazsgMJYlhjIwDZS8G-_apX1trovM)

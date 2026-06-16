@@ -1,3 +1,24 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2025-10-07'
+updated: '2026-04-16'
+summary: 1. 必要数学条件（保证几何级数成立）
+tags:
+- knowledge
+- Spatial
+- MVDR
+- Near-Field
+- Far-Field
+aliases:
+- 阵列因子的相位补偿 合相
+---
 ![[Spatial：天线阵列因子AF.pdf]]计算这种相位补偿的方法，上述pdf中显示的是闭式的解，当满足下述情况的时候，可以等价。
 
 1. 必要数学条件（保证几何级数成立）

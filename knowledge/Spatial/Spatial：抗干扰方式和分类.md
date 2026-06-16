@@ -1,3 +1,31 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-03-08'
+updated: '2026-03-23'
+summary: 1. 盲信道估计
+tags:
+- knowledge
+- Spatial
+- SINR
+- DMA
+- Movable-Antenna
+- SDR
+- SVD
+- EVD
+- Beamforming
+- Anti-Jamming
+- Interference
+- Pilot
+aliases:
+- 抗干扰方式和分类
+---
 >1. 盲信道估计
 >2. 已知信号形式（导频）
 >3. 已知信号来向

@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-04-30'
+updated: '2026-05-01'
+summary: 在6DMA中，有$\hat{g}_{k,m}^l(A_m) \triangleq \hat{g}(\mathbf{u}_m; \psi_{k,m}^l) = \max \{ \mathbf{d}(\psi_{k,m}^l)^T \mathbf{u}_m, 0 \}$
+tags:
+- knowledge
+- Spatial
+- DMA
+- Movable-Antenna
+- Beamforming
+- Far-Field
+aliases:
+- 6DMA 系统中阵元局部旋转（EF）与空间平移（Steering Vector）的独立性及哈达玛积（Hadamard Product）重构证明
+---
 在6DMA中，有$\hat{g}_{k,m}^l(A_m) \triangleq \hat{g}(\mathbf{u}_m; \psi_{k,m}^l) = \max \{ \mathbf{d}(\psi_{k,m}^l)^T \mathbf{u}_m, 0 \}$![[图片 1.png|298]]
 定义的$\hat g_{k,m}$ 是当下阵元的旋转角度和信号来向之间的夹角。推广到DMA中，也就是阵元自带的阵元因子的可调角度与信号来向之间的夹角。定义为$EF(\theta,\phi)=cos(\theta-\phi)$ 
 

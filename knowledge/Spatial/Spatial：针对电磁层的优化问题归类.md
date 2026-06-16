@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-04-28'
+updated: '2026-04-30'
+summary: 1. 重构阵列的空间拓扑结构
+tags:
+- knowledge
+- Spatial
+- DMA
+- Movable-Antenna
+- RIS
+- Interference
+aliases:
+- 针对电磁层的优化问题归类
+---
 ## 1. 重构阵列的空间拓扑结构
 分类依据：$F = \mathbf{w}^H (\mathbf{EF} \odot \mathbf{v})$。
 

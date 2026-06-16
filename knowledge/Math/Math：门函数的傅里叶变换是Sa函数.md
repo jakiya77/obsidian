@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-11'
+updated: '2026-03-23'
+summary: $$g(t-lT_s)=\sum _{k=-\infty}^{+\infty}c_k(l)e^{jkf_pt} $$
+tags:
+- knowledge
+- Math
+- Fourier
+aliases:
+- 门函数的傅里叶变换是Sa函数
+---
 $$g(t-lT_s)=\sum _{k=-\infty}^{+\infty}c_k(l)e^{jkf_pt} $$
 $$c_k(l) = \frac{1}{L_s} Sa\left(\frac{k\pi}{L_s}\right)e^{-j\frac{(2l+1)k\pi}{L_s}}$$
 

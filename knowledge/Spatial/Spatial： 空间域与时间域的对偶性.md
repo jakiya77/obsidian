@@ -1,3 +1,23 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-04-19'
+updated: '2026-04-19'
+summary: 在阵列信号处理中，角度即频率（Angle as Frequency）。天线阵列在空间上的等间距排布，本质上是对空间电磁场的抽样。
+tags:
+- knowledge
+- Spatial
+- Fourier
+- Beamforming
+aliases:
+- 空间域与时间域的对偶性
+---
 
 > [!abstract] 核心思想
 > 

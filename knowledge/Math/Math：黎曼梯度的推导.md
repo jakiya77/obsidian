@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-05-11'
+updated: '2026-05-11'
+summary: 核心原理：把算出来的普通梯度，强行按在流形的表面上，把垂直于表面的分量直接切掉。
+tags:
+- knowledge
+- Math
+aliases:
+- 黎曼梯度的推导
+---
 
 >[!hint]+ 核心原理：把算出来的普通梯度，强行按在流形的表面上，把垂直于表面的分量直接切掉。
 

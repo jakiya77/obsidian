@@ -1,3 +1,26 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-02-02'
+updated: '2026-02-02'
+summary: MATLAB 代码实现
+tags:
+- knowledge
+- Math
+- DMA
+- OFDM
+- ADC
+- Bussgang
+- Beamforming
+aliases:
+- Bussgang 定理和反正弦关系 实现信号恢复
+---
 
 ### MATLAB 代码实现
 

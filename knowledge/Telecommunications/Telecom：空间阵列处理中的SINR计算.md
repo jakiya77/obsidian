@@ -1,3 +1,24 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2025-10-14'
+updated: '2025-10-14'
+summary: 1) 信号模型
+tags:
+- knowledge
+- Telecommunications
+- SINR
+- Beamforming
+- Interference
+aliases:
+- 空间阵列处理中的SINR计算
+---
 
 # 1) 信号模型
 

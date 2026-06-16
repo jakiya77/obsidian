@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-02-15'
+updated: '2026-02-15'
+summary: 相关系数 $\rho$ 的标准差（即均方根幅值）为 $\sigma_\rho = \sqrt{\frac{1}{K}} = \frac{1}{\sqrt{K}}$。
+tags:
+- knowledge
+- Math
+- Beamforming
+- Anti-Jamming
+- Interference
+- Pilot
+aliases:
+- 标准差 不同导频长度对与抗干扰效果的影响量化结果 随机导频序列的干扰渗漏Pilot Leakage) 计算
+---
 **物理结论：**
 
 相关系数 $\rho$ 的标准差（即均方根幅值）为 $\sigma_\rho = \sqrt{\frac{1}{K}} = \frac{1}{\sqrt{K}}$。

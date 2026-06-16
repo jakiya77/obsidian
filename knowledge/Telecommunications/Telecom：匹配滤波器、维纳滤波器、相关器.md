@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2025-12-08'
+updated: '2026-03-23'
+summary: 1. 匹配滤波器（Matched Filter）
+tags:
+- knowledge
+- Telecommunications
+- Pilot
+aliases:
+- 匹配滤波器、维纳滤波器、相关器
+---
 
 ---
 

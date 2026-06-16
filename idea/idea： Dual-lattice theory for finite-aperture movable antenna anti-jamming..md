@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: idea
+project: FADLS / TVT论文
+area: idea
+category: idea
+parent: 研究想法
+status: active
+priority: high
+created: '2026-05-23'
+updated: '2026-05-25'
+summary: 期望信号和多径干扰在位置域分别形成可解析的相干/相消格点；MA 通过位置重构寻找 desired-constructive and jammer-destructive 的 dual-favorable positions；在有限孔径和最小间距约束下，这种位置是否存在、能放多少个、性能如何，是本文要解决的核心问题。
+tags:
+- idea
+- MMSE
+- MVDR
+- Movable-Antenna
+- Anti-Jamming
+- Interference
+aliases:
+- Dual-lattice theory for finite-aperture movable antenna anti-jamming.
+---
 期望信号和多径干扰在位置域分别形成可解析的相干/相消格点；MA 通过位置重构寻找 desired-constructive and jammer-destructive 的 dual-favorable positions；在有限孔径和最小间距约束下，这种位置是否存在、能放多少个、性能如何，是本文要解决的核心问题。
 
 1. 推导 desired constructive lattice；

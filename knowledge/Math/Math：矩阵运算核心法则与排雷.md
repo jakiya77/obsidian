@@ -1,8 +1,23 @@
 ---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-30'
+updated: '2026-03-30'
+summary: 二、 矩阵运算核心法则与排雷
 tags:
-  - 矩阵论
-  - 最小二乘法
-  - 算法推导
+- 矩阵论
+- 最小二乘法
+- 算法推导
+- knowledge
+- Math
+aliases:
+- 矩阵运算核心法则与排雷
 ---
 
 

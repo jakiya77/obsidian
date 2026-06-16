@@ -1,3 +1,23 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-03-17'
+updated: '2026-03-17'
+summary: 一、 物理直觉：把它切成三块来看
+tags:
+- knowledge
+- Spatial
+- Anti-Jamming
+- Interference
+aliases:
+- 向干扰子空间的正向投影矩阵（Projection Matrix onto the Jamming Subspace）
+---
 ### 一、 物理直觉：把它切成三块来看
 
 假设 $y$ 是天线接收到的由信号、干扰和噪声混合而成的信号向量。当我们把这个算子作用在 $y$ 上，即 $A(A^H A)^{-1} A^H y$ 时，它实际上在按顺序执行三个动作：

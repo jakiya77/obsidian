@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-08'
+updated: '2026-03-08'
+summary: 1. 矩阵 $\mathbf{E}$ 的定义本身就是列向量的集合
+tags:
+- knowledge
+- Math
+- Interference
+aliases:
+- 对于E矩阵的构成和干扰子空间提取
+---
 ### 1. 矩阵 $\mathbf{E}$ 的定义本身就是列向量的集合
 
 特征向量矩阵 $\mathbf{E}$ 是按列排列的 。如果天线阵列有 $M$ 个阵元，那么每一个特征向量 $\mathbf{e}_i$ 都是一个 $M \times 1$ 的**列向量**（它代表了空间中的一个方向基底）。 所以，矩阵 $\mathbf{E}$ 展开后长这样：

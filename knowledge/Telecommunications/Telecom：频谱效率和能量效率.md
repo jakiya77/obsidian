@@ -1,3 +1,26 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-04-15'
+updated: '2026-04-15'
+summary: 这是一个非常核心的问题！你直接抓住了这篇顶刊论文的“数学命脉”。在学术界，“频谱效率”和“能量效率”就是衡量任何通信架构优劣的两个终极标尺。
+tags:
+- knowledge
+- Telecommunications
+- DMA
+- Movable-Antenna
+- MIMO
+- Anti-Jamming
+- Interference
+aliases:
+- 频谱效率和能量效率
+---
 这是一个非常核心的问题！你直接抓住了这篇顶刊论文的“数学命脉”。在学术界，**“频谱效率”**和**“能量效率”**就是衡量任何通信架构优劣的两个终极标尺。
 
 作者在这篇论文中并没有凭空捏造结论，而是基于严格的数学公式和硬件功耗模型一步步算出来的。我为你拆解这两个指标的底层计算逻辑，并附上原论文的推导公式。

@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-05-11'
+updated: '2026-05-11'
+summary: 'aliases: [相干信号的秩亏缺, 多径相干性, DARISAA抗干扰]'
+tags:
+- knowledge
+- Telecommunications
+- MUSIC
+- RIS
+- Anti-Jamming
+- Interference
+aliases:
+- 相干信号的rank deficient 秩亏 与多径相干性
+---
 
 ---
 aliases: [相干信号的秩亏缺, 多径相干性, DARISAA抗干扰]

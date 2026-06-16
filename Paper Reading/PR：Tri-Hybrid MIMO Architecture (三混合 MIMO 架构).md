@@ -1,3 +1,29 @@
+---
+codex_dataview: true
+type: paper
+project: 论文阅读
+area: Paper Reading
+category: Paper Reading
+parent: 论文阅读
+status: reference
+priority: high
+created: '2026-04-12'
+updated: '2026-04-15'
+summary: Metadata
+tags:
+- Paper-Reading
+- paper
+- DMA
+- Movable-Antenna
+- MIMO
+- Tri-Hybrid
+- Beamforming
+- Anti-Jamming
+- Interference
+- Near-Field
+aliases:
+- Tri-Hybrid MIMO Architecture (三混合 MIMO 架构)
+---
 
 
 > [!info] Metadata

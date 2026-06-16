@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-09'
+updated: '2026-03-09'
+summary: 1. 列线性无关和行线性无关
+tags:
+- knowledge
+- Math
+aliases:
+- 奇异 == 行列式值为0 == 行线性相关 == 列线性相关 == 不可逆 == 秩亏
+---
 
 ### 1. 列线性无关和行线性无关
 

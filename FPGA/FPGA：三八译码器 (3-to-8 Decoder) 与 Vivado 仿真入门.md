@@ -1,11 +1,23 @@
 ---
-title: 纯组合逻辑实战：三八译码器 (3-to-8 Decoder) 与 Vivado 仿真入门
-date: {{date}}
+codex_dataview: true
+type: learning
+project: Verilog / FPGA学习
+area: FPGA
+category: FPGA
+parent: HDLBits / Verilog
+status: active
+priority: medium
+created: '2026-06-01'
+updated: '2026-06-07'
+summary: 纯组合逻辑实战：三八译码器 (3-to-8 Decoder) 与 Vivado 仿真入门
 tags:
-  - FPGA
-  - Verilog
-  - Vivado
-  - 数字逻辑
+- FPGA
+- learning
+- Verilog
+- Vivado
+- Interference
+aliases:
+- 三八译码器 (3-to-8 Decoder) 与 Vivado 仿真入门
 ---
 
 # 纯组合逻辑实战：三八译码器 (3-to-8 Decoder) 与 Vivado 仿真入门

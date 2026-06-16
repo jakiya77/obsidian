@@ -1,3 +1,26 @@
+---
+codex_dataview: true
+type: paper
+project: 论文阅读
+area: Paper Reading
+category: Paper Reading
+parent: 论文阅读
+status: reference
+priority: high
+created: '2026-03-17'
+updated: '2026-03-23'
+summary: 这篇论文的寻找最优权重的方法很常规，是通过先MUSIC估计出干扰的来向，然后通过向干扰子空间投影的方式对干扰信号进行抑制；创新的部分就是如何让离散的，相位有限的超表面可以从幅度和相位上逼近求出来的最优权重向量。
+tags:
+- Paper-Reading
+- paper
+- SDR
+- MUSIC
+- RIS
+- ADC
+- Interference
+aliases:
+- RIS-based Reconfigurable Antenna for Anti-jamming Communications with Bit-Limited ADCs
+---
 >🐻：
 > 这篇论文的寻找最优权重的方法很常规，是通过先MUSIC估计出干扰的来向，然后通过向干扰子空间投影的方式对干扰信号进行抑制；创新的部分就是如何让离散的，相位有限的超表面可以从幅度和相位上逼近求出来的最优权重向量。
 > 1️⃣、干扰的抑制

@@ -1,3 +1,24 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-02-25'
+updated: '2026-02-25'
+summary: 1. 什么是条件数？
+tags:
+- knowledge
+- Math
+- PGD
+- SVD
+- Interference
+aliases:
+- 矩阵条件数（Condition Number）
+---
 
 
 ---

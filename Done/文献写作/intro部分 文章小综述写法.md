@@ -1,3 +1,26 @@
+---
+codex_dataview: true
+type: writing
+project: Word排版 / 论文写作
+area: Done
+category: 文献写作
+parent: 文献写作
+status: done
+priority: medium
+created: '2025-10-16'
+updated: '2025-10-17'
+summary: 'Movable Antenna Enabled Near-Field Communications: Channel Modeling and'
+tags:
+- Done
+- 文献写作
+- writing
+- Movable-Antenna
+- MIMO
+- Beamforming
+- Interference
+aliases:
+- intro部分 文章小综述写法
+---
 
 # Movable Antenna Enabled Near-Field Communications: Channel Modeling and 
 

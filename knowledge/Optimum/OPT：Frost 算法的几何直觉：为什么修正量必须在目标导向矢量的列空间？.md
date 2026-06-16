@@ -1,3 +1,24 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Optimum
+parent: 优化算法
+status: reference
+priority: medium
+created: '2026-03-24'
+updated: '2026-03-24'
+summary: 'Tags: #线性代数 #Frost算法 #约束优化 #几何投影 #自适应滤波'
+tags:
+- knowledge
+- Optimum
+- LCMV
+- Frost
+- Interference
+aliases:
+- Frost 算法的几何直觉：为什么修正量必须在目标导向矢量的列空间？
+---
 
 ---
 

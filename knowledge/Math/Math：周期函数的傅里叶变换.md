@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-12'
+updated: '2026-03-23'
+summary: 重复门函数序列的标准傅里叶级数（Fourier Series）计算公式。
+tags:
+- knowledge
+- Math
+- Fourier
+aliases:
+- 周期函数的傅里叶变换
+---
 重复门函数序列的**标准傅里叶级数（Fourier Series）计算公式**。
 ---
 

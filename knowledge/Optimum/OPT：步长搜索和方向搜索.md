@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Optimum
+parent: 优化算法
+status: reference
+priority: medium
+created: '2026-05-16'
+updated: '2026-05-16'
+summary: 在无约束最优化算法中，核心的迭代逻辑其实可以用一个非常直观的公式来概括
+tags:
+- knowledge
+- Optimum
+aliases:
+- 步长搜索和方向搜索
+---
 在无约束最优化算法中，核心的迭代逻辑其实可以用一个非常直观的公式来概括：
 
 $$x_{k+1} = x_k + \alpha_k d_k$$

@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2025-10-12'
+updated: '2026-04-03'
+summary: 1) 场景建模（窄带、平面波）
+tags:
+- knowledge
+- Spatial
+- SINR
+- Beamforming
+- Interference
+- Pilot
+aliases:
+- 解析法计算sinr
+---
 
 # 1) 场景建模（窄带、平面波）
 

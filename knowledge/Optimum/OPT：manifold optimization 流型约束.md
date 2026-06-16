@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Optimum
+parent: 优化算法
+status: reference
+priority: medium
+created: '2026-05-11'
+updated: '2026-05-16'
+summary: 核心基础：流形几何概念
+tags:
+- knowledge
+- Optimum
+aliases:
+- manifold optimization 流型约束
+---
 
 ### 核心基础：流形几何概念
 

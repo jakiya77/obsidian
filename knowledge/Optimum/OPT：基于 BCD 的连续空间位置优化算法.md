@@ -1,3 +1,26 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Optimum
+parent: 优化算法
+status: reference
+priority: medium
+created: '2026-03-05'
+updated: '2026-03-05'
+summary: 一、 BCD 算法的核心思想
+tags:
+- knowledge
+- Optimum
+- DMA
+- Movable-Antenna
+- BCD
+- Anti-Jamming
+- Interference
+aliases:
+- 基于 BCD 的连续空间位置优化算法
+---
 
 ---
 

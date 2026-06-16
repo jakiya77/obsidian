@@ -1,3 +1,30 @@
+---
+codex_dataview: true
+type: paper
+project: 论文阅读
+area: Paper Reading
+category: Dynamic Metasurface Antenna Based Anti-Jamming With Bit-Limited ADC
+parent: Dynamic Metasurface Antenna Based Anti-Jamming With Bit-Limited ADC
+status: reference
+priority: high
+created: '2026-02-26'
+updated: '2026-03-23'
+summary: 1. 导频长度对于两种空间滤波策略的影响
+tags:
+- Paper-Reading
+- Dynamic-Metasurface-Antenna-Based-Anti-Jamming-With-Bit-Limited-ADC
+- paper
+- DMA
+- Movable-Antenna
+- PGD
+- SVD
+- ADC
+- Anti-Jamming
+- Interference
+- Pilot
+aliases:
+- Reproduction 时遇到的问题
+---
 ## 1. 导频长度对于两种空间滤波策略的影响
 
 | ![[截屏2026-02-26 09.44.30.png]] | ![[截屏2026-02-26 09.45.23.png]] |

@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-21'
+updated: '2026-03-23'
+summary: 瑞利商（Rayleigh Quotient） 是线性代数和信号处理中的核心工具。它把一个矩阵的“特征”压缩成了一个标量。
+tags:
+- knowledge
+- Math
+- SINR
+- Rayleigh
+- Anti-Jamming
+- Interference
+aliases:
+- 瑞利商（Rayleigh Quotient）
+---
 
 **瑞利商（Rayleigh Quotient）** 是线性代数和信号处理中的核心工具。它把一个矩阵的“特征”压缩成了一个标量。
 

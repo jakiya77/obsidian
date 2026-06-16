@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-02-03'
+updated: '2026-02-03'
+summary: 为什么教科书和高级论文里还是满篇的 $\otimes$（克罗内克积）？
+tags:
+- knowledge
+- Math
+- MVDR
+- MIMO
+- MUSIC
+- Beamforming
+aliases:
+- 导向矢量：Kronecker Product
+---
 为什么教科书和高级论文里还是满篇的 $\otimes$（克罗内克积）？
 
 答案可以归纳为两个词：**“算得快”** 和 **“省内存”**。

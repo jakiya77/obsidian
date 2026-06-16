@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-31'
+updated: '2026-03-31'
+summary: 1. 什么是 Trace？
+tags:
+- knowledge
+- Math
+aliases:
+- 迹（Trace）
+---
 
 ### 1. 什么是 Trace？
 

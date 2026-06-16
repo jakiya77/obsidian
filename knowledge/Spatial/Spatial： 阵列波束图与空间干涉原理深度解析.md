@@ -1,12 +1,32 @@
 ---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-06-14'
+updated: '2026-06-14'
+summary: 1. 波束图到底在画什么？
 tags:
-  - Signal-Processing
-  - Antenna-Array
-  - Beamforming
-  - Obsidian-Note
+- Signal-Processing
+- Antenna-Array
+- Beamforming
+- Obsidian-Note
+- knowledge
+- Spatial
+- SINR
+- MMSE
+- MVDR
+- LCMV
+- Movable-Antenna
+- Interference
 aliases:
-  - 阵列波束图原理
-  - 空间频率与干涉
+- 阵列波束图原理
+- 空间频率与干涉
+- 阵列波束图与空间干涉原理深度解析
 date: 2026-06-14
 ---
 

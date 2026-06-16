@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2025-12-10'
+updated: '2025-12-11'
+summary: R_jj 是协方差矩阵，所以是 Hermite（对称/共轭对称）矩阵，可以特征分解
+tags:
+- knowledge
+- Telecommunications
+- Rayleigh
+aliases:
+- 瑞利熵定理
+---
 R_jj 是协方差矩阵，所以是 Hermite（对称/共轭对称）矩阵，可以特征分解：
     
 $$

@@ -1,10 +1,28 @@
 ---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2025-09-11'
+updated: '2026-04-28'
+summary: DMA单个阵元与阵列辐射特性理论体系
 tags:
-  - 空域
-  - 波束成形
+- 空域
+- 波束成形
+- knowledge
+- Spatial
+- DMA
+- Movable-Antenna
+- Beamforming
+- Far-Field
 aliases:
-  - 方向图乘积定理
-  - 阵元因子与阵列因子
+- 方向图乘积定理
+- 阵元因子与阵列因子
+- 天线远场辐射方向的表示形式 AF EF 导向矢量
 ---
 
 # DMA单个阵元与阵列辐射特性理论体系

@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-03-09'
+updated: '2026-03-09'
+summary: 1. 明确目标：我们要最大化什么？
+tags:
+- knowledge
+- Telecommunications
+aliases:
+- 香农信息论最优化问题求解
+---
 
 ### 1. 明确目标：我们要最大化什么？
 

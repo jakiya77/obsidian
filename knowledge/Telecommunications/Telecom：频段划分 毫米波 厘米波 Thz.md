@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-04-11'
+updated: '2026-04-14'
+summary: 在移动通信领域，频段通常被划分为以下几个主要区间（从低频到高频）
+tags:
+- knowledge
+- Telecommunications
+aliases:
+- 频段划分 毫米波 厘米波 Thz
+---
 ![[png：Pasted image 20260411163623.png]]
 
 ## 在移动通信领域，频段通常被划分为以下几个主要区间（从低频到高频）：

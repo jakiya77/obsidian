@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: done
+project: 已完成归档
+area: Done
+category: 隐蔽通信
+parent: 隐蔽通信
+status: done
+priority: medium
+created: '2026-01-16'
+updated: '2026-03-23'
+summary: '**期刊信息：IEEE COMMUNICATIONS SURVEYS & TUTORIALS, VOL. 25, NO. 2, SECOND QUARTER 2023'
+tags:
+- Done
+- 隐蔽通信
+- done
+aliases:
+- Covert Communications - A Comprehensive Survey
+---
 **期刊信息：IEEE COMMUNICATIONS SURVEYS & TUTORIALS, VOL. 25, NO. 2, SECOND QUARTER 2023
 
 information security protection ：过去对于信息安全保护一般分为PLS（physical layer security）、steganography（速写加密）这两类；但是两种手段存在问题，他们只能以一种混乱的顺序保护信息，但是如果窃听者的解码技术进步很快，则可以做到解码。故而我们引入了隐蔽通信（covert communciations）一种让willie发现不了有信息在传输的技术。covert communications主要采取的是**不确定性手段**。

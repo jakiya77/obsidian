@@ -1,10 +1,30 @@
 ---
-title: 论文故事线解析：基于物理结构的 MA 抗干扰位置优化
+codex_dataview: true
+type: idea
+project: FADLS / TVT论文
+area: idea
+category: idea
+parent: 研究想法
+status: active
+priority: high
+created: '2026-05-26'
+updated: '2026-05-27'
+summary: 宏观故事线：框架与递进逻辑
 tags:
-  - MA/Movable-Antenna
-  - Anti-jamming
-  - 论文架构
-  - 写作逻辑
+- MA/Movable-Antenna
+- Anti-jamming
+- 论文架构
+- 写作逻辑
+- idea
+- FADLS
+- SINR
+- MMSE
+- Movable-Antenna
+- Anti-Jamming
+- Interference
+aliases:
+- 基于物理结构的 MA 抗干扰位置优化
+title: 论文故事线解析：基于物理结构的 MA 抗干扰位置优化
 date: 2026-05-26
 ---
 

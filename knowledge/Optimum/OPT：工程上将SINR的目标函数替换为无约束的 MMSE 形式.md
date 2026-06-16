@@ -1,3 +1,29 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Optimum
+parent: 优化算法
+status: reference
+priority: medium
+created: '2026-03-23'
+updated: '2026-03-23'
+summary: 不管用 SINR 还是 MMSE，在物理现实中，DMA 或 RIS 的硬件约束（恒模、离散相位）都是客观存在的。
+tags:
+- knowledge
+- Optimum
+- SINR
+- MMSE
+- DMA
+- Movable-Antenna
+- RIS
+- Rayleigh
+- Anti-Jamming
+- Interference
+aliases:
+- 工程上将SINR的目标函数替换为无约束的 MMSE 形式
+---
 
 不管用 SINR 还是 MMSE，在物理现实中，DMA 或 RIS 的硬件约束（恒模、离散相位）都是客观存在的。
 

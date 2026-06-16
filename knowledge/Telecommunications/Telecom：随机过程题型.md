@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2025-12-30'
+updated: '2026-01-02'
+summary: 一 平稳、遍历、相关、独立
+tags:
+- knowledge
+- Telecommunications
+aliases:
+- 随机过程题型
+---
 ## 一 平稳、遍历、相关、独立
 #### 平稳性：三个依据
 1. 随机过程的均值为常数

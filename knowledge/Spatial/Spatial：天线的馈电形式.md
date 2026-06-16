@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-02-02'
+updated: '2026-02-02'
+summary: 1. 串行 waveguide- based
+tags:
+- knowledge
+- Spatial
+- DMA
+- Movable-Antenna
+- RIS
+- Beamforming
+aliases:
+- 天线的馈电形式
+---
 ## 1. 串行 waveguide- based
 **串行馈电（Series Feed / Waveguide-based）：**
 

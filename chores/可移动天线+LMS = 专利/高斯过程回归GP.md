@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: patent
+project: 可移动天线+LMS专利
+area: chores
+category: 可移动天线+LMS = 专利
+parent: 可移动天线+LMS = 专利
+status: active
+priority: medium
+created: '2025-10-20'
+updated: '2025-10-20'
+summary: 1) 一句话概念
+tags:
+- chores
+- 可移动天线+LMS-=-专利
+- patent
+- SINR
+- Movable-Antenna
+- Patent
+aliases:
+- 高斯过程回归GP
+---
 # 1) 一句话概念
 
 **高斯过程回归（Gaussian Process Regression, GPR）** 是对“未知函数”做**概率建模**的方法：把函数 (f(x)) 看成“来自某个多维高斯分布的随机函数”。给定少量带噪观测，它能给出任意新点的**预测均值**（函数值估计）和**预测方差**（不确定度）。

@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-01-18'
+updated: '2026-01-18'
+summary: 1. 场景设定
+tags:
+- knowledge
+- Telecommunications
+aliases:
+- 全分变距离Total Variation Distance;散度；相对熵
+---
 
 
 ### 1. 场景设定：

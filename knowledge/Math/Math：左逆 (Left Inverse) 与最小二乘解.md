@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-30'
+updated: '2026-03-30'
+summary: 线性代数笔记
+tags:
+- knowledge
+- Math
+aliases:
+- 左逆 (Left Inverse) 与最小二乘解
+---
 
 # 线性代数笔记：
 **标签**：#数学/线性代数 #矩阵论 #最优化理论

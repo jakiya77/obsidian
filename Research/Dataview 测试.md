@@ -1,6 +1,22 @@
 ---
-type: test
-created: 2026-06-16
+codex_dataview: true
+type: dashboard
+project: Obsidian 知识库管理
+area: Research
+category: Research
+parent: Dataview 测试
+status: active
+priority: low
+created: '2026-06-16'
+updated: '2026-06-16'
+summary: 1. 当前文件测试
+tags:
+- Research
+- dashboard
+- FADLS
+aliases:
+- Dataview 测试
+previous_type: test
 ---
 # Dataview 测试
 

@@ -1,3 +1,23 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-30'
+updated: '2026-03-30'
+summary: “摩尔-彭若斯伪逆（Moore-Penrose Pseudoinverse）”，名字听起来极其硬核、充满学术压迫感，但如果把它扒开看，它的本质其实非常接地气。
+tags:
+- knowledge
+- Math
+- MMSE
+- Pilot
+aliases:
+- 摩尔-彭若斯伪逆（Moore-Penrose Pseudoinverse）
+---
 “摩尔-彭若斯伪逆（Moore-Penrose Pseudoinverse）”，名字听起来极其硬核、充满学术压迫感，但如果把它扒开看，它的本质其实非常接地气。
 
 用一句话通俗地解释：**它是传统矩阵逆（Inverse）的“万能平替”、或“终极备胎”。**

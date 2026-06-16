@@ -1,3 +1,24 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-02-26'
+updated: '2026-02-26'
+summary: 在信号处理和通信理论中，$\frac{1}{K} \mathbf{s}^T \mathbf{s} \approx 1$ 是一个非常经典的结论，其核心逻辑建立在随机过程的平稳性、归一化以及大数定律（LLN）之上。
+tags:
+- knowledge
+- Math
+- DMA
+- MIMO
+- Interference
+aliases:
+- 大数定律
+---
 在信号处理和通信理论中，$\frac{1}{K} \mathbf{s}^T \mathbf{s} \approx 1$ 是一个非常经典的结论，其核心逻辑建立在**随机过程的平稳性**、**归一化**以及**大数定律（LLN）**之上。
 
 以下是具体的推导与物理解释：

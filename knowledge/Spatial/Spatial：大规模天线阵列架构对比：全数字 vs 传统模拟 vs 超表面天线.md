@@ -1,3 +1,31 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-02-28'
+updated: '2026-03-01'
+summary: 1. 全数字波束成形 (Full-Digital Array)
+tags:
+- knowledge
+- Spatial
+- DMA
+- Movable-Antenna
+- MIMO
+- SVD
+- RIS
+- OFDM
+- ADC
+- Beamforming
+- Anti-Jamming
+- Interference
+aliases:
+- 大规模天线阵列架构对比：全数字 vs 传统模拟 vs 超表面天线
+---
 ## 1. 全数字波束成形 (Full-Digital Array)
 
 全数字架构被认为是理论上性能的“天花板”，具备最高的波束控制灵活性。

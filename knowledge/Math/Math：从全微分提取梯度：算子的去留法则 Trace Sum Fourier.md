@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-31'
+updated: '2026-03-31'
+summary: 【矩阵优化核心】从全微分提取梯度：算子的“去留法则” (Trace / Sum / Fourier)
+tags:
+- knowledge
+- Math
+- Fourier
+aliases:
+- 从全微分提取梯度：算子的去留法则 Trace Sum Fourier
+---
 
 
 # 【矩阵优化核心】从全微分提取梯度：算子的“去留法则” (Trace / Sum / Fourier)

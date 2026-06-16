@@ -1,12 +1,32 @@
 ---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-04-29'
+updated: '2026-04-30'
+summary: 在阅读通信顶刊（尤其是涉及 6DMA 或复杂电磁环境的文献）时，理解公式的核心在于搞清楚作者的观测维度。传统的阵列信号处理聚焦于天线维度 ($M$)，而物理信道建模聚焦于多径/信号维度 ($L$)。理解两者的嵌套关系，是构建大一统抗干扰理论模型的关键。
+tags:
+- 通信/物理层安全
+- 通信/信道建模
+- 天线/6DMA
+- 天线/抗干扰
+- 论文写作/System-Model
+- knowledge
+- Spatial
+- DMA
+- Movable-Antenna
+- Beamforming
+- Anti-Jamming
+- Interference
+aliases:
+- 物理层信道建模 vs 阵列信号处理：观测维度的拆解与统一
 title: 物理层信道建模 vs 阵列信号处理：观测维度的拆解与统一
 date: 2026-04-29
-tags:
-  - #通信/物理层安全
-  - #通信/信道建模
-  - #天线/6DMA
-  - #天线/抗干扰
-  - #论文写作/System-Model
 ---
 
 > [!summary] 核心洞察

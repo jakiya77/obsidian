@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: Python工具
+area: knowledge
+category: Python
+parent: Python
+status: reference
+priority: medium
+created: '2026-04-09'
+updated: '2026-04-09'
+summary: I/O 传输层 | 解析层 | 容器层 | 计算层
+tags:
+- knowledge
+- Python
+aliases:
+- Data 处理的流程
+---
 
 
 | ![[png：20260409111921.png\|168]] | ![[png： 20260409112036.png\|178]] | ![[png：20260409112203.png\|170]] | ![[Pasted image 20260409112236.png\|165]] |     |     |

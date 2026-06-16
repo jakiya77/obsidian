@@ -1,12 +1,31 @@
 ---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-04-16'
+updated: '2026-04-16'
+summary: 公式 $w_n = \frac{j \omega L}{R + j\left(\omega L - \frac{1}{\omega C_n}\right)}$ 并非凭空捏造的数学玩具，它来源于真实的洛伦兹谐振（Lorentzian Resonance）物理机制。
 tags:
-  - #DMA
-  - #模型边界
-  - #等效电路模型
-  - #电磁场与微波
+- DMA
+- 模型边界
+- 等效电路模型
+- 电磁场与微波
+- knowledge
+- Spatial
+- Movable-Antenna
+- MIMO
+- BCD
+- Beamforming
+- Near-Field
 aliases:
-  - 洛伦兹公式的物理真实性探讨
-  - 等效电路模型的局限性
+- 洛伦兹公式的物理真实性探讨
+- 等效电路模型的局限性
+- DMA 权重公式是真实的物理公式还是数学简化？
 ---
 
 # 

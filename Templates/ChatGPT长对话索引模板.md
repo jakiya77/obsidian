@@ -1,10 +1,20 @@
 ---
-type: conversation-index
-project:
-status: indexed
-created: {{date}}
-source: ChatGPT
-tags: [chatgpt-index]
+codex_dataview: true
+type: template
+project: 模板
+area: Templates
+category: Templates
+parent: 模板
+status: reference
+priority: low
+created: '2026-06-16'
+updated: '2026-06-16'
+summary: ChatGPT 对话索引
+tags:
+- Templates
+- template
+aliases:
+- ChatGPT长对话索引模板
 ---
 # ChatGPT 对话索引：
 

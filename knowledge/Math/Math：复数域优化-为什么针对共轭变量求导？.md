@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-23'
+updated: '2026-03-23'
+summary: 'Tags: #数学基础 #复变函数 #最优化理论 #Wirtinger微积分 #阵列信号处理'
+tags:
+- knowledge
+- Math
+- Frost
+aliases:
+- 复数域优化-为什么针对共轭变量求导？
+---
 
 **Tags:** #数学基础 #复变函数 #最优化理论 #Wirtinger微积分 #阵列信号处理
 

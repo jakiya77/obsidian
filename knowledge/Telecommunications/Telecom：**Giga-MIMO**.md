@@ -1,3 +1,31 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-04-14'
+updated: '2026-04-14'
+summary: Giga-MIMO（Gigantic MIMO，也常被称为 Ultra-Massive MIMO 或 ELAA - Extremely Large Antenna Array）被广泛认为是 6G 移动通信的关键候选技术之一。它是现有的 5G Massive MIMO（大规模天线技术）的深度演进。
+tags:
+- knowledge
+- Telecommunications
+- DMA
+- Movable-Antenna
+- MIMO
+- RIS
+- Rayleigh
+- Beamforming
+- Anti-Jamming
+- Interference
+- Near-Field
+- Far-Field
+aliases:
+- '**Giga-MIMO**'
+---
 **Giga-MIMO**（Gigantic MIMO，也常被称为 **Ultra-Massive MIMO** 或 **ELAA - Extremely Large Antenna Array**）被广泛认为是 6G 移动通信的关键候选技术之一。它是现有的 5G Massive MIMO（大规模天线技术）的深度演进。
 
 简单来说，如果说 Massive MIMO 是将天线数量从几个增加到几百个，那么 Giga-MIMO 的目标是将天线阵列的规模提升到**千级甚至万级**。

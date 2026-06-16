@@ -1,3 +1,24 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-02-15'
+updated: '2026-03-23'
+summary: 第一步：为什么两个随机序列的内积是 $1/\sqrt{K}$？
+tags:
+- knowledge
+- Telecommunications
+- Anti-Jamming
+- Interference
+- Pilot
+aliases:
+- 非正交多址干扰 导频污染渗漏 导频长度带来的增益
+---
 ### 第一步：为什么两个随机序列的内积是 $1/\sqrt{K}$？
 
 假设我们有两个长度为 $K$ 的实数随机序列（为了方便理解，用实数域推导，复数域结论完全一致）：

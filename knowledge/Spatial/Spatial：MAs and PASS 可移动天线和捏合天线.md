@@ -1,3 +1,26 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-04-15'
+updated: '2026-04-15'
+summary: 1. 可移动天线 (MAs)：微观尺度的相位博弈
+tags:
+- knowledge
+- Spatial
+- Movable-Antenna
+- Anti-Jamming
+- Interference
+- Near-Field
+- Far-Field
+aliases:
+- MAs and PASS 可移动天线和捏合天线
+---
 
 ---
 [[Spatial：远场和近场的信道模型]]

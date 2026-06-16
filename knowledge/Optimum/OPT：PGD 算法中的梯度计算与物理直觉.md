@@ -1,3 +1,23 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Optimum
+parent: 优化算法
+status: reference
+priority: medium
+created: '2026-03-30'
+updated: '2026-05-17'
+summary: 一、 PGD 算法是在做什么？（核心目标）
+tags:
+- knowledge
+- Optimum
+- PGD
+- Pilot
+aliases:
+- PGD 算法中的梯度计算与物理直觉
+---
 
 ## 一、 PGD 算法是在做什么？（核心目标）
 

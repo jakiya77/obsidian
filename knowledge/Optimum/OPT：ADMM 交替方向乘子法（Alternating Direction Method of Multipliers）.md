@@ -1,3 +1,23 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Optimum
+parent: 优化算法
+status: reference
+priority: medium
+created: '2026-03-04'
+updated: '2026-03-23'
+summary: 恒模约束波束赋形的 ADMM 优化笔记 admm
+tags:
+- knowledge
+- Optimum
+- ADMM
+- Beamforming
+aliases:
+- ADMM 交替方向乘子法（Alternating Direction Method of Multipliers）
+---
 
 ---
 ## 恒模约束波束赋形的 ADMM 优化笔记 admm

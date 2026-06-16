@@ -1,3 +1,24 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-19'
+updated: '2026-03-19'
+summary: 在数值线性代数中，当我们面对一个庞大的矩阵，想要找出它最大的特征值及其对应的特征向量（即主特征向量，代表该矩阵最核心的变换方向）时，最经典、最简单粗暴的算法就是幂法（Power Method）。
+tags:
+- knowledge
+- Math
+- Beamforming
+- Anti-Jamming
+- Interference
+aliases:
+- 幂法 (Power Iteration)：寻找矩阵最大的特征值及其对应的特征向量
+---
 
 ---
 在数值线性代数中，当我们面对一个庞大的矩阵，想要找出它最大的特征值及其对应的特征向量（即主特征向量，代表该矩阵最核心的变换方向）时，最经典、最简单粗暴的算法就是**幂法（Power Method）**。

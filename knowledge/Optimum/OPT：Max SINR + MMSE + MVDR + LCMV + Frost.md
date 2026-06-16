@@ -1,3 +1,30 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Optimum
+parent: 优化算法
+status: reference
+priority: medium
+created: '2026-03-21'
+updated: '2026-05-17'
+summary: 核心秘诀：将“目标”与“路径”严格剥离。
+tags:
+- knowledge
+- Optimum
+- SINR
+- MMSE
+- MVDR
+- LCMV
+- Frost
+- Rayleigh
+- Beamforming
+- Anti-Jamming
+- Interference
+aliases:
+- Max SINR + MMSE + MVDR + LCMV + Frost
+---
 
 
 **核心秘诀：将“目标”与“路径”严格剥离。**

@@ -1,3 +1,23 @@
+---
+codex_dataview: true
+type: writing
+project: Word排版 / 论文写作
+area: Done
+category: 文献写作
+parent: 文献写作
+status: done
+priority: medium
+created: '2026-02-21'
+updated: '2026-02-21'
+summary: 一、 学术英语写作的“四大核心心法”
+tags:
+- Done
+- 文献写作
+- writing
+- AO
+aliases:
+- IEEE 英文写作
+---
 
 ---
 

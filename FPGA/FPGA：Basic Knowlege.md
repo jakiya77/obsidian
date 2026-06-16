@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: learning
+project: Verilog / FPGA学习
+area: FPGA
+category: FPGA
+parent: HDLBits / Verilog
+status: active
+priority: medium
+created: '2026-06-05'
+updated: '2026-06-11'
+summary: https://hdlbits.01xz.net/
+tags:
+- FPGA
+- learning
+- Verilog
+aliases:
+- Basic Knowlege
+---
 https://hdlbits.01xz.net/
 # I Basics
 ## 1. concatenation 

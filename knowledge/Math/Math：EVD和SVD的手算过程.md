@@ -1,3 +1,23 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-19'
+updated: '2026-03-19'
+summary: 对于这个具体的矩阵
+tags:
+- knowledge
+- Math
+- SVD
+- EVD
+aliases:
+- EVD和SVD的手算过程
+---
 ## EVD
 对于这个具体的矩阵：
 

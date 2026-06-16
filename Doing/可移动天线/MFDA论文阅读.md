@@ -1,3 +1,23 @@
+---
+codex_dataview: true
+type: project
+project: FADLS / TVT论文
+area: Doing
+category: Doing
+parent: 进行中
+status: active
+priority: high
+created: '2026-01-21'
+updated: '2026-03-23'
+summary: \begin{aligned}
+tags:
+- Doing
+- project
+- Movable-Antenna
+- Beamforming
+aliases:
+- MFDA论文阅读
+---
 ## 系统模型
 
 $$

@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: idea
+project: FADLS / TVT论文
+area: idea
+category: idea
+parent: 研究想法
+status: active
+priority: high
+created: '2026-04-01'
+updated: '2026-04-01'
+summary: '*20260401*'
+tags:
+- idea
+- DMA
+- Movable-Antenna
+- AO
+- ADC
+- Pilot
+aliases:
+- Debug code
+---
 *20260401*
 
 ``` matlab

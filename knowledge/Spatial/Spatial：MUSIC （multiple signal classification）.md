@@ -1,6 +1,24 @@
 ---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-02-26'
+updated: '2026-03-23'
+summary: MUSIC算法的原理
 tags:
-  - 空域
+- 空域
+- knowledge
+- Spatial
+- EVD
+- MUSIC
+- Interference
+aliases:
+- MUSIC （multiple signal classification）
 ---
 MUSIC算法的原理
 ---

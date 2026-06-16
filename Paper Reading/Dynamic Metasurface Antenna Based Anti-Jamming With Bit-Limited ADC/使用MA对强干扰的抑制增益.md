@@ -1,3 +1,30 @@
+---
+codex_dataview: true
+type: paper
+project: 论文阅读
+area: Paper Reading
+category: Dynamic Metasurface Antenna Based Anti-Jamming With Bit-Limited ADC
+parent: Dynamic Metasurface Antenna Based Anti-Jamming With Bit-Limited ADC
+status: reference
+priority: high
+created: '2026-02-27'
+updated: '2026-02-27'
+summary: 在普通的DMA上，可以做的是提供一个波束成形的权重：$\mathbf{\Phi}_{null}$，这个权重乘上信道和信号是最终接收到的东西：$Y_{jam}=\Phi_{null}h_{jam}x_{jam}$
+tags:
+- Paper-Reading
+- Dynamic-Metasurface-Antenna-Based-Anti-Jamming-With-Bit-Limited-ADC
+- paper
+- DMA
+- Movable-Antenna
+- PGD
+- SVD
+- ADC
+- Beamforming
+- Anti-Jamming
+- Interference
+aliases:
+- 使用MA对强干扰的抑制增益
+---
 ### 原理
 
 **在普通的DMA上，可以做的是提供一个波束成形的权重：$\mathbf{\Phi}_{null}$，这个权重乘上信道和信号是最终接收到的东西：$Y_{jam}=\Phi_{null}h_{jam}x_{jam}$** 

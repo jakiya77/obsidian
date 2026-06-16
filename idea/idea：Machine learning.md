@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: idea
+project: FADLS / TVT论文
+area: idea
+category: idea
+parent: 研究想法
+status: active
+priority: high
+created: '2026-04-06'
+updated: '2026-04-06'
+summary: 在深度学习与无线通信交叉的研究中，大家往往会有一种错觉，认为最核心的工作是“搭积木”式的网络设计。但实际上，网络结构往往是现成的（比如多层感知机或卷积神经网络），真正决定这项研究成败、且耗时最长的是问题的数学建模与高质量数据集的构建。
+tags:
+- idea
+- SINR
+- Tri-Hybrid
+- ADMM
+- Anti-Jamming
+- Interference
+aliases:
+- Machine learning
+---
 
 在深度学习与无线通信交叉的研究中，大家往往会有一种错觉，认为最核心的工作是“搭积木”式的网络设计。但实际上，网络结构往往是现成的（比如多层感知机或卷积神经网络），真正决定这项研究成败、且耗时最长的是**问题的数学建模与高质量数据集的构建**。
 

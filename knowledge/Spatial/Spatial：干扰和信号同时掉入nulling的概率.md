@@ -1,3 +1,24 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-03-05'
+updated: '2026-03-23'
+summary: 信号和干扰的多径信道（$L=3$）是通过独立同分布的复高斯随机变量（randn + 1i*randn）生成的。
+tags:
+- knowledge
+- Spatial
+- Movable-Antenna
+- Rayleigh
+- Interference
+aliases:
+- 干扰和信号同时掉入nulling的概率
+---
 信号和干扰的多径信道（$L=3$）是通过独立同分布的复高斯随机变量（`randn + 1i*randn`）生成的。
 
 在无线通信中，当存在多个独立多径叠加，且没有绝对主导的视距（LoS）路径时，这被称为**瑞利衰落（Rayleigh Fading）**。

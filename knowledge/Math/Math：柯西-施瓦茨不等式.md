@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-02'
+updated: '2026-03-02'
+summary: 柯西-施瓦茨不等式 (Cauchy-Schwarz Inequality) 是数学中极为基础且重要的一个定理。无论是在线性代数、微积分、概率论还是信号处理领域，它都扮演着“确立物理量上限”的关键角色。
+tags:
+- knowledge
+- Math
+- Interference
+aliases:
+- 柯西-施瓦茨不等式
+---
 柯西-施瓦茨不等式 (Cauchy-Schwarz Inequality) 是数学中极为基础且重要的一个定理。无论是在线性代数、微积分、概率论还是信号处理领域，它都扮演着“确立物理量上限”的关键角色。
 
 >**两个向量内积的绝对值，永远小于或等于它们各自模长的乘积。**

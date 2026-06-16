@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-04'
+updated: '2026-03-04'
+summary: 在数学上，谱范数（Spectral Norm）和最大特征值（Maximum Eigenvalue）是两个既有区别又紧密联系的概念。在你这段波束赋形的代码背景下，它们实际上是完全等价的。
+tags:
+- knowledge
+- Math
+- Beamforming
+aliases:
+- 谱范数（Spectral Norm）和最大特征值（Maximum Eigenvalue）
+---
 在数学上，**谱范数（Spectral Norm）**和**最大特征值（Maximum Eigenvalue）**是两个既有区别又紧密联系的概念。在你这段波束赋形的代码背景下，它们实际上是**完全等价**的。
 
 我们可以通过以下三个层次来理清它们的关系：

@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-03-09'
+updated: '2026-03-09'
+summary: 空间平滑的原理
+tags:
+- knowledge
+- Spatial
+- MUSIC
+aliases:
+- 空间平滑
+---
 空间平滑的原理
 ---
 空间平滑（Spatial Smoothing）的核心原理可以高度概括为：**利用空间平移带来的相位多样性，通过子阵平均的方式，人为地破坏相干信号之间的固定相位关系，从而恢复接收数据协方差矩阵的满秩状态。**

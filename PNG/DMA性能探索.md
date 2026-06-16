@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: asset-note
+project: FADLS / TVT论文
+area: PNG
+category: PNG
+parent: 图片说明
+status: reference
+priority: low
+created: '2026-04-16'
+updated: '2026-04-16'
+summary: DMA性能探索
+tags:
+- PNG
+- asset-note
+- SINR
+- DMA
+- Movable-Antenna
+- Interference
+aliases:
+- DMA性能探索
+---
 ```matlab
 % =========================================================================
 

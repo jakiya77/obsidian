@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-04-13'
+updated: '2026-04-13'
+summary: 天线极化是指天线在给定方向上所辐射的电磁波的电场矢量 $\mathbf{E}$ 在空间随时间变化的轨迹形状、取向和旋转方向。
+tags:
+- knowledge
+- Spatial
+- DMA
+- MIMO
+- Beamforming
+- Interference
+aliases:
+- 天线极化 (Antenna Polarization)
+---
 ![[gif：天线极化三维.gif|286]]![[gif：天线极化方式.gif|302]]---
 
 > [!abstract] 核心定义

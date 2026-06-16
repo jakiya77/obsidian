@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2025-10-07'
+updated: '2026-03-23'
+summary: 场景：256个模拟阵元，分成2✖️2的子阵，一个子阵由8✖️8的方阵组成。整个模拟阵关于原点对称，需要在针对四个子阵得到每一个子阵对应的目标方向和干扰方向的增益矩阵。
+tags:
+- knowledge
+- Spatial
+- Interference
+aliases:
+- 模拟阵扫描原理
+---
 
 场景：256个模拟阵元，分成2✖️2的子阵，一个子阵由8✖️8的方阵组成。整个模拟阵关于原点对称，需要在针对四个子阵得到每一个子阵对应的目标方向和干扰方向的增益矩阵。
 

@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2025-10-12'
+updated: '2025-10-12'
+summary: 基于 HPBW 的自适应蛇形扫描（Obsidian 笔记稿）
+tags:
+- knowledge
+- Spatial
+- Beamforming
+aliases:
+- 空间波束扫描策略
+---
 # 基于 HPBW 的自适应蛇形扫描（Obsidian 笔记稿）
 
 ## 📌 概要

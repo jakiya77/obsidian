@@ -1,3 +1,27 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2026-03-09'
+updated: '2026-03-23'
+summary: 一、 核心差异速查表
+tags:
+- knowledge
+- Telecommunications
+- MVDR
+- MUSIC
+- Rayleigh
+- Beamforming
+- Anti-Jamming
+- Interference
+aliases:
+- 信号的生成：data->modulation or Randn+1i*randn
+---
 
 ---
 

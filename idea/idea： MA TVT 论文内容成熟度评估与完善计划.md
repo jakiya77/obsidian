@@ -1,9 +1,26 @@
 ---
+codex_dataview: true
+type: idea
+project: FADLS / TVT论文
+area: idea
+category: idea
+parent: 研究想法
+status: active
+priority: high
+created: '2026-05-21'
+updated: '2026-05-21'
+summary: 论文骨架已经完整。按照 TVT 标准，目前不是缺部分，而是要将现有内容正规化。最强主贡献是 Coherence Lattice 解析；有限孔径和鲁棒性足以支撑独立章节；Beamforming 的物理 Insight 需要重点提炼。
 tags:
-  - #TVT
-  - #Movable_Antennas
-  - #Paper_Drafting
-  - #Math_Derivation
+- TVT
+- Movable_Antennas
+- Paper_Drafting
+- Math_Derivation
+- idea
+- LCMV
+- Movable-Antenna
+- Beamforming
+aliases:
+- MA TVT 论文内容成熟度评估与完善计划
 date: 2026-05-21
 ---
 

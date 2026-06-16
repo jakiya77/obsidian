@@ -1,3 +1,27 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-02-15'
+updated: '2026-03-09'
+summary: 1. 数据左乘以S 可以表示为对原数据D的拉伸
+tags:
+- knowledge
+- Math
+- DMA
+- Movable-Antenna
+- SVD
+- Beamforming
+- Anti-Jamming
+- Interference
+aliases:
+- 奇异值分解
+---
 ![[截屏2026-02-15 12.53.41.png]]
 ![[截屏2026-02-15 12.53.50.png]]
 1. 数据左乘以S 可以表示为对原数据D的拉伸

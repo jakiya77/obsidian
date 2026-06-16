@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: simulation-record
+project: FADLS / TVT论文
+area: SOP SUM
+category: simulation record
+parent: 仿真记录
+status: log
+priority: medium
+created: '2026-04-19'
+updated: '2026-04-27'
+summary: 1. 更改EF cos的幂 看一下效果的变化
+tags:
+- SOP-SUM
+- simulation-record
+- DMA
+aliases:
+- simulation record 0419
+---
 1. 更改EF cos的幂 看一下效果的变化
 
 | $cos^1(\theta)$                      | $cos^2(\theta)$                      | $cos^3(\theta)$                      | $cos^4(\theta)$                      |

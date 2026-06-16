@@ -1,3 +1,24 @@
+---
+codex_dataview: true
+type: paper
+project: 论文阅读
+area: Paper Reading
+category: Paper Reading
+parent: 论文阅读
+status: reference
+priority: high
+created: '2026-04-30'
+updated: '2026-04-30'
+summary: $k$：代表第 $k$ 个用户终端（User Terminal, UT 或 UE）。如果空间里有多个干扰源或多个用户，这就代表其中特定的一点。
+tags:
+- Paper-Reading
+- paper
+- DMA
+- Movable-Antenna
+- Interference
+aliases:
+- 6D Movable Antenna Enhanced Multi-Access PointCoordination via Position and OrientationOptimization
+---
 >[!hint]+ 下标的含义
 >- **$k$**：代表第 $k$ 个**用户终端**（User Terminal, UT 或 UE）。如果空间里有多个干扰源或多个用户，这就代表其中特定的一点。
 >- **$m$**：代表接收端 6DMA 阵列上的第 $m$ 根**物理天线阵元**（Antenna Element at AP）。

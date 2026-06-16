@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-16'
+updated: '2026-03-16'
+summary: 学习笔记：周期信号的“傅里叶级数+变换”两步分析法
+tags:
+- knowledge
+- Math
+- Fourier
+aliases:
+- 傅里叶变换 - 周期调制信号的频域分解法
+---
 
 ---
 

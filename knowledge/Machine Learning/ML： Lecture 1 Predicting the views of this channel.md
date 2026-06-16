@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 机器学习
+area: knowledge
+category: Machine Learning
+parent: 机器学习
+status: reference
+priority: medium
+created: '2026-04-06'
+updated: '2026-05-12'
+summary: 43>[!tldr]+
+tags:
+- knowledge
+- Machine-Learning
+aliases:
+- Lecture 1 Predicting the views of this channel
+---
 43>[!tldr]+ 
 >1. 3 types of functions
 >2. label ; model ; feature ;weight; bias

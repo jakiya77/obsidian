@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Optimum
+parent: 优化算法
+status: reference
+priority: medium
+created: '2026-01-21'
+updated: '2026-01-22'
+summary: 哪些问题不是凸问题
+tags:
+- knowledge
+- Optimum
+aliases:
+- convex function 凸优化和非凸问题的处理
+---
 ### 哪些问题不是凸问题
 - **书名：** _Convex Optimization_
     

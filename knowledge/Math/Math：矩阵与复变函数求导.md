@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-05-17'
+updated: '2026-05-18'
+summary: 推导前必问的两个问题
+tags:
+- knowledge
+- Math
+- Beamforming
+aliases:
+- 矩阵与复变函数求导
+---
 
 ---
 

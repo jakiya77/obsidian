@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: tool-note
+project: 工具与工作流
+area: Tools
+category: Tools
+parent: Obsidian / 工具
+status: reference
+priority: low
+created: '2026-04-27'
+updated: '2026-04-28'
+summary: 📝 小红书文案与表格模板
+tags:
+- Tools
+- tool-note
+aliases:
+- Obsidian + GitHub 零基础同步 💻 终端报错终极避坑指南**
+---
 
 ---
 

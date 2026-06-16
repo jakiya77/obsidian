@@ -1,3 +1,26 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-02-27'
+updated: '2026-04-17'
+summary: SVD 与 EVD 的物理映射与数学等效性
+tags:
+- knowledge
+- Math
+- SVD
+- EVD
+- MUSIC
+- ADC
+- Interference
+aliases:
+- EVD特征分解和SVD奇异值分解
+---
 
 # SVD 与 EVD 的物理映射与数学等效性
 

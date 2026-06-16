@@ -1,3 +1,31 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Optimum
+parent: 优化算法
+status: reference
+priority: medium
+created: '2026-03-23'
+updated: '2026-03-23'
+summary: 'Tags: #阵列信号处理 #抗干扰 #波束成形 #最优化理论 #MMSE #SINR #线性代数'
+tags:
+- knowledge
+- Optimum
+- SINR
+- MMSE
+- DMA
+- Movable-Antenna
+- RIS
+- Rayleigh
+- Beamforming
+- Anti-Jamming
+- Interference
+- Pilot
+aliases:
+- 导频MMSE和Max SINR 的最优解等价性证明
+---
 **Tags:** #阵列信号处理 #抗干扰 #波束成形 #最优化理论 #MMSE #SINR #线性代数
 
 ## 1. 核心直觉 (TL;DR) Too Long; Didn't Read

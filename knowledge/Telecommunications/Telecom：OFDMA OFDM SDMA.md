@@ -1,3 +1,31 @@
+---
+codex_dataview: true
+type: knowledge
+project: 通信理论笔记
+area: knowledge
+category: Telecommunications
+parent: 通信理论
+status: reference
+priority: medium
+created: '2025-10-17'
+updated: '2025-10-17'
+summary: 1) 基本概念（
+tags:
+- knowledge
+- Telecommunications
+- MMSE
+- DMA
+- Movable-Antenna
+- OFDM
+- OFDMA
+- SDMA
+- ADC
+- Beamforming
+- Interference
+- Near-Field
+aliases:
+- OFDMA OFDM SDMA
+---
 # 1) 基本概念（
 
 - **OFDM（正交频分复用）**：单用户调制方式，把一个宽带拆成很多正交子载波，解决频率选择性衰落；**不直接负责“多用户资源分配”**。

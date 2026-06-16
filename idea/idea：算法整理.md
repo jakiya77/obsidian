@@ -1,3 +1,21 @@
+---
+codex_dataview: true
+type: idea
+project: FADLS / TVT论文
+area: idea
+category: idea
+parent: 研究想法
+status: active
+priority: high
+created: '2026-03-30'
+updated: '2026-04-03'
+summary: 最终的接收信号：$\hat{X} = \beta \mathbf{w}^H \mathbf{\Phi} \mathbf{Y}$
+tags:
+- idea
+- PGD
+aliases:
+- 算法整理
+---
 最终的接收信号：$\hat{X} = \beta \mathbf{w}^H \mathbf{\Phi} \mathbf{Y}$
 
 第一步迭代过程：固定$\beta$ 和$\mathbf{w}$   

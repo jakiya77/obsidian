@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-02-02'
+updated: '2026-02-03'
+summary: RIS 中涉及到的相位分为三个部分
+tags:
+- knowledge
+- Spatial
+- RIS
+aliases:
+- RIS 的空域和时域原理和功能
+---
 # 1. 空域
 ## RIS 中涉及到的相位分为三个部分：
 ### 1. 来自入射方向的相位 $\theta_{incident}$

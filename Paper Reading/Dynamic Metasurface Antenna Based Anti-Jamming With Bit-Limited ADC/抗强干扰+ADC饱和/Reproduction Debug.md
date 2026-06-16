@@ -1,3 +1,30 @@
+---
+codex_dataview: true
+type: paper
+project: 论文阅读
+area: Paper Reading
+category: Dynamic Metasurface Antenna Based Anti-Jamming With Bit-Limited ADC
+parent: Dynamic Metasurface Antenna Based Anti-Jamming With Bit-Limited ADC
+status: reference
+priority: high
+created: '2026-02-16'
+updated: '2026-03-23'
+summary: 1. $\Phi_{null} = \sigma (e^{jarg(\Lambda_0)},D)$ 环节的时候出现了由于忽略幅度导致的干扰抑制实效
+tags:
+- Paper-Reading
+- Dynamic-Metasurface-Antenna-Based-Anti-Jamming-With-Bit-Limited-ADC
+- paper
+- DMA
+- Movable-Antenna
+- PGD
+- SVD
+- ADC
+- Anti-Jamming
+- Interference
+- Pilot
+aliases:
+- Reproduction Debug
+---
 ## 1. $\Phi_{null} = \sigma (e^{jarg(\Lambda_0)},D)$ 环节的时候出现了由于忽略幅度导致的干扰抑制实效
 ![[截屏2026-02-16 11.16.45.png]]
 在这部分 如果直接使用分解后的0空间来进行操作的话，得到的是矩阵E，此时可以看出干扰得到较好的抑制效果；如果只采用角度信息，那么会出现干扰增益反倒变大了的情况。

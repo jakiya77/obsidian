@@ -1,12 +1,20 @@
 ---
-date: {{date}}
+codex_dataview: true
+type: template
+project: 模板
+area: Templates
+category: Templates
+parent: 模板
+status: reference
+priority: low
+created: '2026-03-31'
+updated: '2026-05-22'
+summary: 今天只求：论文往前推进，身体稳定，心态别崩。
 tags:
-  - daily
-  - 论文冲刺
-  - 通信系统
-  - 机器学习
-  - 健身
-status: active
+- Templates
+- template
+aliases:
+- Daily SOP Templates
 ---
 > [!abstract] **每日祈福🧧**
 > 今天只求：论文往前推进，身体稳定，心态别崩。

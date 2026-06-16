@@ -1,3 +1,25 @@
+---
+codex_dataview: true
+type: patent
+project: 可移动天线+LMS专利
+area: chores
+category: 可移动天线+LMS = 专利
+parent: 可移动天线+LMS = 专利
+status: active
+priority: medium
+created: '2025-10-20'
+updated: '2025-10-20'
+summary: 1) 什么时候用 BO
+tags:
+- chores
+- 可移动天线+LMS-=-专利
+- patent
+- SINR
+- Movable-Antenna
+- Patent
+aliases:
+- Bayesian Optimization, BO
+---
 
 
 # 1) 什么时候用 BO

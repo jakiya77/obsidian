@@ -1,3 +1,31 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-03-09'
+updated: '2026-03-23'
+summary: 模块一：矩阵维度与物理天线的视觉映射
+tags:
+- knowledge
+- Spatial
+- LCMV
+- DMA
+- Movable-Antenna
+- SVD
+- EVD
+- MUSIC
+- Beamforming
+- Anti-Jamming
+- Interference
+- Pilot
+aliases:
+- 阵列抗干扰避坑指南：SVD 行列的物理真相与 DMA 降维投影悖论
+---
 
 ---
 

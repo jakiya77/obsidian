@@ -1,3 +1,28 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Optimum
+parent: 优化算法
+status: reference
+priority: medium
+created: '2026-03-24'
+updated: '2026-03-25'
+summary: 📝 学习笔记：交替优化算法 (AO) 与复杂通信系统优化方案
+tags:
+- knowledge
+- Optimum
+- SINR
+- MMSE
+- BCD
+- SDR
+- AO
+- RIS
+- Beamforming
+aliases:
+- 交替优化算法 (Alternating Optimization, AO)
+---
 
 ---
 

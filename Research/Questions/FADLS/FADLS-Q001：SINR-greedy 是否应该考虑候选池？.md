@@ -1,13 +1,29 @@
 ---
+codex_dataview: true
 type: question
-id: FADLS-Q001
-project: FADLS
-parent: 算法设计
-status: open
+project: FADLS / TVT论文
+area: Research
+category: Research
+parent: 问题索引
+status: active
 priority: high
+created: '2026-06-16'
+updated: '2026-06-16'
+summary: 1. 原始主问题
+tags:
+- FADLS
+- SINR
+- greedy
+- MMSE
+- candidate-pool
+- Research
+- question
+aliases:
+- FADLS-Q001：SINR-greedy 是否应该考虑候选池？
+previous_project: FADLS
+previous_parent: 算法设计
+id: FADLS-Q001
 priority_rank: 3
-tags: [FADLS, SINR, greedy, MMSE, candidate-pool]
-created: 2026-06-16
 source: ChatGPT
 ---
 # FADLS-Q001：SINR-greedy 是否应该考虑候选池？

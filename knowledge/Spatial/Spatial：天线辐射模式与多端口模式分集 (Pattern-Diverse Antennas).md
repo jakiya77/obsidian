@@ -1,3 +1,29 @@
+---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-04-13'
+updated: '2026-04-13'
+summary: 在传统 MIMO 或大规模 MIMO 中，空间自由度（Spatial Degrees of Freedom, DoF）通常严重依赖于物理天线阵元的数量。而多端口模式分集天线（Pattern-Diverse Antenna）打破了这一限制：通过在单一物理天线结构上引入多个独立馈电端口（Ports），激发相互正交的表面电流分布，从而在不增加物理尺寸的前提下，产生
+tags:
+- knowledge
+- Spatial
+- DMA
+- Movable-Antenna
+- MIMO
+- RIS
+- Fourier
+- Beamforming
+- Interference
+- Far-Field
+aliases:
+- 天线辐射模式与多端口模式分集 (Pattern-Diverse Antennas)
+---
 
 
 > [!abstract] TLDR

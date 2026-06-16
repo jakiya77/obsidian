@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: learning
+project: Verilog / FPGA学习
+area: FPGA
+category: FPGA
+parent: HDLBits / Verilog
+status: active
+priority: medium
+created: '2026-06-07'
+updated: '2026-06-07'
+summary: 有符号数计算：Two's Complement 补码笔记
+tags:
+- FPGA
+- learning
+- Verilog
+aliases:
+- 有符号数计算
+---
 # 有符号数计算：Two's Complement 补码笔记
 
 >[!tldr] 

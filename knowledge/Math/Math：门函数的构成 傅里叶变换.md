@@ -1,3 +1,22 @@
+---
+codex_dataview: true
+type: knowledge
+project: 数学与优化基础
+area: knowledge
+category: Math
+parent: 数学基础
+status: reference
+priority: medium
+created: '2026-03-11'
+updated: '2026-03-23'
+summary: $\sum_{n=-\infty}^{+\infty}\epsilon(t-nT_p)-\epsilon(t-T_s-nT_p)$
+tags:
+- knowledge
+- Math
+- Fourier
+aliases:
+- 门函数的构成 傅里叶变换
+---
 ![[png求和.png]]
 # $\sum_{n=-\infty}^{+\infty}\epsilon(t-nT_p)-\epsilon(t-T_s-nT_p)$ 
 ### 第一步：认识基础砖块 $\epsilon(t)$（拨动开关）

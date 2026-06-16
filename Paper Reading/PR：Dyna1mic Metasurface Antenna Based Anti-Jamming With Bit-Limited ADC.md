@@ -1,3 +1,29 @@
+---
+codex_dataview: true
+type: paper
+project: 论文阅读
+area: Paper Reading
+category: Paper Reading
+parent: 论文阅读
+status: reference
+priority: high
+created: '2026-03-19'
+updated: '2026-03-24'
+summary: 1️⃣、信号接收部分
+tags:
+- Paper-Reading
+- paper
+- DMA
+- Movable-Antenna
+- PGD
+- SVD
+- ADC
+- Anti-Jamming
+- Interference
+- Pilot
+aliases:
+- Dyna1mic Metasurface Antenna Based Anti-Jamming With Bit-Limited ADC
+---
 >**🐻：**
 >1️⃣、信号接收部分： 
 >1. 我当下可以使用的接收设备是一个块可以拥有2bit相位调节自由度的ris，这块ris后面只连接了一根RF chain。

@@ -1,13 +1,31 @@
 ---
+codex_dataview: true
+type: knowledge
+project: FADLS / TVT论文
+area: knowledge
+category: Spatial
+parent: 空间阵列与天线
+status: reference
+priority: medium
+created: '2026-04-16'
+updated: '2026-04-16'
+summary: 从微观电路到宏观辐射：DMA阵元物理机制全解析
 tags:
-  - #天线理论
-  - #微波工程
-  - #电磁场
-  - #DMA
-  - #物理层
+- 天线理论
+- 微波工程
+- 电磁场
+- DMA
+- 物理层
+- knowledge
+- Spatial
+- Movable-Antenna
+- Beamforming
+- Near-Field
+- Far-Field
 aliases:
-  - DMA电磁场与辐射物理机制
-  - 波束权重与电感辐射推导
+- DMA电磁场与辐射物理机制
+- 波束权重与电感辐射推导
+- 从微观电路到宏观辐射 DMA阵元物理机制
 ---
 
 # 从微观电路到宏观辐射：DMA阵元物理机制全解析
