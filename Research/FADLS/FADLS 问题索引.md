@@ -18,26 +18,37 @@ tags: [FADLS, question-index]
 
 ## 当前未解决问题
 ```dataview
-TABLE id AS ID, parent AS 父主题, status AS 状态, priority AS 优先级, created AS 创建时间
-FROM "obsidian note/Research/Questions/FADLS"
-WHERE type = "question" AND status != "done"
+TABLE WITHOUT ID file.link AS "问题", id AS "ID", parent AS "父主题", status AS "状态", priority AS "优先级", created AS "创建时间"
+WHERE type = "question" AND contains(file.folder, "Research/Questions/FADLS") AND status != "done"
 SORT priority_rank DESC, created DESC
+```
+
+## 待办进度
+```dataview
+TASK
+WHERE contains(file.folder, "Research/Questions/FADLS") AND !completed
+GROUP BY file.link
+```
+
+## 已完成动作
+```dataview
+TASK
+WHERE contains(file.folder, "Research/Questions/FADLS") AND completed
+GROUP BY file.link
 ```
 
 ## 按父主题聚合
 ```dataview
-TABLE rows.file.link AS 问题, rows.status AS 状态, rows.priority AS 优先级
-FROM "obsidian note/Research/Questions/FADLS"
-WHERE type = "question"
+TABLE rows.file.link AS "问题", rows.status AS "状态", rows.priority AS "优先级"
+WHERE type = "question" AND contains(file.folder, "Research/Questions/FADLS")
 GROUP BY parent
 SORT parent ASC
 ```
 
 ## 已完成问题
 ```dataview
-TABLE id AS ID, parent AS 父主题, created AS 创建时间
-FROM "obsidian note/Research/Questions/FADLS"
-WHERE type = "question" AND status = "done"
+TABLE WITHOUT ID file.link AS "问题", id AS "ID", parent AS "父主题", created AS "创建时间"
+WHERE type = "question" AND contains(file.folder, "Research/Questions/FADLS") AND status = "done"
 SORT created DESC
 ```
 
