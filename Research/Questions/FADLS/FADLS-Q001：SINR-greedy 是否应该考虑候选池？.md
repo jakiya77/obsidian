@@ -32,7 +32,7 @@ SINR-based greedy 算法是否应该基于全体 feasible 坐标逐步搜索，�
 - 实验图注和正文是否明确说明 SINR-greedy 是 full-grid baseline。
 
 ## 5. 下一步动作
-- [ ] 检查 MATLAB 代码中 SINR-greedy 的输入和搜索范围。
+- [x] 检查 MATLAB 代码中 SINR-greedy 的输入和搜索范围。
 - [ ] 修改论文算法描述。
 - [ ] 修改复杂度分析。
 - [ ] 检查仿真实验说明和 figure caption。
