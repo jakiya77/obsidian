@@ -4,17 +4,20 @@ type: template
 project: 模板
 area: Templates
 category: Templates
-parent: 问题索引模板
-status: active
-priority: high
-created: 2026-06-16
-updated: 2026-06-16
+parent: 模板
+status: reference
+priority: low
+created: '2026-06-16'
+updated: '2026-06-16'
 summary: ChatGPT 长对话结束后复制到 Obsidian 的固定问题索引模板。
 tags:
-  - Template
-  - Question-Index
+- Template
+- Question-Index
+- Templates
+- template
 aliases:
-  - 问题索引模板
+- 问题索引模板
+- ChatGPT 问题索引模板
 ---
 # 问题索引：{{title}}
 
