@@ -62,4 +62,4 @@ SINR-based greedy 算法是否应该基于全体 feasible 坐标逐步搜索，�
 `FADLS-SINR-greedy-候选池` `MMSE-SINR-推导` `SINR-greedy-fullgrid`
 
 ## 8. 相关链接
-- [[obsidian note/Research/FADLS/FADLS 问题索引|FADLS 问题索引]]
+- [[PG-DFPS 问题索引|FADLS 问题索引]]

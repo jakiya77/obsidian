@@ -24,7 +24,7 @@ previous_project: FADLS
 # FADLS 问题索引
 
 ## 入口
-- Canvas：[[obsidian note/Research/FADLS/FADLS 问题地图.canvas|FADLS 问题地图]]
+- Canvas：[[FADLS 问题地图.canvas|FADLS 问题地图]]
 - 总览：[[obsidian note/Research/问题总览|问题总览]]
 - 问题目录：`obsidian note/Research/Questions/FADLS/`
 
