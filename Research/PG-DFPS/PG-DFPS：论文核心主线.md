@@ -285,9 +285,11 @@ Theoretical complexity and empirical runtime are reported separately.
 ### Simulation setup
 
 说明共同参数：  
-[  
+
+$$
 N,\ A,\ d_{\min},\ M,\ C,\ P_s,\ P_j,\ \sigma^2,\ \text{JSR}.  
-]  
+$$
+
 说明所有方法最终统一用 post-MMSE output SINR 评价。
 
 ---
