@@ -64,9 +64,9 @@ $$
 
 现有 MA 位置优化通常有两类：
 
-### 1. 全网格 / 黑箱搜索
+### 1. Discrete SINR-driven search 离散网格搜索
 
-例如 full-grid SINR-greedy，每一步都扫描全部 (M) 个网格点，并计算 receiver-level SINR。
+full-grid SINR-greedy，每一步都扫描全部 (M) 个网格点，并计算 receiver-level SINR。
 
 问题是：
 
@@ -78,7 +78,7 @@ $$
 
 ---
 
-### 2. AO-SCA-CVX 优化
+### 2. Continuous local SINR optimization 连续位置搜索
 
 AO-SCA-CVX 通过局部凸近似和 CVX 求解连续位置 refinement。
 
