@@ -1,8 +1,4 @@
-这里为您提供适合在 **Obsidian** 中直接阅读的 Markdown 版本。
 
-由于 Obsidian 默认使用标准的 MathJax 来渲染数学公式，而原生 LaTeX 中的环境（如 `\begin{equation}`、`\begin{align}`、`\begin{algorithm}` 等）在 Obsidian 的标准视图下可能无法完美解析或美观显示，我已将它们转换为了 Obsidian 兼容性最好的 **双 $$ 独立公式块** 形式，并保留了伪代码的清晰结构，方便您在双栏或单栏笔记中流畅阅读。
-
-# 使用 IEEEtran.cls 的 IEEE 期刊与汇刊示例文章
 
 **作者**：IEEE 出版技术部（职员，IEEE）
 
@@ -32,39 +28,39 @@
 
 我们考虑一个窄带远场上行抗干扰通信系统，其中单天线目标发射机与配备有 $N$ 元流体天线（Movable Antenna, MA）阵列的接收机进行通信。单天线干扰机发射强干扰信号以降低目标信号的接收质量。MA 阵元部署在长度为 $A$ 的一维有限孔径上。在不失一般性的情况下，MA 的位置按以下顺序排列：
 
-$$\begin{equation} -\frac{A}{2} \le p_1 < p_2 < \cdots < p_N \le \frac{A}{2} \end{equation}\tag{1}$$
+$$-\frac{A}{2} \le p_1 < p_2 < \cdots < p_N \le \frac{A}{2} \tag{1}$$
 
 且满足最小阵元间距约束：
 
-$$\begin{equation} p_{n+1}-p_n \ge d_{\min}, \quad n=1,\ldots,N-1 \end{equation}\tag{2}$$
+$$p_{n+1}-p_n \ge d_{\min}, \quad n=1,\ldots,N-1 \tag{2}$$
 
 公式 (1) 中的排序消除了 MA 阵元之间的排列模糊性，因为所考虑的性能指标在重新标记天线位置时保持不变。一个充要的可行性条件为：
 
-$$\begin{equation} A \ge (N-1)d_{\min} \end{equation}\tag{3}$$
+$$A \ge (N-1)d_{\min} \tag{3}$$
 
 对于从角度 $\theta$ 到达的平面波，位于位置 $p$ 处的 MA 阵元的响应建模为：
 
-$$\begin{equation} a(p,\theta) = e^{-j\frac{2\pi}{\lambda}p\sin\theta} \end{equation}\tag{4}$$
+$$a(p,\theta) = e^{-j\frac{2\pi}{\lambda}p\sin\theta} \tag{4}$$
 
 其中 $\lambda$ 为载波波长，$\theta$ 是相对于阵列法线方向（Broadside）测量得到的。
 
 在位置 $p$ 处观测到的目标信道建模为：
 
-$$\begin{equation} h(p) = \sum_{\ell=0}^{L_s-1} \alpha_\ell e^{-j\frac{2\pi}{\lambda}p\sin\theta_{s,\ell}} \end{equation}\tag{5}$$
+$$h(p) = \sum_{\ell=0}^{L_s-1} \alpha_\ell e^{-j\frac{2\pi}{\lambda}p\sin\theta_{s,\ell}} \tag{5}$$
 
 其中 $L_s$ 为目标传播路径的数量，$\alpha_\ell$ 为第 $\ell$ 条目标路径的复增益，$\theta_{s,\ell}$ 为其到达角（AoA）。类似地，在位置 $p$ 处观测到的干扰信道建模为：
 
-$$\begin{equation} g(p) = \sum_{\ell=0}^{L_j-1} \beta_\ell e^{-j\frac{2\pi}{\lambda}p\sin\theta_{j,\ell}} \end{equation}\tag{6}$$
+$$g(p) = \sum_{\ell=0}^{L_j-1} \beta_\ell e^{-j\frac{2\pi}{\lambda}p\sin\theta_{j,\ell}} \tag{6}$$
 
 其中 $L_j$、$\beta_\ell$ 和 $\theta_{j,\ell}$ 分别表示干扰路径的数量、第 $\ell$ 条干扰路径的复增益和到达角。
 
 收集各阵元的信道响应，目标信道向量和干扰信道向量分别由下式给出：
 
-$$\begin{equation} \mathbf h(\mathbf p) = [h(p_1),h(p_2),\ldots,h(p_N)]^T \in\mathbb C^{N\times 1} \end{equation}\tag{7}$$
+$$\mathbf h(\mathbf p) = [h(p_1),h(p_2),\ldots,h(p_N)]^T \in\mathbb C^{N\times 1} \tag{7}$$
 
 以及
 
-$$\begin{equation} \mathbf g(\mathbf p) = [g(p_1),g(p_2),\ldots,g(p_N)]^T \in\mathbb C^{N\times 1} \end{equation}\tag{8}$$
+$$\mathbf g(\mathbf p) = [g(p_1),g(p_2),\ldots,g(p_N)]^T \in\mathbb C^{N\times 1} \tag{8}$$
 
 ### 2.2 接收信号模型与位置优化
 
@@ -72,7 +68,7 @@ $$\begin{equation} \mathbf g(\mathbf p) = [g(p_1),g(p_2),\ldots,g(p_N)]^T \in\ma
 
 MA 阵列处的接收信号为：
 
-$$\begin{equation} \mathbf y = \sqrt{P_s}\mathbf h(\mathbf p)x_s + \sqrt{P_j}\mathbf g(\mathbf p)x_j + \mathbf n \end{equation}\tag{9}$$
+$$\mathbf y = \sqrt{P_s}\mathbf h(\mathbf p)x_s + \sqrt{P_j}\mathbf g(\mathbf p)x_j + \mathbf n \tag{9}$$
 
 其中 $P_s$ 和 $P_j$ 分别表示目标信号和干扰信号的发射功率。目标符号 $x_s$ 和干扰信号 $x_j$ 归一化为：
 
@@ -86,29 +82,31 @@ $$\mathbf n\sim\mathcal{CN}(\mathbf 0,\sigma^2\mathbf I_N)$$
 
 对于给定的位置向量 $\mathbf p$，线性接收合并器 $\mathbf w\in\mathbb C^{N\times 1}$ 得到的输出信干噪比（SINR）为：
 
-$$\begin{equation} \Gamma(\mathbf p,\mathbf w) = \frac{ P_s|\mathbf w^H\mathbf h(\mathbf p)|^2 }{ P_j|\mathbf w^H\mathbf g(\mathbf p)|^2 + \sigma^2\|\mathbf w\|^2 } \end{equation}\tag{10}$$
+$$\Gamma(\mathbf p,\mathbf w) = \frac{ P_s|\mathbf w^H\mathbf h(\mathbf p)|^2 }{ P_j|\mathbf w^H\mathbf g(\mathbf p)|^2 + \sigma^2\|\mathbf w\|^2 } \tag{10}$$
 
 对于固定的 $\mathbf p$，使 SINR 最大化的合并器方向为：
 
-$$\begin{equation} \mathbf w^\star(\mathbf p) \propto \left( P_j\mathbf g(\mathbf p)\mathbf g^H(\mathbf p) + \sigma^2\mathbf I_N \right)^{-1} \mathbf h(\mathbf p) \end{equation}\tag{11}$$
+$$\mathbf w^\star(\mathbf p) \propto \left( P_j\mathbf g(\mathbf p)\mathbf g^H(\mathbf p) + \sigma^2\mathbf I_N \right)^{-1} \mathbf h(\mathbf p) \tag{11}$$
 
 该方向在标量归一化意义下等价于最小均方误差（MMSE）合并器。由于输出 SINR 对 $\mathbf w$ 的缩放具有不变性，将公式 (11) 代入公式 (10) 可得最大输出 SINR：
 
-$$\begin{equation} \Gamma^\star(\mathbf p) = P_s \mathbf h^H(\mathbf p) \left( P_j\mathbf g(\mathbf p)\mathbf g^H(\mathbf p) + \sigma^2\mathbf I_N \right)^{-1} \mathbf h(\mathbf p) \end{equation}\tag{12}$$
+$$\Gamma^\star(\mathbf p) = P_s \mathbf h^H(\mathbf p) \left( P_j\mathbf g(\mathbf p)\mathbf g^H(\mathbf p) + \sigma^2\mathbf I_N \right)^{-1} \mathbf h(\mathbf p) \tag{12}$$
 
 应用矩阵求逆引理（Matrix Inversion Lemma），公式 (12) 可以重写为：
 
-$$\begin{equation} \Gamma^\star(\mathbf p) = \frac{P_s}{\sigma^2} \left( \|\mathbf h(\mathbf p)\|^2 - \frac{ P_j |\mathbf g^H(\mathbf p)\mathbf h(\mathbf p)|^2 }{ \sigma^2+P_j\|\mathbf g(\mathbf p)\|^2 } \right) \end{equation}\tag{13}$$
+$$\Gamma^\star(\mathbf p) = \frac{P_s}{\sigma^2} \left( \|\mathbf h(\mathbf p)\|^2 - \frac{ P_j |\mathbf g^H(\mathbf p)\mathbf h(\mathbf p)|^2 }{ \sigma^2+P_j\|\mathbf g(\mathbf p)\|^2 } \right) \tag{13}$$
 
 这一表达式表明，最大输出 SINR 受三个耦合量的控制：**目标信道能量** $\|\mathbf h(\mathbf p)\|^2$、**干扰信道能量** $\|\mathbf g(\mathbf p)\|^2$ 以及**目标-干扰空间相关性** $|\mathbf g^H(\mathbf p)\mathbf h(\mathbf p)|^2$。因此，一个良好的 MA 位置集合不仅应当提供强大的目标信道增益，还应当使目标信道向量和干扰信道向量在接收端具有足够的空间区分度。
 
 为了后续使用，我们将归一化的目标-干扰相关系数定义为：
 
-$$\begin{equation} \rho_{hg}(\mathbf p) = \frac{ |\mathbf h^H(\mathbf p)\mathbf g(\mathbf p)|^2 }{ \|\mathbf h(\mathbf p)\|^2 \|\mathbf g(\mathbf p)\|^2+\epsilon } \end{equation}\tag{14}$$
+$$\rho_{hg}(\mathbf p) = \frac{ |\mathbf h^H(\mathbf p)\mathbf g(\mathbf p)|^2 }{ \|\mathbf h(\mathbf p)\|^2 \|\mathbf g(\mathbf p)\|^2+\epsilon } \tag{14}$$
 
 其中 $\epsilon$ 是一个为了数值稳定性而引入的微小正常数。较小的 $\rho_{hg}(\mathbf p)$ 表明目标信道向量与干扰信道向量之间具有更好的空间可分性。
 
-$$\begin{align} \mathbf P_0:\quad \max_{\mathbf p}\quad & \Gamma^\star(\mathbf p) \\ \text{s.t.}\quad & -\frac{A}{2}\le p_1 < p_2 < \cdots < p_N \le \frac{A}{2}, \nonumber\\ & p_{n+1}-p_n\ge d_{\min},\quad n=1,\ldots,N-1. \nonumber \end{align}\tag{P0}$$
+优化问题 $\mathbf P_0$ 定义为：
+
+$$\begin{aligned} \mathbf P_0:\quad \max_{\mathbf p}\quad & \Gamma^\star(\mathbf p) \\ \text{s.t.}\quad & -\frac{A}{2}\le p_1 < p_2 < \cdots < p_N \le \frac{A}{2}, \\ & p_{n+1}-p_n\ge d_{\min},\quad n=1,\ldots,N-1. \end{aligned} \tag{P0}$$
 
 优化问题 $\mathbf P_0$ 通常难以求解。多径信道响应是 MA 位置的高度振荡函数，这导致 $\Gamma^\star(\mathbf p)$ 具有非凸性，并在有限孔径内产生多个局部最优解。此外，最小间距约束将各个 MA 的位置耦合在一起，因此无法总是同时选出单点表现优异的位置。因此，直接在位置域进行黑盒搜索可能需要大量的目标函数评估次数，尤其是在孔径较大、MA 数量较多或数值实现采用精细空间采样分辨率的情况下。这些挑战促使我们提出一种物理引导的位置域选择策略，该策略利用多径诱导的空间结构，在务实的搜索预算下识别出高质量的 MA 位置。
 
@@ -120,7 +118,7 @@ $$\begin{align} \mathbf P_0:\quad \max_{\mathbf p}\quad & \Gamma^\star(\mathbf p
 
 对于具有两条主导路径的目标信道，我们写成：
 
-$$\begin{equation} h(p) = \alpha_0 e^{-j\frac{2\pi}{\lambda}p\sin\theta_{s,0}} + \alpha_1 e^{-j\frac{2\pi}{\lambda}p\sin\theta_{s,1}} \end{equation}\tag{15}$$
+$$h(p) = \alpha_0 e^{-j\frac{2\pi}{\lambda}p\sin\theta_{s,0}} + \alpha_1 e^{-j\frac{2\pi}{\lambda}p\sin\theta_{s,1}} \tag{15}$$
 
 其中对于 $\ell\in\{0,1\}$，有 $\alpha_\ell=|\alpha_\ell|e^{j\phi_{s,\ell}}$。定义：
 
@@ -128,19 +126,19 @@ $$\Delta k_s = \frac{2\pi}{\lambda} \left( \sin\theta_{s,1}-\sin\theta_{s,0} \ri
 
 则位置 $p$ 处的目标信道功率为：
 
-$$\begin{equation} |h(p)|^2 = |\alpha_0|^2 + |\alpha_1|^2 + 2|\alpha_0||\alpha_1| \cos\left(\Delta\phi_s-\Delta k_s p\right) \end{equation}\tag{16}$$
+$$|h(p)|^2 = |\alpha_0|^2 + |\alpha_1|^2 + 2|\alpha_0||\alpha_1| \cos\left(\Delta\phi_s-\Delta k_s p\right) \tag{16}$$
 
 当 $\Delta k_s\neq0$ 时，目标信号相长相干（Constructive）的位置满足：
 
-$$\begin{equation} \Delta\phi_s-\Delta k_s p = 2m\pi, \quad m\in\mathbb Z \end{equation}\tag{17}$$
+$$\Delta\phi_s-\Delta k_s p = 2m\pi, \quad m\in\mathbb Z \tag{17}$$
 
 并构成一个周期性集合，其周期为：
 
-$$\begin{equation} T_s=\frac{2\pi}{|\Delta k_s|} \end{equation}\tag{18}$$
+$$T_s=\frac{2\pi}{|\Delta k_s|} \tag{18}$$
 
 类似地，对于占主导地位的双径干扰信道：
 
-$$\begin{equation} g(p) = \beta_0 e^{-j\frac{2\pi}{\lambda}p\sin\theta_{j,0}} + \beta_1 e^{-j\frac{2\pi}{\lambda}p\sin\theta_{j,1}} \end{equation}\tag{19}$$
+$$g(p) = \beta_0 e^{-j\frac{2\pi}{\lambda}p\sin\theta_{j,0}} + \beta_1 e^{-j\frac{2\pi}{\lambda}p\sin\theta_{j,1}} \tag{19}$$
 
 其中 $\beta_\ell=|\beta_\ell|e^{j\phi_{j,\ell}}$。定义：
 
@@ -148,23 +146,23 @@ $$\Delta k_j = \frac{2\pi}{\lambda} \left( \sin\theta_{j,1}-\sin\theta_{j,0} \ri
 
 位置 $p$ 处的干扰功率为：
 
-$$\begin{equation} |g(p)|^2 = |\beta_0|^2 + |\beta_1|^2 + 2|\beta_0||\beta_1| \cos\left(\Delta\phi_j-\Delta k_j p\right) \end{equation}\tag{20}$$
+$$|g(p)|^2 = |\beta_0|^2 + |\beta_1|^2 + 2|\beta_0||\beta_1| \cos\left(\Delta\phi_j-\Delta k_j p\right) \tag{20}$$
 
 当 $\Delta k_j\neq0$ 时，干扰相消相干（Destructive）的位置对应于公式 (20) 的局部极小值，即：
 
-$$\begin{equation} \Delta\phi_j-\Delta k_j p = (2n+1)\pi, \quad n\in\mathbb Z \end{equation}\tag{21}$$
+$$\Delta\phi_j-\Delta k_j p = (2n+1)\pi, \quad n\in\mathbb Z \tag{21}$$
 
 在这些位置上，干扰功率被最小化为：
 
-$$\begin{equation} |g(p)|^2_{\min} = \left(|\beta_0|-|\beta_1|\right)^2 \end{equation}\tag{22}$$
+$$|g(p)|^2_{\min} = \left(|\beta_0|-|\beta_1|\right)^2 \tag{22}$$
 
 因此，仅在 $|\beta_0|=|\beta_1|$ 的特殊情况下才会出现完美的干扰零陷。通常情况下，相消位置应当被理解为干扰功率的局部极小值，而非完美的零陷。它们的周期为：
 
-$$\begin{equation} T_j=\frac{2\pi}{|\Delta k_j|} \end{equation}\tag{23}$$
+$$T_j=\frac{2\pi}{|\Delta k_j|} \tag{23}$$
 
 双径表达式为“路径参数如何决定有限孔径内良好 MA 位置的可获得性”提供了有用的洞察。特别是，相位偏移 $\Delta\phi_s$ 和 $\Delta\phi_j$ 分别决定了目标相长图案和干扰相消图案的空间平移。对于固定的空间周期 $T_s$ 和 $T_j$，改变相位偏移不会改变相邻相长或相消区域之间的间距，但会改变它们在位置域沿线的具体位置。因此，即使两个信道实现具有相同的空间周期，它们在有限孔径内的良好区域也可能呈现出不同程度的对齐。
 
-相比指下，由相应路径的 AoA 间隔决定的空间频率差，控制着目标剖面和干扰剖面的空间周期。两条路径的投影 AoA 差异越大，引起的空间频率差就越大，从而空间周期越短。结果是，在给定的孔径内会出现更多的相长或相消区域。可用目标相长机会和干扰相消机会的数量主要分别由归一化孔径大小 $A/T_s$ 和 $A/T_j$ 决定，而它们的准确位置则进一步取决于相位偏移和孔径边界。
+相比之下，由相应路径的 AoA 间隔决定的空间频率差，控制着目标剖面和干扰剖面的空间周期。两条路径的投影 AoA 差异越大，引起的空间频率差就越大，从而空间周期越短。结果是，在给定的孔径内会出现更多的相长或相消区域。可用目标相长机会和干扰相消机会的数量主要分别由归一化孔径大小 $A/T_s$ 和 $A/T_j$ 决定，而它们的准确位置则进一步取决于相位偏移和孔径边界。
 
 这些观察突显了有限孔径的重要性。当空间周期大于或与孔径相当时，只能利用空间振荡的有限部分，MA 接收机可能几乎没有良好的位置可供选择。当空间周期较短时，孔径内可能会出现更多良好的区域。然而，对于多天线选择，最小间距约束阻止了同时使用任意多个邻近的良好位置。因此，实际可用的良好位置数量是由多径诱导的空间周期、孔径大小、相位偏移和天线间距约束共同决定的。
 
@@ -178,32 +176,84 @@ $$\begin{equation} T_j=\frac{2\pi}{|\Delta k_j|} \end{equation}\tag{23}$$
 
 受到上述洞察的启发，我们通过归一化的目标和干扰功率剖面来表征有限孔径的空间机会。具体而言，在孔径 $\mathcal A=[-A/2,A/2]$ 上，定义：
 
-$$\begin{equation} h_{\max}^2 = \max_{p\in\mathcal A}|h(p)|^2, \qquad g_{\max}^2 = \max_{p\in\mathcal A}|g(p)|^2 \end{equation}\tag{24}$$
+$$h_{\max}^2 = \max_{p\in\mathcal A}|h(p)|^2, \qquad g_{\max}^2 = \max_{p\in\mathcal A}|g(p)|^2 \tag{24}$$
 
 归一化的目标和干扰功率剖面分别由下式给出：
 
-$$\begin{equation} H(p) = \frac{|h(p)|^2}{h_{\max}^2}, \qquad G(p) = \frac{|g(p)|^2}{g_{\max}^2}, \quad p\in\mathcal A \end{equation}\tag{25}$$
+$$H(p) = \frac{|h(p)|^2}{h_{\max}^2}, \qquad G(p) = \frac{|g(p)|^2}{g_{\max}^2}, \quad p\in\mathcal A \tag{25}$$
 
 在此，$H(p)$ 和 $G(p)$ 仅用作位置域的筛选剖面。它们并不取代原始的最大输出 SINR 目标。相反，它们指示了在有限孔径内哪里更有可能出现强大的目标信道响应和微弱的干扰信道响应。最终的 MA 位置向量仍为 $\mathbf p=[p_1,\ldots,p_N]^T$，其性能由 $\Gamma^\star(\mathbf p)$ 进行评估。
 
 给定目标强度阈值 $\tau_s$ 和干扰抑制阈值 $\tau_j$，近似的**双重良好区域**定义为：
 
-$$\begin{equation} \Omega_{\rm dual}(A;\tau_s,\tau_j) = \left\{ p\in\mathcal A: H(p)\ge \tau_s,\; G(p)\le \tau_j \right\} \end{equation}\tag{26}$$
+$$\Omega_{\rm dual}(A;\tau_s,\tau_j) = \left\{ p\in\mathcal A: H(p)\ge \tau_s,\; G(p)\le \tau_j \right\} \tag{26}$$
 
 位于 $\Omega_{\rm dual}(A;\tau_s,\tau_j)$ 内的位置在局部是良好的，因为它提供了相对较强的目标响应和相对较弱的干扰响应。然而，$\Omega_{\rm dual}(A;\tau_s,\tau_j)$ 只是一个物理引导的候选区域，而不是原始优化问题的最终可行集。选定 MA 集合的性能不仅取决于单点剖面 $H(p)$ 和 $G(p)$，还取决于 $\mathbf h(\mathbf p)$ 与 $\mathbf g(\mathbf p)$ 之间的向量级关系。
 
 为了表征严格的双重良好区域是否足够大以支持多个 MA 阵元，我们将双重良好装箱数（packing number）定义为：
 
-$$\begin{equation} N_{\rm dual}^{\rm pack} = \max_{\mathcal S\subseteq \Omega_{\rm dual}(A;\tau_s,\tau_j)} |\mathcal S| \end{equation}\tag{27}$$
+$$N_{\rm dual}^{\rm pack} = \max_{\mathcal S\subseteq \Omega_{\rm dual}(A;\tau_s,\tau_j)} |\mathcal S| \tag{27}$$
 
 $$\text{约束条件为：} \quad |u-v|\ge d_{\min}, \quad \forall u,v\in\mathcal S,\; u\neq v \tag{28}$$
 
-指标 $N_{\rm dual}^{\rm pack}$ 衡量了在最小间距约束下，严格的双重良好区域内物理上允许的最大 MA 位置数量。如果 $N_{\rm dual}^{\rm pack}<N$，则仅凭严格的双重良好区域无法容纳所有的 ## ###
+指标 $N_{\rm dual}^{\rm pack}$ 衡量了在最小间距约束下，严格的双重良好区域内物理上允许的最大 MA 位置数量。如果 $N_{\rm dual}^{\rm pack}<N$，则仅凭严格的双重良好区域无法容纳所有的 MA 阵元，此时需要放宽阈值 $\tau_s$ 和 $\tau_j$，或通过额外的选择标准进行补充。
 
-$$\begin{aligned} $$\begin{equation} $G(p)$，我们首先为每个候选位置分配一个单点**双剖面得分**： $H(p)$ $K$ $M\le $N$ $T_j$ $T_s$ $\Gamma^\star(\mathbf $\Omega_{\rm $\epsilon$ $\mathcal $\rho_{hg}(\mathcal $\tau_j$，或通过额外的选择标准进行补充。 $\tau_s$ $d_{\min}$。它无法区分装箱后的位置是否提供了足够不同的信道采样。在双径情况下，目标和干扰功率剖面分别大约以空间周期 $q_k$ $s_{\rm &="[g(u_1),g(u_2),\ldots,g(u_M)]^T" (12) (25) (26) (29) (32) **算法 --- 1** 1. 2. 3. 3.1 3.2 3.3 A$ A_\Delta A_\Delta$ FADLS G(\mathcal H(\mathcal J(\mathcal MA N$ S="\{u_1,u_2,\ldots,u_M\}\subseteq\mathcal" S$ S) S)$ S)\bigr) SINR S} S}G(u) S}H(u), S}\|^2 S}\|^2+\epsilon S}^H\mathbf S}|^2 \bigl(1-\overline \bigl(1-\rho_{hg}(\mathcal \end{aligned}$$ \end{equation}\tag{29}$$
+然而，$N_{\rm dual}^{\rm pack}$ 仅考虑了最小物理间距 $d_{\min}$。它无法区分装箱后的位置是否提供了足够不同的信道采样。在双径情况下，目标和干扰功率剖面分别大约以空间周期 $T_s$ 和 $T_j$ 变化。因此，相距远小于这些周期的两个位置可能仍会经历高度相似的目标和干扰响应。
 
-\end{equation}\tag{30}$$ \end{equation}\tag{31}$$ \end{equation}\tag{32}$$ \mathbf \mathcal \overline \qquad \quad \rho_{hg}(\mathcal |\mathbf ^sec-proposed-fadls ^subsec-dual-profile-ranking ^subsec-greedy-fadls-algorithm ^subsec-set-level-metric dual}$ dual}(q_k)="H(q_k)\bigl(1-G(q_k)\bigr)," dual}(q_k)$ dual}^{\rm g_{\mathcal h_{\mathcal indicator，而非可达最大输出 p)$ pack}$ position选择提供了有用的物理引导。然而，公式 q_k\in\mathcal s_{\rm |\mathbf } }{ 上一节表明，多径诱导的位置域剖面为 上的平均目标剖面值和平均干扰剖面值定义为： 个 个位置的临时选定位置集。对应的目标信道向量和干扰信道向量定义为： 中定义的归一化剖面 中的三个因子具有明确的物理意义： 中的严格双重良好区域不同，公式 中的严格双重良好区域不应作为放置所有 中的输出 中集合级指标最大化的那一个。 中： 为了数值实现，有限孔径 为了表征所选位置集上目标信道向量与干扰信道向量之间的空间可分性，我们定义： 为候选网格点的数量。基于公式 仅用作低复杂度的物理引导选择指标。最终的性能仍由最大输出 仅考虑了最小物理间距 令 位置。在每一步中，一个候选位置被试探性地添加到已选集合中。该候选位置必须与已选位置满足最小间距约束，并且剩余孔径必须仍能容纳未选的 位置上，目标信道向量与干扰信道向量之间的相关性较低。 位置向量的整体。因此，需要一个集合级指标来评估临时选出的位置集的质量。 位置数量。然而，如果物理上允许的位置处于位置域剖面变化缓慢的部分，它们仍可能观测到相似的目标和干扰信道响应。 位置选择 位置选择不应完全依赖于单点良好性，而应进一步考虑集合层面的目标信道强度、干扰抑制以及目标-干扰信道相关性。 位置集。 值得注意的是，$N_{\rm 公式 其中 具有更强的目标响应和更弱的干扰响应。与公式 内的 双剖面候选排序 双剖面得分仅单独评估每个位置。然而，公式 取决于所选 受到这一观察的启发，我们提出了一种有限孔径双重良好位置选择（FADLS）方法。其核心思想是将双重良好结构作为一种软性的候选排序原则，然后根据集合级指标选择一个可行的 变化。因此，相距远小于这些周期的两个位置可能仍会经历高度相似的目标和干扰响应。 和 因此，$N_{\rm 在 在双径情况下，这种效应与空间周期 基于双剖面排序和集合级指标，所提 密切相关：当这些周期与孔径或阵元间距相比结构较大时，信道响应在空间上的变化较为缓慢，多个允许的位置可能只能提供有限的额外空间可区分性。在通用多径信道中，叠加信道剖面的空间变化尺度也起着相同的作用。 应当仅被解释为有限孔径的几何可用性度量。最终的 所提基于 指标 指标由下式给出： 方法以贪婪的方式选择 是一个几何可行性 是用于数值稳定性的微小正常数。较小的 没有对候选位置施加硬性阈值。相反，它根据候选位置的局部双重良好程度对整个有限孔径上的所有位置进行排序。这种软排序机制避免了当严格的双重良好区域无法容纳所有 然而，$N_{\rm 由此，所提集合级 的位置选择 的直接度量。它仅统计了在最小间距约束下，物理上可以放置在 第一项鼓励所选位置提供强大的目标响应。 第三项鼓励更低的目标-干扰信道相关性，这有助于接收机从干扰中区分出目标信号。 第二项降低了具有强干扰响应的位置集的优先级。 表明位置 表明在选定的 表示一个包含 被离散采样为 该流程总结在 贪婪 较大的 进行评估。 阵元。在所有符合条件的候选位置中，选择使公式 阵元时可能出现的不可行问题。 阵元的硬性约束，因为在有限孔径和最小间距约束下，它可能无法包含足够数量的物理允许位置。 阵元，此时需要放宽阈值 集合级 需要说明的是，$\mathcal> [!info] **算法 1：基于 FADLS 的贪婪 MA 位置选择**
+值得注意的是，$N_{\rm dual}^{\rm pack}$ 是一个几何可行性指标，而非可达最大输出 SINR 的直接度量。它仅统计了在最小间距约束下，物理上可以放置在 $\Omega_{\rm dual}$ 内的 MA 位置数量。然而，如果物理上允许的位置处于位置域剖面变化缓慢的部分，它们仍可能观测到相似的目标和干扰信道响应。在双径情况下，这种效应与空间周期 $T_s$ 和 $T_j$ 密切相关：当 these 周期与孔径或阵元间距相比结构较大时，信道响应在空间上的变化较为缓慢，多个允许的位置可能只能提供有限的额外空间可区分性。在通用多径信道中，叠加信道剖面的空间变化尺度也起着相同的作用。
 
+因此，$N_{\rm dual}^{\rm pack}$ 应当仅被解释为有限孔径的几何可用性度量。最终的 MA 位置选择不应完全依赖于单点良好性，而应进一步考虑集合层面的目标信道强度、干扰抑制以及目标-干扰信道相关性。
+
+## 3. 所提基于 FADLS 的位置选择
+
+^sec-proposed-fadls
+
+上一节表明，多径诱导的位置域剖面为 MA 位置选择提供了有用的物理引导。然而，公式 (26) 中的严格双重良好区域不应作为放置所有 MA 阵元的硬性约束，因为在有限孔径和最小间距约束下，它可能无法包含足够数量的物理允许位置。受到这一观察的启发，我们提出了一种有限孔径双重良好位置选择（FADLS）方法。其核心思想是将双重良好结构作为一种软性的候选排序原则，然后根据集合级指标选择一个可行的 MA 位置集。
+
+### 3.1 双剖面候选排序
+
+^subsec-dual-profile-ranking
+
+为了数值实现，有限孔径 $\mathcal A$ 被离散采样为 $\mathcal A_\Delta=\{q_1,q_2,\ldots,q_K\}$，其中 $K$ 为候选网格点的数量。基于公式 (25) 中定义的归一化剖面 $H(p)$ 和 $G(p)$，我们首先为每个候选位置分配一个单点**双剖面得分**：
+
+$$s_{\rm dual}(q_k) = H(q_k)\bigl(1-G(q_k)\bigr), \quad q_k\in\mathcal A_\Delta \tag{29}$$
+
+较大的 $s_{\rm dual}(q_k)$ 表明位置 $q_k$ 具有更强的目标响应和更弱的干扰响应。与公式 (26) 中的严格双重良好区域不同，公式 (29) 没有对候选位置施加硬性阈值。相反，它根据候选位置的局部双重良好程度对整个有限孔径上的所有位置进行排序。这种软排序机制避免了当严格的双重良好区域无法容纳所有 $N$ 个 MA 阵元时可能出现的不可行问题。
+
+### 3.2 集合级 FADLS 指标
+
+^subsec-set-level-metric
+
+双剖面得分仅单独评估每个位置。然而，公式 (12) 中的输出 SINR 取决于所选 MA 位置向量的整体。因此，需要一个集合级指标来评估临时选出的位置集的质量。
+
+令 $\mathcal S=\{u_1,u_2,\ldots,u_M\}\subseteq\mathcal A_\Delta$ 表示一个包含 $M\le N$ 个位置的临时选定位置集。对应的目标信道向量和干扰信道向量定义为：
+
+$$\begin{aligned} \mathbf h_{\mathcal S} &= [h(u_1),h(u_2),\ldots,h(u_M)]^T, \\ \mathbf g_{\mathcal S} &= [g(u_1),g(u_2),\ldots,g(u_M)]^T. \end{aligned} \tag{30}$$
+
+在 $\mathcal S$ 上的平均目标剖面值和平均干扰剖面值定义为：
+
+$$\overline H(\mathcal S) = \frac{1}{M}\sum_{u\in\mathcal S}H(u), \qquad \overline G(\mathcal S) = \frac{1}{M}\sum_{u\in\mathcal S}G(u) \tag{31}$$
+
+为了表征所选位置集上目标信道向量与干扰信道向量之间的空间可分性，我们定义：
+
+$$\rho_{hg}(\mathcal S) = \frac{ |\mathbf h_{\mathcal S}^H\mathbf g_{\mathcal S}|^2 }{ \|\mathbf h_{\mathcal S}\|^2 \|\mathbf g_{\mathcal S}\|^2+\epsilon } \tag{32}$$
+
+其中 $\epsilon$ 是用于数值稳定性的微小正常数。较小的 $\rho_{hg}(\mathcal S)$ 表明在选定的 MA 位置上，目标信道向量与干扰信道向量之间的相关性较低。
+
+由此，所提**集合级 FADLS 指标**由下式给出：
+
+$$\mathcal J(\mathcal S) = \overline H(\mathcal S) \bigl(1-\overline G(\mathcal S)\bigr) \bigl(1-\rho_{hg}(\mathcal S)\bigr) \tag{33}$$
+
+公式 (33) 中的三个因子具有明确的物理意义。第一项鼓励所选位置提供强大的目标响应。第二项降低了具有强干扰响应的位置集的优先级。第三项鼓励更低的目标-干扰信道相关性，这有助于接收机从干扰中区分出目标信号。需要说明的是，$\mathcal J(\mathcal S)$ 仅用作低复杂度的物理引导选择指标。最终的性能仍由最大输出 SINR $\Gamma^\star(\mathbf p)$ 进行评估。
+
+### 3.3 贪婪 FADLS 位置选择
+
+^subsec-greedy-fadls-algorithm
+
+基于双剖面排序和集合级指标，所提 FADLS 方法以贪婪的方式选择 MA位置。在每一步中，一个候选位置被试探性地添加到已选集合中。该候选位置必须与已选位置满足最小间距约束，并且剩余孔径必须仍能容纳未选的 MA 阵元。在所有符合条件的候选位置中，选择使公式 (33) 中集合级指标最大化的那一个。
+
+> [!info] **算法 1：基于 FADLS 的贪婪 MA 位置选择**
+> 
 > **输入**：候选网格 $\mathcal A_\Delta=\{q_1,\ldots,q_K\}$；剖面 $H(q_k)$，$G(q_k)$；信道采样 $h(q_k)$，$g(q_k)$；MA 数量 $N$；最小间距 $d_{\min}$。
 > 
 > **输出**：选定的 MA 位置集 $\mathcal S$。
@@ -228,7 +278,7 @@ $$\begin{aligned} $$\begin{equation} $G(p)$，我们首先为每个候选位置�
 >     
 > 10. $\quad\quad$ **IF** $\mathcal S_q$ 无法在 $\mathcal A_\Delta$ 内补全为 $N$ 个可行位置 **THEN** continue
 >     
-> 11. $\quad\quad$ 根据公式 (32) 计算 $\mathcal J(\mathcal S_q)$。
+> 11. $\quad\quad$ 根据公式 (33) 计算 $\mathcal J(\mathcal S_q)$。
 >     
 > 12. $\quad\quad$ **IF** $\mathcal J(\mathcal S_q) > J_{\max}$ **THEN**
 >     
@@ -268,11 +318,11 @@ FADLS 解可以直接用作最终的 MA 位置向量。它也可以作为局部�
 
 ^subsec-complexity-discussion
 
-令 $K=|\mathcal A_\Delta| $ 表示候选网格点的数量。对所有可行 MA 位置集进行穷举搜索的复杂度对于 $K$ 和 $N$ 呈组合级增长。相比指下，所提 FADLS 方法首先对 $K$ 个候选点进行排序，这需要 $\mathcal O(K\log K)$ 次操作。
+令 $K=|\mathcal A_\Delta| $ 表示候选网格点的数量。对所有可行 MA 位置集进行穷举搜索的复杂度对于 $K$ 和 $N$ 呈组合级增长。相比指下，所提 FADLS 方法首先对 $K$ 个候选点进行排序，这需要 $\mathcal O(K\log K)$次操作。
 
 在贪婪选择阶段，在 $N$ 个选择步骤的每一步中，最多检查 $K$ 个候选点。由于集合级指标是在临时选定的集合上计算的，因此整体复杂度随 $K$ 和 $N$ 呈**多项式级增长**，而非组合级增长。
 
-此外，公式 (32) 中的 FADLS 指标避免了在初始选择阶段对所有候选位置组合重复评估原始的最大输出 SINR。由于可选的 BCD/AO 微调受到目标函数评估预算的限制，因此其复杂度是可控的。总之，所提方法在物理可解释性、计算复杂度和输出 SINR 性能之间提供了一种务实的折衷。
+此外，公式 (33) 中的 FADLS 指标避免了在初始选择阶段对所有候选位置组合重复评估原始的最大输出 SINR。由于可选的 BCD/AO 微调受到目标函数评估预算的限制，因此其复杂度是可控的。总之，所提方法在物理可解释性、计算复杂度和输出 SINR 性能之间提供了一种务实的折衷。
 
 ## 4. 数值结果
 
@@ -344,4 +394,4 @@ _Michael Shell_：使用 `\begin{IEEEbiography}` 并链接照片，后接简介�
 
 **如果您不附带照片**：
 
-_John Doe_：使用 `\begin{IEEEbiographynophoto}`，后接简介文本。</N$，则仅凭严格的双重良好区域无法容纳所有的>
+_John Doe_：使用 `\begin{IEEEbiographynophoto}`，后接简介文本。
