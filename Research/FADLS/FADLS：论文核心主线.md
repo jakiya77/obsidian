@@ -17,35 +17,6 @@ Based on this observation, we propose a physics-guided FADLS algorithm that sele
 
 ---
 
-# 2. 你的论文不是 uplink 主线，而是 receive-side anti-jamming 主线
-
-之前这句：
-
-```text
-We consider a narrowband far-field uplink anti-jamming communication system...
-```
-
-建议不要写 uplink，改成：
-
-```text
-We consider a narrowband far-field receive-side anti-jamming communication system...
-```
-
-因为你的重点不是“上行链路”，而是：
-
-```text
-单天线 desired transmitter → 多天线 MA receiver
-单天线 jammer → 干扰 receiver
-receiver 通过移动天线位置增强 desired、削弱 jammer
-```
-
-所以论文主线应叫：
-
-> **Receive-side MA-aided anti-jamming reception**
-
-而不是：
-
-> uplink MA communication
 
 ---
 
@@ -61,25 +32,31 @@ receiver 通过移动天线位置增强 desired、削弱 jammer
 
 MA 引入了一个新的自由度：
 
+$$
 [  
 \mathbf p=[p_1,p_2,\ldots,p_N]^T  
 ]
 
+$$
 通过改变接收阵元位置，可以改变 desired channel 和 jammer channel：
 
-[  
+
+$$
 \mathbf h(\mathbf p),\quad \mathbf g(\mathbf p)  
-]
+$$
+
 
 最终改变 post-MMSE output SINR：
 
-# [  
+
+$$
 \Gamma_{\rm out}
 
 P_s\mathbf h^H  
 (P_j\mathbf g\mathbf g^H+\sigma^2\mathbf I)^{-1}  
 \mathbf h.  
-]
+$$
+
 
 ---
 
