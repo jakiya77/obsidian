@@ -116,7 +116,7 @@
 
 ## 📅 后续行动项 (Action Items)
 
-- [ ] **Priority 1: 图例与正文表述纠偏**
+- [x] **Priority 1: 图例与正文表述纠偏**
     
     - 将所有代码和图表中的 `AO-SCA-CVX` / `AO SINR` 修改为 `Local AO-SCA-CVX` 或 `AO-SCA-CVX baseline`。
         
