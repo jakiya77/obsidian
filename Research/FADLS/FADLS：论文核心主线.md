@@ -1,479 +1,395 @@
-# 1. 论文核心主线
 
-## 一句话版本
+## I. Introduction
 
-This paper investigates receive-side movable antenna (MA)-aided anti-jamming reception under finite-aperture and minimum-spacing constraints. 
+### Main purpose
 
-Instead of treating MA position optimization as a black-box non-convex problem, we reveal that desired and jamming multipath channels induce different position-domain spatial variations over the aperture. 
-Based on this observation, we propose a physics-guided FADLS algorithm that selects MA positions from desired-favorable, jammer-weak, and desired-jammer separable regions. The proposed method achieves competitive post-MMSE output SINR compared with full-grid SINR-greedy and local AO-SCA-CVX baselines, while avoiding repeated receiver-level SINR search and CVX-based convex subproblem solving.
+说明为什么接收端 MA 阵列适合用于抗干扰，以及为什么现有 MA 位置优化方法仍然存在复杂度问题。
 
-中文理解就是：
+### Logic
 
-> 本文研究接收端 MA 阵列抗干扰。
-> 
-> 传统方法把位置优化当成黑箱非凸优化问题，先揭示 desired 和 jammer 在孔径上的位置域变化结构，然后基于 desired 强、jammer 弱、desired/jammer 可分离三个特征做快速选点。
-> 
-> 最终证明 FADLS 性能接近强 baseline，但复杂度和运行时间明显更低。
+1. 无线接收端在强方向性干扰下性能下降，传统固定阵列只能依赖数字波束形成，空间采样位置固定。
+    
+2. MA 引入阵元位置自由度，使接收机可以在有限孔径内选择更有利的空间采样点。
+    
+3. 现有 MA 优化多将位置设计建模为非凸优化问题，常依赖 full-grid search、AO、SCA、CVX 或黑箱优化，计算代价较高。
+    
+4. 本文不直接黑箱优化最终 SINR，而是先分析 desired 和 jammer 信道在位置域的空间变化结构。
+    
+5. 基于该结构提出 FADLS，实现快速、物理启发式的接收端 MA 抗干扰位置选择。
+    
+
+### Key claim
+
+The key idea is to exploit position-domain channel structures rather than repeatedly solving receiver-level SINR optimization problems.
+
+### Contributions
+
+1. Reveal a position-domain dual-favorable structure induced by desired and jamming multipath channels.
+    
+2. Propose FADLS, which jointly considers desired-channel gain, jammer-channel weakness, and desired-jammer channel separability.
+    
+3. Show that FADLS achieves competitive post-MMSE output SINR compared with full-grid SINR-greedy and local AO-SCA-CVX baselines, while avoiding repeated CVX solves and reducing empirical runtime.
+    
 
 ---
 
+## II. System Model
 
----
+### Main purpose
 
-# 3. 论文逻辑链条
+建立接收端 MA 抗干扰模型，明确变量、信道、约束和统一性能指标。
 
-## 第一步：问题背景
+### Logic
 
-传统接收阵列抗干扰主要依赖数字端波束形成，例如 MMSE / MVDR。
+1.  receive-side anti-jamming communication system。
+    
+2. 单天线 desired transmitter 向接收机发送信号。
+    
+3. 接收机配备 (N)-element MA array，阵元位于一维有限孔径内。
+    
+4. 单天线 jammer 发射强干扰。
+    
+5. MA 位置向量为  
+    
+$$
+    \mathbf p=[p_1,p_2,\ldots,p_N]^T.  
+$$
+    
+    
+6. 位置满足孔径约束和最小间距约束：  
+$$
+    [  
+    -\frac{A}{2}\le p_1<\cdots<p_N\le \frac{A}{2},  
+    ]  
+    [  
+    p_{n+1}-p_n\ge d_{\min}.  
+    ]
+$$
 
-但是固定阵列有一个限制：
-
-> 阵元位置固定，空间采样点固定，无法利用 aperture 内不同位置的信道强弱变化。
-
-MA 引入了一个新的自由度：
+    
+7. desired 和 jammer 信道由多径叠加形成：  
+$$
+    [  
+    h(p)=\sum_{\ell=1}^{L_s}\alpha_\ell e^{-j\frac{2\pi}{\lambda}p\sin\theta_{s,\ell}},  
+    ]  
+    [  
+    g(p)=\sum_{\ell=1}^{L_j}\beta_\ell e^{-j\frac{2\pi}{\lambda}p\sin\theta_{j,\ell}}.  
+    ]
 
 $$
-[  
-\mathbf p=[p_1,p_2,\ldots,p_N]^T  
-]
 
+    
+8. 接收信号为  
 $$
-通过改变接收阵元位置，可以改变 desired channel 和 jammer channel：
-
-
+    [  
+    \mathbf y=\sqrt{P_s}\mathbf h(\mathbf p)x_s+\sqrt{P_j}\mathbf g(\mathbf p)x_j+\mathbf n.  
+    ]
 $$
-\mathbf h(\mathbf p),\quad \mathbf g(\mathbf p)  
+    
+9. 统一采用 post-MMSE output SINR：  
 $$
-
-
-最终改变 post-MMSE output SINR：
-
-
+    [  
+    \Gamma(\mathbf p)=  
+    P_s\mathbf h^H(\mathbf p)  
+    \left(P_j\mathbf g(\mathbf p)\mathbf g^H(\mathbf p)+\sigma^2\mathbf I\right)^{-1}  
+    \mathbf h(\mathbf p).  
+    ]
 $$
-\Gamma_{\rm out}
+    
 
-P_s\mathbf h^H  
-(P_j\mathbf g\mathbf g^H+\sigma^2\mathbf I)^{-1}  
-\mathbf h.  
-$$
+### Key point
 
+This section only defines the physical model and evaluation metric. Do not introduce FADLS yet.
 
 ---
 
-## 第二步：现有方法的问题
+## III. Position-Domain Dual-Favorable Structure
 
-现有 MA 位置优化通常有两类：
+### Main purpose
 
-### 1. Discrete SINR-driven search 离散网格搜索
+解释为什么 MA 位置选择不是黑箱问题，而是存在可利用的物理结构。
 
-full-grid SINR-greedy，每一步都扫描全部 (M) 个网格点，并计算 receiver-level SINR。
+### Logic
 
-问题是：
+1. 多径叠加使 (h(p)) 和 (g(p)) 在 aperture 上随位置变化。
+    
+2. 定义归一化 desired-channel gain profile：  
+    [  
+    H(p)=\frac{|h(p)|^2}{\max_q |h(q)|^2}.  
+    ]
+    
+3. 定义归一化 jammer-channel gain profile：  
+    [  
+    G(p)=\frac{|g(p)|^2}{\max_q |g(q)|^2}.  
+    ]
+    
+4. 当 (H(p)) 大时，该位置对 desired signal 有利。
+    
+5. 当 (G(p)) 小时，该位置处 jammer 较弱。
+    
+6. 因此 (H(p)) 大且 (G(p)) 小的位置是 dual-favorable positions。
+    
+7. 用  
+    [  
+    H(p)(1-G(p))  
+    ]  
+    作为单点 dual-profile score，解释候选池预筛选的物理来源。
+    
+8. 但单点好不代表阵列组合好，因此还需要集合级 desired-jammer separability。
+    
 
-```text
-搜索点多；
-每个候选点都要计算 post-MMSE SINR；
-复杂度随 M 和 N 增长较快。
-```
+### Key point
+
+这一节是论文创新的物理基础。它要支撑 Fig. 1。
+
+### Figure
+
+Fig. 1: Position-domain profiles.
+
+- (H(p))
+    
+- (1-G(p))
+    
+- (H(p)(1-G(p)))
+    
+- FADLS selected positions
+    
+
+### Caption message
+
+FADLS exploits the position-domain dual-favorable regions rather than blindly searching over the aperture.
 
 ---
 
-### 2. Continuous local SINR optimization 连续位置搜索
+## IV. Proposed FADLS Algorithm
 
-AO-SCA-CVX 通过局部凸近似和 CVX 求解连续位置 refinement。
+### Main purpose
 
-问题是：
+把物理结构转化成具体低复杂度选点算法。
 
-```text
-本质是局部优化；
-依赖初始化和 trust region；
-需要反复 CVX solve；
-实测 runtime 很高。
-```
+### Logic
 
-你现在实验已经验证：
+1. FADLS 包含两个阶段：candidate pre-screening 和 set-dependent greedy selection。
+    
+2. 第一阶段：用单点 dual-score 选出 candidate pool：  
+    [  
+    \mathcal C=\text{Top-}C{H(p)(1-G(p)),p\in\mathcal P}.  
+    ]
+    
+3. 第二阶段：从空集合开始逐根选择 MA 位置。
+    
+4. 第 (n) 根天线选择时，测试临时集合：  
+    [  
+    \mathcal S_{\rm tmp}=\mathcal S_{n-1}\cup{p}.  
+    ]
+    
+5. 定义集合平均 desired gain：  
+    [  
+    \bar H_{\mathcal S}=\frac{1}{|\mathcal S|}\sum_{p_i\in\mathcal S}H(p_i).  
+    ]
+    
+6. 定义集合平均 jammer weakness：  
+    [  
+    1-\bar G_{\mathcal S}.  
+    ]
+    
+7. 定义 desired-jammer channel separability：  
+    [  
+    \rho_{hg}(\mathcal S)=  
+    \frac{|\mathbf h_{\mathcal S}^H\mathbf g_{\mathcal S}|^2}  
+    {|\mathbf h_{\mathcal S}|^2|\mathbf g_{\mathcal S}|^2+\epsilon}.  
+    ]
+    
+8. FADLS score 为  
+    [  
+    s_{\rm FADLS}(\mathcal S)  
+    =  
+    \omega_H\log(\bar H_{\mathcal S}+\epsilon)  
+    +\omega_G\log(1-\bar G_{\mathcal S}+\epsilon)  
+    +\omega_\rho\log(1-\rho_{hg}(\mathcal S)+\epsilon).  
+    ]
+    
+9. 选择使 score 最大且满足最小间距约束的位置。
+    
+10. 最终所有方法都用同一个 post-MMSE SINR 评价。
+    
 
-```text
-FADLS:          约 10 ms
-SINR-greedy:    约 19 ms
-AO-SCA-CVX:     约 9597 ms
-```
+### Key point
 
-所以你的叙事不是：
-
-> AO 没用。
-
-而是：
-
-> AO-SCA-CVX 是有意义的局部优化 baseline，但 repeated CVX solve 代价很高，不适合快速重构。
+FADLS 与 naive dual-score 的区别是：FADLS 是集合级选择，额外考虑 (\rho_{hg}(\mathcal S))。
 
 ---
 
-# 4. 核心洞察
+## V. Baselines and Complexity Discussion
 
-你的关键发现是：
+### Main purpose
 
-> desired channel 和 jammer channel 在 aperture 上不是均匀的，而是由多径相位叠加形成不同的空间起伏。
+解释为什么选择这些 baseline，以及复杂度优势如何严谨表达。
 
-定义：
+### Logic
 
+1. Fixed ULA：固定阵列参考。
+    
+2. Proposed FADLS：本文方法。
+    
+3. Full-grid SINR-greedy：强 receiver-aware baseline，每一步扫描全网格并直接计算 post-MMSE SINR。
+    
+4. Local AO-SCA-CVX：优化型局部 refinement baseline，使用 dual-profile ranking 初始化，再通过 SCA-CVX 局部微调。
+    
+5. 强调 AO-SCA-CVX 不是全局最优，而是 local optimization benchmark。
+    
+6. 复杂度不要用混合 proxy 图，而是用表格说明。
+    
+7. FADLS 避免：
+    
+    - full-grid receiver-level SINR scoring；
+        
+    - repeated CVX-based convex subproblem solving。
+        
+8. Runtime 可以作为 empirical runtime，不等同于理论复杂度。
+    
+
+### Table
+
+Table I: Complexity and runtime comparison.
+
+Recommended columns:
+
+- Method
+    
+- Selection principle
+    
+- Search range
+    
+- Receiver-level SINR evaluations
+    
+- CVX solves
+    
+- Complexity / cost order
+    
+- Runtime
+    
+
+### Key statement
+
+Theoretical complexity and empirical runtime are reported separately.
+
+---
+
+## VI. Simulation Results
+
+### Main purpose
+
+用最少但最有力的图证明：机制成立、性能有效、复杂度低、鲁棒性可接受。
+
+### Simulation setup
+
+说明共同参数：  
 [  
-H(p)=\frac{|h(p)|^2}{\max_q |h(q)|^2}  
-]
-
-[  
-G(p)=\frac{|g(p)|^2}{\max_q |g(q)|^2}  
-]
-
-那么：
-
-```text
-H(p) 大：desired-favorable position
-G(p) 小：jammer-weak position
-H(p) 大且 G(p) 小：dual-favorable position
-```
-
-但是只看单点还不够，因为接收端最终是一个阵列。  
-所以你又引入集合级 separability：
-
-[  
-\rho_{hg}(\mathcal S)=  
-\frac{  
-|\mathbf h_{\mathcal S}^H\mathbf g_{\mathcal S}|^2  
-}{  
-|\mathbf h_{\mathcal S}|^2|\mathbf g_{\mathcal S}|^2+\epsilon  
-}.  
-]
-
-这个指标说明：
-
-> selected desired channel vector 和 jammer channel vector 是否相似。
-
-如果 (\rho_{hg}) 小，说明 desired 和 jammer 在接收阵列上更容易被 MMSE 分离。
-
-所以你的方法不是简单找 (H) 最大，也不是简单找 (G) 最小，而是找：
-
-```text
-desired 强
-jammer 弱
-desired/jammer 可分离
-```
+N,\ A,\ d_{\min},\ M,\ C,\ P_s,\ P_j,\ \sigma^2,\ \text{JSR}.  
+]  
+说明所有方法最终统一用 post-MMSE output SINR 评价。
 
 ---
 
-# 5. FADLS 方法主线
+### A. Position-Domain Mechanism
 
-你的 FADLS 可以写成两层。
+Use Fig. 1.
 
-## 第一层：全孔径 profile 预筛选
+### Main message
 
-先计算单点 dual-score：
-
-[  
-s_{\rm pre}(p)=H(p)(1-G(p)).  
-]
-
-然后从全网格 (\mathcal P) 中选出前 (C) 个候选点：
-
-[  
-\mathcal C=\text{Top-}C{H(p)(1-G(p))}.  
-]
-
-这一步作用是：
-
-> 从 (M) 个网格点缩小到 (C) 个 candidate pool。
+FADLS selected positions are concentrated around dual-favorable regions. This validates that the algorithm exploits channel-profile structures rather than black-box search.
 
 ---
 
-## 第二层：集合级 FADLS 贪心选择
+### B. Main Performance Comparison
 
-第 (n) 根天线选择时，不是只看单点，而是看加入该点后的临时集合：
+Use Fig. 2 with two subfigures.
 
-[  
-\mathcal S_{\rm tmp}=\mathcal S_{n-1}\cup{p}.  
-]
+#### Fig. 2(a): SINR vs Number of Paths
 
-评分为：
+Main message:  
+FADLS remains effective as the number of multipath components increases, showing multipath robustness.
 
-# [  
-s_{\rm FADLS}(\mathcal S)
+#### Fig. 2(b): SINR vs JSR / INR
 
-\omega_H\log(\bar H_{\mathcal S}+\epsilon)  
-+  
-\omega_G\log(1-\bar G_{\mathcal S}+\epsilon)  
-+  
-\omega_\rho\log(1-\rho_{hg}(\mathcal S)+\epsilon).  
-]
+Main message:  
+FADLS maintains competitive output SINR under strong jamming, showing anti-jamming capability.
 
-其中：
+### Wording
 
-```text
-第一项：desired channel gain
-第二项：jammer weakness
-第三项：desired-jammer separability
-```
-
-这就是你的核心算法贡献。
+Do not write “FADLS always outperforms all baselines.”  
+Write “FADLS achieves competitive or slightly higher average post-MMSE output SINR with much lower complexity.”
 
 ---
 
-# 6. 为什么 FADLS 可以比 AO-SCA-CVX 好
+### C. Representative Beam Pattern
 
-这个现在已经解释清楚了，论文里可以写得很稳。
+Use Fig. 3.
 
-AO-SCA-CVX 虽然用了 dual-score 排序初始化，但它用的是：
+### Main message
 
-[  
-H(p)(1-G(p))  
-]
+The beam pattern provides an intuitive visualization that FADLS enhances the desired direction and suppresses the jammer direction.
 
-这是单点排序。
+### Note
 
-而 FADLS 用的是集合级评分：
-
-[  
-\bar H_{\mathcal S},\quad  
-1-\bar G_{\mathcal S},\quad  
-1-\rho_{hg}(\mathcal S).  
-]
-
-所以：
-
-```text
-AO 初始化：单点好
-FADLS 选择：组合好
-```
-
-此外 AO-SCA-CVX 后续 refinement 受 trust region 限制：
-
-[  
-|\Delta p_n|\le r_{\rm trust}.  
-]
-
-它不能全局换点，只能局部微调。
-
-所以如果初始化组合不如 FADLS，AO 不一定能追上。
-
-这就是为什么现在实验中：
-
-```text
-FADLS 有时高于 local AO-SCA-CVX
-```
-
-是合理的。
+This figure is illustrative, not the main quantitative proof.
 
 ---
 
-# 7. 实验主线怎么排
+### D. Robustness to Estimation Error
 
-我建议主文最终按这个结构。
+Use Fig. 4.
 
----
+### Main message
 
-## Fig. 1：Position-domain mechanism
+Since FADLS relies on estimated channel profiles or path parameters, this experiment evaluates its robustness under AoA/profile estimation errors.
 
-目的：
-
-> 证明 FADLS 不是黑箱 heuristic，而是由位置域信道结构驱动。
-
-内容：
-
-```text
-H(p)
-1-G(p)
-dual score H(p)(1-G(p))
-FADLS selected positions
-```
-
-想传达：
-
-> FADLS 所选位置集中在 desired-favorable and jammer-weak regions 附近。
-
----
-
-## Table I：Complexity / runtime / CVX solves
-
-目的：
-
-> 说明 FADLS 的复杂度优势和实际运行时间优势。
-
-表格建议列：
-
-```text
-Method
-Selection principle
-Search range
-CVX solves
-Theoretical cost
-Runtime
-Average SINR
-```
-
-重点不要再用一个混合 proxy。
-
-AO-SCA-CVX 的复杂度应该写成：
-
-[  
-O(I_{\rm AO}I_{\rm SCA}T_{\rm CVX})  
-]
-
-而不是和 FADLS / SINR-greedy 的 candidate-check proxy 混在一起。
-
----
-
-## Fig. 2：Main performance curves 双子图
-
-这一张是主性能图，两个子图：
-
-```text
-(a) SINR vs Number of paths
-(b) SINR vs JSR / INR
-```
-
-### Fig. 2(a)
-
-验证：
-
-> 多径数增加时，FADLS 仍然有效。
-
-### Fig. 2(b)
-
-验证：
-
-> 干扰强度变化时，FADLS 仍然具有抗干扰能力。
-
-这一张图是论文性能部分的核心。
-
----
-
-## Fig. 3：Representative beam pattern
-
-目的：
-
-> 给导师和审稿人一个直观感受：FADLS 确实对 jammer 方向形成抑制，同时保持 desired 方向响应。
-
-这张图不要放太多曲线，建议保留：
-
-```text
-Fixed ULA
-Proposed FADLS
-Full-grid SINR-greedy 或 AO-SCA-CVX
-```
-
----
-
-## Fig. 4：CSI / AoA estimation error sensitivity
-
-目的：
-
-> 回应审稿人可能质疑：你依赖 channel profile，如果估计不准怎么办？
-
-建议优先做 AoA error：
+### Recommended setting
 
 [  
 \hat\theta=\theta+\Delta\theta.  
 ]
 
-横轴：
-
-```text
-AoA estimation error standard deviation
-```
-
-纵轴：
-
-```text
-Average output SINR
-```
-
-这张图很重要，因为你方法依赖测向 / profile 估计。
+Plot average output SINR versus AoA error level.
 
 ---
 
-# 8. 附录内容建议
+## VII. Appendix / Supplementary
 
-不要把所有图都放 appendix。Appendix 也要克制。
+### Main purpose
 
-## 建议保留
+保留有价值但不占主文版面的补充实验。
 
-### Appendix A：Candidate pool size sensitivity
+### Recommended appendix
 
-回答：
-
-> 为什么 (C=300)？
-
-说明：
-
-```text
-C 太小性能不足；
-C 增大后性能趋于饱和；
-C=300 是性能和搜索开销的折中。
-```
-
----
-
-### Appendix B：Small-scale exhaustive ceiling
-
-回答：
-
-> FADLS 离离散全局最优有多远？
-
-说明：
-
-```text
-小规模下 FADLS 接近 exhaustive optimum。
-```
-
----
-
-## 不建议放
-
-```text
-Runtime curve
-Complexity proxy curve
-Performance-search tradeoff curve
-```
-
-这些图有意义，但容易被误解或重复。  
-runtime 放表格即可，complexity 用理论表格即可。
-
----
-
-# 9. 论文贡献可以这样写
-
-建议贡献点压成三条。
-
-The main contributions of this paper are summarized as follows.
-
-1. We reveal a position-domain dual-favorable structure for receive-side MA-aided anti-jamming reception. Specifically, the desired and jamming multipath channels induce different spatial variations over the finite aperture, which gives rise to desired-favorable and jammer-weak regions.
+1. Candidate pool size sensitivity  
+    Purpose: justify (C=300) and show performance-search tradeoff.
     
-2. Based on this structure, we propose a physics-guided FADLS algorithm for MA position selection. The proposed algorithm jointly exploits desired-channel gain, jammer-channel weakness, and desired-jammer channel separability over the selected MA array, thereby avoiding repeated full-grid receiver-level SINR optimization.
-    
-3. Simulation results show that the proposed FADLS achieves competitive post-MMSE output SINR compared with full-grid SINR-greedy and local AO-SCA-CVX baselines, while substantially reducing the search effort, avoiding repeated CVX solves, and achieving much lower empirical runtime.
+2. Small-scale exhaustive ceiling  
+    Purpose: show FADLS is close to the discrete global optimum in small-scale settings.
     
 
+### Not recommended
+
+Do not include runtime curve or complexity proxy curve unless specifically required. Runtime is better reported in Table I. Complexity proxy curves are easy to misunderstand because different methods have different per-operation costs.
+
 ---
 
-# 10. 当前推进到哪了
+## VIII. Conclusion
 
-你现在已经推进到这个阶段：
+### Main purpose
 
-```text
-1. 系统模型口径确定：receive-side anti-jamming，不建议写 uplink。
-2. 核心机制确定：position-domain dual-favorable structure。
-3. 算法定位确定：FADLS 是集合级 physics-guided greedy selection。
-4. AO-SCA-CVX 合理性确定：local refinement baseline，不是全局最优。
-5. SINR 评价公平性已验证：AO trace SINR = recomputed post-MMSE SINR。
-6. 复杂度表达方式确定：理论复杂度表 + runtime 表，不用柱状图和 proxy 曲线。
-7. 主文图表框架基本确定：4 图 + 1 表。
-```
+回扣主线，不夸大。
 
-下一步最该做的是：
+### Logic
 
-> **把 Fig. 1 机制图、Fig. 2 主性能双子图、Table I 复杂度表先定稿，然后补 CSI/AoA error sensitivity。**
-
-你现在已经不是“想法阶段”了，已经进入：
-
-```text
-实验收束 + 论文叙事成型阶段
-```
+1. 本文研究 receive-side MA-aided anti-jamming reception。
+    
+2. 揭示了 desired 和 jammer multipath channels 在 aperture 上产生不同 position-domain profiles。
+    
+3. 提出 FADLS，通过 desired-favorable、jammer-weak 和 desired-jammer separability 三类结构指标快速选点。
+    
+4. 仿真表明 FADLS 在 post-MMSE output SINR 上接近 full-grid SINR-greedy 和 local AO-SCA-CVX，同时显著降低搜索复杂度和 empirical runtime。
+    
+5. 未来可扩展到 imperfect CSI、多干扰、宽带干扰和二维/三维 MA array 场景。
