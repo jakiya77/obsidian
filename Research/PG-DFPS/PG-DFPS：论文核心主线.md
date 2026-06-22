@@ -1,4 +1,12 @@
+II. System Model and Problem Formulation
+    A. Signal and Channel Model
+    B. Post-MMSE Output SINR and Position Optimization
 
+III. Position-Domain Dual-Favorable Structure
+    A. Two-Path Motivating Example
+    B. Desired-Favorable, Jammer-Weak, and Separable Position Profiles
+
+IV. Proposed DFPS/FADLS Algorithm
 ## I. Introduction
 
 ### Main purpose
@@ -114,14 +122,18 @@ This section only defines the physical model and evaluation metric. Do not intro
 1. 多径叠加使 (h(p)) 和 (g(p)) 在 aperture 上随位置变化。
     
 2. 定义归一化 desired-channel gain profile：  
-    [  
+    
+$$
     H(p)=\frac{|h(p)|^2}{\max_q |h(q)|^2}.  
-    ]
+$$
+  
     
 3. 定义归一化 jammer-channel gain profile：  
-    [  
+    
+$$
     G(p)=\frac{|g(p)|^2}{\max_q |g(q)|^2}.  
-    ]
+$$
+    
     
 4. 当 (H(p)) 大时，该位置对 desired signal 有利。
     
@@ -130,9 +142,11 @@ This section only defines the physical model and evaluation metric. Do not intro
 6. 因此 (H(p)) 大且 (G(p)) 小的位置是 dual-favorable positions。
     
 7. 用  
-    [  
+    
+$$
     H(p)(1-G(p))  
-    ]  
+$$
+    
     作为单点 dual-profile score，解释候选池预筛选的物理来源。
     
 8. 但单点好不代表阵列组合好，因此还需要集合级 desired-jammer separability。
@@ -172,42 +186,54 @@ FADLS exploits the position-domain dual-favorable regions rather than blindly se
 1. FADLS 包含两个阶段：candidate pre-screening 和 set-dependent greedy selection。
     
 2. 第一阶段：用单点 dual-score 选出 candidate pool：  
-    [  
+      
+$$
     \mathcal C=\text{Top-}C{H(p)(1-G(p)),p\in\mathcal P}.  
-    ]
+$$
+    
     
 3. 第二阶段：从空集合开始逐根选择 MA 位置。
     
 4. 第 (n) 根天线选择时，测试临时集合：  
-    [  
+    
+$$
     \mathcal S_{\rm tmp}=\mathcal S_{n-1}\cup{p}.  
-    ]
+$$
+    
     
 5. 定义集合平均 desired gain：  
-    [  
+
+$$
     \bar H_{\mathcal S}=\frac{1}{|\mathcal S|}\sum_{p_i\in\mathcal S}H(p_i).  
-    ]
+$$
+    
     
 6. 定义集合平均 jammer weakness：  
-    [  
+    
+$$
     1-\bar G_{\mathcal S}.  
-    ]
+$$
+    
     
 7. 定义 desired-jammer channel separability：  
-    [  
+    
+$$
     \rho_{hg}(\mathcal S)=  
     \frac{|\mathbf h_{\mathcal S}^H\mathbf g_{\mathcal S}|^2}  
     {|\mathbf h_{\mathcal S}|^2|\mathbf g_{\mathcal S}|^2+\epsilon}.  
-    ]
+$$
+    
     
 8. FADLS score 为  
-    [  
+      
+$$
     s_{\rm FADLS}(\mathcal S)  
     =  
     \omega_H\log(\bar H_{\mathcal S}+\epsilon)  
     +\omega_G\log(1-\bar G_{\mathcal S}+\epsilon)  
     +\omega_\rho\log(1-\rho_{hg}(\mathcal S)+\epsilon).  
-    ]
+$$
+    
     
 9. 选择使 score 最大且满足最小间距约束的位置。
     
@@ -395,3 +421,6 @@ Do not include runtime curve or complexity proxy curve unless specifically requi
 4. 仿真表明 FADLS 在 post-MMSE output SINR 上接近 full-grid SINR-greedy 和 local AO-SCA-CVX，同时显著降低搜索复杂度和 empirical runtime。
     
 5. 未来可扩展到 imperfect CSI、多干扰、宽带干扰和二维/三维 MA array 场景。
+
+
+
