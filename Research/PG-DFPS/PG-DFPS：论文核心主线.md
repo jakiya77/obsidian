@@ -103,8 +103,6 @@ $$
     这个部分分离出$h(p)g(p)$
     
 
-### Key point
-
 ## III. Proposed Physics-Guided Dual-Favorable Position Selection 
 
 ### Main purpose
@@ -114,6 +112,7 @@ $$
 
 PG-DFPS 正是利用这种结构，先进行物理引导的候选点筛选，再进行集合级的位置选择。本节的整体逻辑架构如下：
 
+>[!hint]+ 位置域信道结构 → 双优剖面定义 → 候选池预筛选 → 空间可分离性指标 → 算法步进与指标联合 → 算法计算代价与对比 → 明确指标界限
 
 
 ## A. Position-Domain Dual-Favorable Profiles (位置域双有利信道特征)
