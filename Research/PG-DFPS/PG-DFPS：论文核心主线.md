@@ -118,6 +118,8 @@ D. Complexity Discussion
 ### Main purpose
 
 解释为什么 MA 位置选择不是黑箱问题，而是存在可利用的物理结构。
+>[!hint]+ P0​ 难直接解⇒位置域存在物理结构⇒用结构构造低复杂度选点算法⇒说明复杂度优势
+
 
 ### Logic
 
