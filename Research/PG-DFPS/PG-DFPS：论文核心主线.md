@@ -47,6 +47,11 @@ The key idea is to exploit position-domain channel structures rather than repeat
 
 建立接收端 MA 抗干扰模型，明确变量、信道、约束和统一性能指标。
 
+>[!hint]+ 场景→位置约束→信道模型→接收信号→output SINR→位置优化问题→引出下一节
+>This section only defines the physical model and evaluation metric. Do not introduce FADLS yet.
+
+
+
 ### Logic
 
 1.  receive-side anti-jamming communication system。
@@ -94,7 +99,7 @@ $$
     ]
 $$
     
-9. 统一采用 post-MMSE output SINR：  
+9. 统一采用 output SINR：  
 $$
     [  
     \Gamma(\mathbf p)=  
@@ -103,11 +108,12 @@ $$
     \mathbf h(\mathbf p).  
     ]
 $$
+    这个部分分离出$h(p)g(p)$
     
 
 ### Key point
 
-This section only defines the physical model and evaluation metric. Do not introduce FADLS yet.
+
 
 ---
 
