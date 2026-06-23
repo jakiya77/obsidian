@@ -105,440 +105,166 @@ $$
 
 ### Key point
 
+## III. Proposed Physics-Guided Dual-Favorable Position Selection 
 
-
----
-
-## III. Proposed Physics-Guided Dual-Favorable Position Selection
-
-### ### Main purpose
-
-第三节是全文的方法核心。它需要完成从物理结构到具体算法的转化。
-
-本节不应该只是单纯写算法步骤，而应该先说明：
-
-> MA 位置选择并不是完全黑箱的非凸搜索问题。  
-> desired channel 和 jamming channel 在有限孔径上会形成可利用的位置域起伏结构。  
-> PG-DFPS 正是利用这种结构，先进行物理引导的候选点筛选，再进行集合级位置选择。
-
-因此本节的整体逻辑应该是：
-
-
-$$
-\text{位置域信道结构}  
-\rightarrow  
-\text{dual-favorable profile}  
-\rightarrow  
-\text{候选池预筛选}  
-\rightarrow  
-\text{集合级 desired-jammer separability}  
-\rightarrow  
-\text{PG-DFPS 贪心选点}  
-\rightarrow  
-\text{复杂度讨论}  
-$$
-
-
----
-
-## A. Position-Domain Dual-Favorable Profiles
-
-## A. 位置域双有利信道特征
-
-### 这一小节的目的
-
-这一小节回答一个核心问题：
-
-> 为什么 MA 位置选择不是盲目搜索，而是有物理结构可以利用？
-
-### 写作逻辑
-
-由于 desired channel 和 jamming channel 都由多径叠加形成，因此单个 MA 阵元位于不同位置时，接收到的 desired signal 和 jammer strength 并不相同。也就是说，(h(p)) 和 (g(p)) 会随着位置 (p) 在有限孔径内发生空间起伏。
-
-因此，可以定义 desired-channel gain profile：
-
-[  
-H(p)=  
-\frac{|h(p)|^2}  
-{\max_{q\in\mathcal A}|h(q)|^2}.  
-]
-
-其中，(H(p)) 越大，说明位置 (p) 对 desired signal 越有利。
-
-同理，定义 jamming-channel gain profile：
-
-[  
-G(p)=  
-\frac{|g(p)|^2}  
-{\max_{q\in\mathcal A}|g(q)|^2}.  
-]
-
-其中，(G(p)) 越小，说明位置 (p) 处 jammer 越弱。为了更直观地表示 jammer weakness，可以使用：
-
-[  
-1-G(p).  
-]
-
-因此，如果一个位置同时满足：
-
-[  
-H(p)\ \text{large},  
-\quad  
-1-G(p)\ \text{large},  
-]
-
-那么该位置就是一个 dual-favorable position，即：
-
-> desired channel strong and jammer channel weak.
-
-基于这个思想，定义单点 dual-profile score：
-
-# [  
-s_{\rm dual}(p)
-
-H(p)\bigl(1-G(p)\bigr).  
-]
-
-该分数用于进行候选点预筛选。也就是说，PG-DFPS 不是从所有网格点中盲目搜索，而是先根据 (H(p)(1-G(p))) 从有限孔径中选出更有物理意义的候选点集合。
-
-候选池可以写成：
-
-# [  
-\mathcal C
-
-{\rm Top}\text{-}C  
-\left{  
-p\in\mathcal A_\Delta:  
-s_{\rm dual}(p)  
-\right},  
-]
-
-其中，(\mathcal A_\Delta) 是离散化后的候选网格，(C) 是候选池大小。
-
-### 这一小节的核心句
-
-PG-DFPS uses the position-domain desired and jamming profiles as a physical prior to reduce the search range before directly evaluating the output SINR.
-
-### Fig. 1 放置位置
-
-Fig. 1 建议放在这一小节。
-
-Fig. 1 应该展示：
-
-- (H(p))
-    
-- (1-G(p))
-    
-- (H(p)(1-G(p)))
-    
-- PG-DFPS selected positions
-    
-
-图注想传达的核心信息是：
-
-> PG-DFPS 所选位置集中在 desired-favorable and jammer-weak regions 附近，说明它利用的是位置域物理结构，而不是黑箱搜索。
-
----
-
-## B. Set-Level Desired-Jammer Separability
-
-## B. 集合级期望-干扰可分离性
-
-### 这一小节的目的
-
-这一小节回答第二个核心问题：
-
-> 为什么不能只选 (H(p)(1-G(p))) 最大的前 (N) 个点？
-
-原因是接收机不是逐点独立处理信道，而是对整个 MA 阵列的接收向量进行合并。最终影响 output SINR 的不是单个位置的 (h(p)) 和 (g(p))，而是整个位置集合对应的 channel vectors：
-
-# [  
-\mathbf h_{\mathcal S}
-
-[h(u_1),\ldots,h(u_M)]^T,  
-]
-
-# [  
-\mathbf g_{\mathcal S}
-
-[g(u_1),\ldots,g(u_M)]^T.  
-]
-
-即使每个单点都具有较高的 dual-profile score，最终形成的 (\mathbf h_{\mathcal S}) 和 (\mathbf g_{\mathcal S}) 仍可能高度相关。如果 desired channel vector 和 jamming channel vector 非常相似，那么接收合并器很难有效区分 desired signal 和 jammer。
-
-因此，需要引入集合级 desired-jammer separability：
-
-# [  
-\rho_{hg}(\mathcal S)
-
-\frac{  
-|\mathbf h_{\mathcal S}^H\mathbf g_{\mathcal S}|^2  
-}{  
-\lVert \mathbf h_{\mathcal S} \rVert^2  
-\lVert \mathbf g_{\mathcal S} \rVert^2+\epsilon  
-}.  
-]
-
-其中，(\rho_{hg}(\mathcal S)) 越小，说明 desired 和 jammer 在所选阵列位置上的空间可分离性越好。
-
-这一点也和第二节中的展开式一致，因为 output SINR 中存在：
-
-[  
-|\mathbf g^H(\mathbf p)\mathbf h(\mathbf p)|^2  
-]
-
-这一项。该项越大，说明 desired 和 jammer channel vectors 越相关，会削弱接收机区分 desired signal 和 jammer 的能力。
-
-### 这一小节的核心句
-
-Single-position dual favorability is useful for candidate screening, but the final MA position set should further account for the vector-level separability between the desired and jamming channels.
-
----
-
-## C. PG-DFPS-Based Greedy Position Selection
-
-## C. 基于 PG-DFPS 的贪心位置选择
-
-### 这一小节的目的
-
-这一小节把前面的物理结构转化成具体算法。
-
-PG-DFPS 包含两个阶段：
-
-1. **candidate pre-screening**：基于 (s_{\rm dual}(p)=H(p)(1-G(p))) 构造候选池；
-    
-2. **set-level greedy selection**：从候选池中逐根选择 MA 位置，并使用集合级评分判断当前组合是否有利。
-    
-
-### 写作逻辑
-
-首先，从空集合开始：
-
-[  
-\mathcal S_0=\emptyset.  
-]
-
-在第 (n) 根 MA 选择时，对每个候选位置 (p\in\mathcal C)，构造临时集合：
-
-# [  
-\mathcal S_{\rm tmp}
-
-\mathcal S_{n-1}\cup{p}.  
-]
-
-如果该临时集合不满足最小间距约束，则直接跳过。
-
-然后，计算集合平均 desired profile：
-
-# [  
-\bar H(\mathcal S)
-
-\frac{1}{|\mathcal S|}  
-\sum_{u\in\mathcal S}H(u).  
-]
-
-计算集合平均 jammer profile：
-
-# [  
-\bar G(\mathcal S)
-
-\frac{1}{|\mathcal S|}  
-\sum_{u\in\mathcal S}G(u).  
-]
-
-其中，(1-\bar G(\mathcal S)) 表示集合级 jammer weakness。
-
-结合 desired-channel gain、jammer weakness 和 desired-jammer separability，定义 PG-DFPS 集合级评分：
-
-# [  
-s_{\rm PG\text{-}DFPS}(\mathcal S)
-
-\omega_H\log\bigl(\bar H(\mathcal S)+\epsilon\bigr)  
-+  
-\omega_G\log\bigl(1-\bar G(\mathcal S)+\epsilon\bigr)  
-+  
-\omega_\rho\log\bigl(1-\rho_{hg}(\mathcal S)+\epsilon\bigr).  
-]
-
-三个部分分别对应：
-
-- (\bar H(\mathcal S))：增强 desired channel；
-    
-- (1-\bar G(\mathcal S))：削弱 jammer channel；
-    
-- (1-\rho_{hg}(\mathcal S))：提升 desired-jammer separability。
-    
-
-在每一步选择中，PG-DFPS 选择使 (s_{\rm PG\text{-}DFPS}(\mathcal S_{\rm tmp})) 最大且满足间距约束的位置。重复该过程，直到选出 (N) 个 MA 位置。
-
-### 这一小节的核心句
-
-Different from naive dual-profile selection, PG-DFPS evaluates the quality of a position set rather than each position independently.
-
-### Algorithm box
-
-这里放 Algorithm 1。
-
-算法名称建议写成：
-
-[  
-\text{Algorithm 1: PG-DFPS-Based Greedy MA Position Selection}  
-]
-
-输入包括：
-
-- candidate grid (\mathcal A_\Delta)
-    
-- desired profile (H(p))
-    
-- jammer profile (G(p))
-    
-- channel samples (h(p)), (g(p))
-    
-- number of MAs (N)
-    
-- minimum spacing (d_{\min})
-    
-- candidate pool size (C)
-    
-- weights (\omega_H,\omega_G,\omega_\rho)
-    
-
-输出：
-
-- selected MA position vector (\mathbf p_{\rm PG\text{-}DFPS})
-    
-
----
-
-## D. Complexity Discussion
-
-## D. 复杂度讨论
-
-### 这一小节的目的
-
-这一小节回答：
-
-> PG-DFPS 为什么比 direct SINR-driven search 更低复杂度？
-
-### 写作逻辑
-
-设离散候选网格大小为：
-
-[  
-K=|\mathcal A_\Delta|.  
-]
-
-PG-DFPS 首先计算所有位置的 single-position dual-profile score，然后排序得到候选池。排序复杂度为：
-
-[  
-\mathcal O(K\log K).  
-]
-
-之后的贪心选择只在候选池 (\mathcal C) 中进行，其中：
-
-[  
-C\ll K.  
-]
-
-因此，PG-DFPS 避免了在每一步都对全网格位置进行 output-SINR evaluation。
-
-相比之下，full-grid SINR-greedy 每一步都需要扫描大量候选点，并对每个临时位置集合计算 (\Gamma^\star(\mathbf p))，因此 output-SINR evaluation 次数较多。
-
-AO-SCA-CVX 方法虽然可以在连续孔径内进行局部 refinement，但通常需要多轮 SCA 和 repeated CVX-based subproblem solving，因此实际运行时间较高，并且结果依赖初始化和 trust-region 设置。
-
-因此，PG-DFPS 的优势不是声称全局最优，而是：
-
-> 用物理引导的 profile screening 和集合级 greedy selection，减少对全网格 output-SINR search 和 CVX-based local refinement 的依赖。
-
-### 本小节核心句
-
-PG-DFPS provides a low-complexity physics-guided position selection strategy by replacing repeated full-grid output-SINR evaluations with position-domain profile screening and set-level greedy selection.
-
----
-
-## Section III 结尾段
-
-本节最后建议加一个短段，防止审稿人误解 PG-DFPS 的 score 是最终性能指标。
-
-可以写：
-
-Although the PG-DFPS score is used for low-complexity position selection, it is not used as the final performance metric. For fair comparison, all schemes are evaluated using the same maximum output SINR (\Gamma^\star(\mathbf p)) defined in Section II.
----
-
-## IV. Simulation Results
-A. Simulation Setup and Baselines
-B. Position-Domain Mechanism
-C. Main Performance Comparison
-D. Beam Pattern Visualization
-E. Robustness to Estimation Error
 ### Main purpose
+本节是全文的方法核心，旨在完成从**物理信道结构**到**具体工程算法**的转化。
+- 可动天线（MA）的位置选择问题**并不是一个完全黑箱的非凸搜索问题**。
+- 期望信道（Desired Channel）和干扰信道（Jamming Channel）在有限孔径上由于多径叠加，会形成天然可利用的**位置域起伏结构**。
 
-把物理结构转化成具体低复杂度选点算法。
+PG-DFPS 正是利用这种结构，先进行物理引导的候选点筛选，再进行集合级的位置选择。本节的整体逻辑架构如下：
 
-### Logic
 
-1. FADLS 包含两个阶段：candidate pre-screening 和 set-dependent greedy selection。
-    
-2. 第一阶段：用单点 dual-score 选出 candidate pool：  
-      
-$$
-    \mathcal C=\text{Top-}C{H(p)(1-G(p)),p\in\mathcal P}.  
-$$
-    
-    
-3. 第二阶段：从空集合开始逐根选择 MA 位置。
-    
-4. 第 (n) 根天线选择时，测试临时集合：  
-    
-$$
-    \mathcal S_{\rm tmp}=\mathcal S_{n-1}\cup{p}.  
-$$
-    
-    
-5. 定义集合平均 desired gain：  
 
-$$
-    \bar H_{\mathcal S}=\frac{1}{|\mathcal S|}\sum_{p_i\in\mathcal S}H(p_i).  
-$$
+## A. Position-Domain Dual-Favorable Profiles (位置域双有利信道特征)
+
+### 1. 物理结构起伏
+
+由于期望信道和干扰信道均由多径叠加形成，因此单个 MA 阵元位于不同位置时，接收到的期望信号和干扰强度并不相同。换言之，$h(p)$ 和 $g(p)$ 会随着位置 $p$ 在有限孔径内发生空间起伏。这也是位置选择算法能够利用的底层物理先验。
+
+### 2. 双优剖面定义与候选池预筛选
+
+为此，定义**归一化期望信道增益剖面 (Desired-channel gain profile)**：
+
+$$H(p) = \frac{|h(p)|^2}{\max_{q\in\mathcal{A}}|h(q)|^2}$$
+
+其中 $H(p)$ 越大，说明位置 $p$ 对期望信号越有利（Desired-favorable）。
+
+同理，定义**归一化干扰信道增益剖面 (Jamming-channel gain profile)**：
+
+$$G(p) = \frac{|g(p)|^2}{\max_{q\in\mathcal{A}}|g(q)|^2}$$
+
+其中 $G(p)$ 越小，说明位置 $p$ 处的干扰越弱。为了更直观地表示**干扰弱度 (Jammer weakness)**，定义其补项为：$1-G(p)$。
+
+> [!SUCCESS] 双优位置 (Dual-Favorable Position)
+> 
+> 如果一个位置同时满足 $H(p)$ 较大且 $1-G(p)$ 较大，即满足**期望信道强、干扰信道弱**，则该位置是一个双优位置。
+
+基于该思想，定义**单点双剖面评分 (Single-position dual-profile score)**：
+
+$$s_{\rm dual}(p) = H(p)\bigl(1-G(p)\bigr)$$
+
+该分数用于进行候选点预筛选，从而避免在全网格盲目搜索。**候选池 (Candidate Pool)** 构建如下：
+
+$$\mathcal{C} = \text{Top-}C \left\{ p\in\mathcal{A}_\Delta: s_{\rm dual}(p) \right\}$$
+
+其中，$\mathcal{A}_\Delta$ 是离散化后的候选网格，$C$ 是指定的候选池大小。
+
+> [!NOTE] 核心结论 (Key Message)
+> 
+> PG-DFPS uses the position-domain desired and jamming profiles as a physical prior to reduce the search range before directly evaluating the output SINR.
+
+🖼️ **图表埋点：此处插入 Fig. 1**
+
+- **图片内容建议**：在一维/二维空间孔径上，同时绘制出 $H(p)$、$1-G(p)$ 以及相乘后的 $s_{\rm dual}(p)$ 曲线，并高亮标出 PG-DFPS 最终选中的点。
     
-    
-6. 定义集合平均 jammer weakness：  
-    
-$$
-    1-\bar G_{\mathcal S}.  
-$$
-    
-    
-7. 定义 desired-jammer channel separability：  
-    
-$$
-    \rho_{hg}(\mathcal S)=  
-    \frac{|\mathbf h_{\mathcal S}^H\mathbf g_{\mathcal S}|^2}  
-    {|\mathbf h_{\mathcal S}|^2|\mathbf g_{\mathcal S}|^2+\epsilon}.  
-$$
-    
-    
-8. FADLS score 为  
-      
-$$
-    s_{\rm FADLS}(\mathcal S)  
-    =  
-    \omega_H\log(\bar H_{\mathcal S}+\epsilon)  
-    +\omega_G\log(1-\bar G_{\mathcal S}+\epsilon)  
-    +\omega_\rho\log(1-\rho_{hg}(\mathcal S)+\epsilon).  
-$$
-    
-    
-9. 选择使 score 最大且满足最小间距约束的位置。
-    
-10. 最终所有方法都用同一个 post-MMSE SINR 评价。
+- **图注核心信息 (Caption)**：PG-DFPS 所选位置集中在 desired-favorable and jammer-weak regions 附近，说明它利用的是位置域物理结构，而不是黑箱搜索。
     
 
-### Key point
+## B. Set-Level Desired-Jammer Separability (集合级期望-干扰可分离性)
 
-FADLS 与 naive dual-score 的区别是：FADLS 是集合级选择，额外考虑 (\rho_{hg}(\mathcal S))。
+### 1. 独立评分的局限性
 
----
+回答核心问题：**为什么不能只选 $H(p)(1-G(p))$ 最大的前 $N$ 个点？**
 
-## V. Conclusion
+原因在于接收机并不是逐点独立处理信道的，而是对整个 MA 阵列的接收向量进行空间合并。最终影响输出信噪比（Output SINR）的不是孤立单点的信道，而是整个位置集合 $\mathcal{S}$ 对应的**信道向量 (Channel Vectors)**：
+
+$$\mathbf{h}_{\mathcal{S}} = [h(u_1),\ldots,h(u_M)]^T$$
+
+$$\mathbf{g}_{\mathcal{S}} = [g(u_1),\ldots,g(u_M)]^T$$
+
+### 2. 空间可分离性指标
+
+即使每个选定单点都具有极高的双优评分，最终形成的 $\mathbf{h}_{\mathcal{S}}$ 和 $\mathbf{g}_{\mathcal{S}}$ **仍可能高度相关**。如果期望向量与干扰向量过于相似，空间接收合并器将无法在空间上有效区分二者。
+
+因此，引入**集合级期望-干扰相关性**：
+
+$$\rho_{hg}(\mathcal{S}) = \frac{|\mathbf{h}_{\mathcal{S}}^H\mathbf{g}_{\mathcal{S}}|^2}{\lVert \mathbf{h}_{\mathcal{S}} \rVert^2 \lVert \mathbf{g}_{\mathcal{S}} \rVert^2+\epsilon}$$
+
+- $\rho_{hg}(\mathcal{S})$ 越小，说明期望和干扰在所选阵列位置上的**空间可分离性越好**。
+    
+- 该项与第二节推导出的 Output SINR 展开式中的 $|\mathbf{g}^H(\mathbf{p})\mathbf{h}(\mathbf{p})|^2$ 项直接对应，揭示了向量级相关性对抑噪抗干扰能力的削弱。
+    
+
+> [!NOTE] 核心结论 (Key Message)
+> 
+> Single-position dual favorability is useful for candidate screening, but the final MA position set should further account for the vector-level separability between the desired and jamming channels.
+
+## C. PG-DFPS-Based Greedy Position Selection (基于 PG-DFPS 的贪心位置选择)
+
+### 1. 算法双阶段机制
+
+将前面的物理结构推导转化为具体算法。PG-DFPS 包含两个核心阶段：
+
+1. **候选点预筛选 (Candidate pre-screening)**：基于单点双优评分构造候选池 $\mathcal{C}$。
+    
+2. **集合级贪心选择 (Set-level greedy selection)**：从候选池中逐根选择 MA 位置，并使用集合级评分进行联合评估。
+    
+
+### 2. 算法步进与指标联合定义
+
+算法从空集开始初始化：$\mathcal{S}_0=\emptyset$。
+
+在第 $n$ 根 MA 选择时，对每个候选位置 $p\in\mathcal{C}$，构造临时集合：
+
+$$\mathcal{S}_{\rm tmp} = \mathcal{S}_{n-1}\cup\{p\}$$
+
+- **间距约束检查**：若 $\mathcal{S}_{\rm tmp}$ 中任意点违反最小间距约束 $d_{\min}$，则直接丢弃该候选点。
+    
+
+对于通过检查的候选点，计算临时集合的**平均期望剖面值**与**平均干扰剖面值**：
+
+$$\bar{H}(\mathcal{S}) = \frac{1}{|\mathcal{S}|} \sum_{u\in\mathcal{S}}H(u), \quad \bar{G}(\mathcal{S}) = \frac{1}{|\mathcal{S}|} \sum_{u\in\mathcal{S}}G(u)$$
+
+结合期望增益、干扰弱度以及向量可分离性，定义 **PG-DFPS 集合级综合评分**：
+
+$$s_{\rm PG\text{-}DFPS}(\mathcal{S}) = \omega_H\log\bigl(\bar{H}(\mathcal{S})+\epsilon\bigr) + \omega_G\log\bigl(1-\bar{G}(\mathcal{S})+\epsilon\bigr) + \omega_\rho\log\bigl(1-\rho_{hg}(\mathcal{S})+\epsilon\bigr)$$
+
+> 📌 **评分项对应关系：**
+> 
+> - $\bar{H}(\mathcal{S})$ $\rightarrow$ 增强期望信号信道
+>     
+> - $1-\bar{G}(\mathcal{S})$ $\rightarrow$ 削弱干扰信号信道
+>     
+> - $1-\rho_{hg}(\mathcal{S})$ $\rightarrow$ 提升期望与干扰的向量级空间可分离性
+>     
+
+在每一步选择中，算法选择使 $s_{\rm PG\text{-}DFPS}(\mathcal{S}_{\rm tmp})$ 最大且满足间距约束的位置。重复该过程，直到选满 $N$ 个 MA 位置。
+
+> [!NOTE] 核心结论 (Key Message)
+> 
+> Different from naive dual-profile selection, PG-DFPS evaluates the quality of a position set rather than each position independently.
+
+### 📋 算法伪代码框 (Algorithm 1)
+
+|**Algorithm 1: PG-DFPS-Based Greedy MA Position Selection**|
+|---|
+|**Input:**<br><br>  <br><br>• 候选网格 $\mathcal{A}_\Delta$，期望与干扰剖面 $H(p), G(p)$<br><br>  <br><br>• 信道采样 $h(p), g(p)$<br><br>  <br><br>• MA 天线数量 $N$，最小间距限制 $d_{\min}$<br><br>  <br><br>• 候选池大小 $C$，权重系数 $\omega_H, \omega_G, \omega_\rho$<br><br>  <br><br>**Output:**<br><br>  <br><br>• 选定的 MA 位置向量 $\mathbf{p}_{\rm PG\text{-}DFPS}$|
+
+## D. Complexity Discussion (复杂度讨论)
+
+### 1. 算法计算代价分析
+
+设离散候选网格总数为 $K = |\mathcal{A}_\Delta|$。
+
+- **预筛选阶段**：计算所有位置的单点双优评分并进行排序，复杂度仅为 $\mathcal{O}(K\log K)$。
+    
+- **贪心选点阶段**：由于 $C \ll K$，后续的贪心搜索完全在缩减后的候选池 $\mathcal{C}$ 中进行，大幅缩减了搜索空间。因此，PG-DFPS 成功避免了在每一步都对全网格位置进行耗时的 Output-SINR 评估。
+    
+
+### 2. 基线方案对比
+
+- **全网格 SINR 贪心算法 (Full-grid SINR-greedy)**：作为强基线方案，其每一步都需要扫描海量的候选网格点，并对每个临时位置集合重复计算复杂的矩阵求逆与 $\Gamma^\star(\mathbf{p})$ 评估，计算开销随网格密度呈指数级上升。
+    
+- **AO-SCA-CVX 算法**：该方案虽然可以在连续孔径内进行局部细化（Refinement），但通常需要多轮的连续凸近似（SCA）迭代，且高度依赖初始化参数与置信域（Trust-Region）的繁琐调优，实际运行时间极高。
+    
+
+> [!NOTE] 核心结论 (Key Message)
+> 
+> PG-DFPS provides a low-complexity physics-guided position selection strategy by replacing repeated full-grid output-SINR evaluations with position-domain profile screening and set-level greedy selection.
+
+## 🔗 章节结尾过渡段 (Section III Summary)
+
+为了防止审稿人误将 PG-DFPS 的联合评分（Score）当成最终的优化性能指标，在此明确区分选择准则与评估指标：
+
+> Although the PG-DFPS score is used for low-complexity position selection, it is not used as the final performance metric. For fair comparison, all schemes are evaluated using the same maximum output SINR $\Gamma^\star(\mathbf{p})$ defined in Section II.
