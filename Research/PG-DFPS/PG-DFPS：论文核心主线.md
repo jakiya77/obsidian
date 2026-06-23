@@ -1,12 +1,4 @@
-II. System Model and Problem Formulation
-    A. Signal and Channel Model
-    B. Post-MMSE Output SINR and Position Optimization
 
-III. Position-Domain Dual-Favorable Structure
-    A. Two-Path Motivating Example
-    B. Desired-Favorable, Jammer-Weak, and Separable Position Profiles
-
-IV. Proposed DFPS/FADLS Algorithm
 ## I. Introduction
 
 ### Main purpose
@@ -117,7 +109,11 @@ $$
 
 ---
 
-## III. Position-Domain Dual-Favorable Structure
+## III. Proposed Position-Domain Dual-Favorable Selection
+A. Position-Domain Dual-Favorable Profiles
+B. Set-Level Desired-Jammer Separability
+C. FADLS Algorithm
+D. Complexity Discussion
 
 ### Main purpose
 
@@ -181,8 +177,12 @@ FADLS exploits the position-domain dual-favorable regions rather than blindly se
 
 ---
 
-## IV. Proposed FADLS Algorithm
-
+## IV. Simulation Results
+A. Simulation Setup and Baselines
+B. Position-Domain Mechanism
+C. Main Performance Comparison
+D. Beam Pattern Visualization
+E. Robustness to Estimation Error
 ### Main purpose
 
 把物理结构转化成具体低复杂度选点算法。
@@ -252,181 +252,4 @@ FADLS 与 naive dual-score 的区别是：FADLS 是集合级选择，额外考�
 
 ---
 
-## V. Baselines and Complexity Discussion
-
-### Main purpose
-
-解释为什么选择这些 baseline，以及复杂度优势如何严谨表达。
-
-### Logic
-
-1. Fixed ULA：固定阵列参考。
-    
-2. Proposed FADLS：本文方法。
-    
-3. Full-grid SINR-greedy：强 receiver-aware baseline，每一步扫描全网格并直接计算 post-MMSE SINR。
-    
-4. Local AO-SCA-CVX：优化型局部 refinement baseline，使用 dual-profile ranking 初始化，再通过 SCA-CVX 局部微调。
-    
-5. 强调 AO-SCA-CVX 不是全局最优，而是 local optimization benchmark。
-    
-6. 复杂度不要用混合 proxy 图，而是用表格说明。
-    
-7. FADLS 避免：
-    
-    - full-grid receiver-level SINR scoring；
-        
-    - repeated CVX-based convex subproblem solving。
-        
-8. Runtime 可以作为 empirical runtime，不等同于理论复杂度。
-    
-
-### Table
-
-Table I: Complexity and runtime comparison.
-
-Recommended columns:
-
-- Method
-    
-- Selection principle
-    
-- Search range
-    
-- Receiver-level SINR evaluations
-    
-- CVX solves
-    
-- Complexity / cost order
-    
-- Runtime
-    
-
-### Key statement
-
-Theoretical complexity and empirical runtime are reported separately.
-
----
-
-## VI. Simulation Results
-
-### Main purpose
-
-用最少但最有力的图证明：机制成立、性能有效、复杂度低、鲁棒性可接受。
-
-### Simulation setup
-
-说明共同参数：  
-
-$$
-N,\ A,\ d_{\min},\ M,\ C,\ P_s,\ P_j,\ \sigma^2,\ \text{JSR}.  
-$$
-
-说明所有方法最终统一用 post-MMSE output SINR 评价。
-
----
-
-### A. Position-Domain Mechanism
-
-Use Fig. 1.
-
-### Main message
-
-FADLS selected positions are concentrated around dual-favorable regions. This validates that the algorithm exploits channel-profile structures rather than black-box search.
-
----
-
-### B. Main Performance Comparison
-
-Use Fig. 2 with two subfigures.
-
-#### Fig. 2(a): SINR vs Number of Paths
-
-Main message:  
-FADLS remains effective as the number of multipath components increases, showing multipath robustness.
-
-#### Fig. 2(b): SINR vs JSR / INR
-
-Main message:  
-FADLS maintains competitive output SINR under strong jamming, showing anti-jamming capability.
-
-### Wording
-
-Do not write “FADLS always outperforms all baselines.”  
-Write “FADLS achieves competitive or slightly higher average post-MMSE output SINR with much lower complexity.”
-
----
-
-### C. Representative Beam Pattern
-
-Use Fig. 3.
-
-### Main message
-
-The beam pattern provides an intuitive visualization that FADLS enhances the desired direction and suppresses the jammer direction.
-
-### Note
-
-This figure is illustrative, not the main quantitative proof.
-
----
-
-### D. Robustness to Estimation Error
-
-Use Fig. 4.
-
-### Main message
-
-Since FADLS relies on estimated channel profiles or path parameters, this experiment evaluates its robustness under AoA/profile estimation errors.
-
-### Recommended setting
-
-[  
-\hat\theta=\theta+\Delta\theta.  
-]
-
-Plot average output SINR versus AoA error level.
-
----
-
-## VII. Appendix / Supplementary
-
-### Main purpose
-
-保留有价值但不占主文版面的补充实验。
-
-### Recommended appendix
-
-1. Candidate pool size sensitivity  
-    Purpose: justify (C=300) and show performance-search tradeoff.
-    
-2. Small-scale exhaustive ceiling  
-    Purpose: show FADLS is close to the discrete global optimum in small-scale settings.
-    
-
-### Not recommended
-
-Do not include runtime curve or complexity proxy curve unless specifically required. Runtime is better reported in Table I. Complexity proxy curves are easy to misunderstand because different methods have different per-operation costs.
-
----
-
-## VIII. Conclusion
-
-### Main purpose
-
-回扣主线，不夸大。
-
-### Logic
-
-1. 本文研究 receive-side MA-aided anti-jamming reception。
-    
-2. 揭示了 desired 和 jammer multipath channels 在 aperture 上产生不同 position-domain profiles。
-    
-3. 提出 FADLS，通过 desired-favorable、jammer-weak 和 desired-jammer separability 三类结构指标快速选点。
-    
-4. 仿真表明 FADLS 在 post-MMSE output SINR 上接近 full-grid SINR-greedy 和 local AO-SCA-CVX，同时显著降低搜索复杂度和 empirical runtime。
-    
-5. 未来可扩展到 imperfect CSI、多干扰、宽带干扰和二维/三维 MA array 场景。
-
-
-
+## V. Conclusion
