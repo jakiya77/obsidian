@@ -275,3 +275,4 @@ $$s_{\rm PG\text{-}DFPS}(\mathcal{S}) = \omega_H\log\bigl(\bar{H}(\mathcal{S})+\
 The proposed position-domain selection principle can be extended to two-dimensional or three-dimensional MA apertures by replacing the scalar position ppp with a position vector r\mathbf rr, while the corresponding profile definitions become H(r)H(\mathbf r)H(r) and G(r)G(\mathbf r)G(r).
 
 ![[Pasted image 20260624112628.png|435]]
+![[Pasted image 20260624163945.png]]
