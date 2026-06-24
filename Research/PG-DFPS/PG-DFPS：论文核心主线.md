@@ -267,3 +267,9 @@ $$s_{\rm PG\text{-}DFPS}(\mathcal{S}) = \omega_H\log\bigl(\bar{H}(\mathcal{S})+\
 为了防止审稿人误将 PG-DFPS 的联合评分（Score）当成最终的优化性能指标，在此明确区分选择准则与评估指标：
 
 > Although the PG-DFPS score is used for low-complexity position selection, it is not used as the final performance metric. For fair comparison, all schemes are evaluated using the same maximum output SINR $\Gamma^\star(\mathbf{p})$ defined in Section II.
+
+
+## conclusion
+
+讲一嘴到2d 3d的扩展
+The proposed position-domain selection principle can be extended to two-dimensional or three-dimensional MA apertures by replacing the scalar position ppp with a position vector r\mathbf rr, while the corresponding profile definitions become H(r)H(\mathbf r)H(r) and G(r)G(\mathbf r)G(r).
