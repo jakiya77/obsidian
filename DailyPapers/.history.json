@@ -123,5 +123,55 @@
     "id": "2606.30584",
     "date": "2026-06-30",
     "title": "Semantic Noise Aided Secure Image Transmission over MIMO Fading Channels"
+  },
+  {
+    "id": "2606.26420",
+    "date": "2026-07-01",
+    "title": "MIMO Zak-OTFS: Channel Estimation, Detection, and Throughput Analysis"
+  },
+  {
+    "id": "2606.26957",
+    "date": "2026-07-01",
+    "title": "Angle Estimation via WFRFT Spatial-Domain Basis Decomposition"
+  },
+  {
+    "id": "2606.27471",
+    "date": "2026-07-01",
+    "title": "Electronically Reconfigurable Pinching Antennas for Millimeter-Wave Communication in LoS and NLoS Environments"
+  },
+  {
+    "id": "2606.28778",
+    "date": "2026-07-01",
+    "title": "Brownian Bridge Diffusion-Based Joint Channel Estimation and Data Detection for Jamming-Resilient Receivers"
+  },
+  {
+    "id": "2606.28807",
+    "date": "2026-07-01",
+    "title": "A Survey of Physical-layer Authentication Enhanced by Emerging Spatial Domain Technologies"
+  },
+  {
+    "id": "2606.28921",
+    "date": "2026-07-01",
+    "title": "PASS-Assisted RSMA under Imperfect SIC: Joint Antenna Activation and Resource Allocation"
+  },
+  {
+    "id": "2606.28924",
+    "date": "2026-07-01",
+    "title": "Communication-Centric RIS-Assisted ISAC: Signal Modeling and BER Analysis"
+  },
+  {
+    "id": "2606.31139",
+    "date": "2026-07-01",
+    "title": "Fluid-Antenna-Aided Active User Detection With 1D-CNN Channel Reconstruction for Unsourced Random Access"
+  },
+  {
+    "id": "2606.31149",
+    "date": "2026-07-01",
+    "title": "Peak Sidelobe Suppression in Planar Fluid Antenna Array"
+  },
+  {
+    "id": "2606.31400",
+    "date": "2026-07-01",
+    "title": "Transformer-Hypernetwork-Controlled Deep-Unfolded Phase-Aware Channel Estimation Refinement for Phase-Drift-Robust Backscatter Links"
   }
 ]
