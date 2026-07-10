@@ -1,4 +1,6 @@
 ## 1 调试
+
+1- 查看
 模型构建检查通过：
 - feyolov8s.yaml 可被 Ultralytics 正常解析；
 - FEM 已作为 model.0 接入 backbone 前端；
