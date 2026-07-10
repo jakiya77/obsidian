@@ -1,65 +1,5 @@
 [
   {
-    "id": "2501.11842",
-    "date": "2026-06-09",
-    "title": "Rydberg Atomic Receivers for Classical and Quantum Communications"
-  },
-  {
-    "id": "2512.03703",
-    "date": "2026-06-09",
-    "title": "Pixel Reconfigurable Beamforming Network-Enabled Fluid Antenna System"
-  },
-  {
-    "id": "2601.04069",
-    "date": "2026-06-09",
-    "title": "Hybrid Downlink Beamforming with Analog Beam Codewords in MU-MIMO Systems"
-  },
-  {
-    "id": "2601.15790",
-    "date": "2026-06-09",
-    "title": "Joint Hardware-Algorithm Design for Adaptive Non-Uniform Sampling"
-  },
-  {
-    "id": "2606.08017",
-    "date": "2026-06-09",
-    "title": "Mitigating Asynchrony in Wireless Networks with Fluid Antenna Systems"
-  },
-  {
-    "id": "2606.08320",
-    "date": "2026-06-09",
-    "title": "Enhanced Wide-Angle Steering in Multi-Mode Multi-Port Antenna Arrays"
-  },
-  {
-    "id": "2606.08385",
-    "date": "2026-06-09",
-    "title": "The Universal Switching Beamformer: Integrated Communications and Localization through Analog-Digital Multimode Switching and Signal Fusion"
-  },
-  {
-    "id": "2606.08829",
-    "date": "2026-06-09",
-    "title": "Flexible Coupler Antenna for Wireless Networks: Opportunities and Challenges"
-  },
-  {
-    "id": "2606.09085",
-    "date": "2026-06-09",
-    "title": "MoEformer: Multi-Expert Transformer for Fine-Grained Automatic Modulation Recognition"
-  },
-  {
-    "id": "2606.09095",
-    "date": "2026-06-09",
-    "title": "Rate-Splitting Multiple Access for Pinching-Antenna Systems"
-  },
-  {
-    "id": "2606.09652",
-    "date": "2026-06-09",
-    "title": "Near-Field Beamfocusing in Mobile Environments: A Journey from Point-Focusing to Caustic Beamforming"
-  },
-  {
-    "id": "2606.09753",
-    "date": "2026-06-09",
-    "title": "Jamming-Resilient Sparse Delay-Doppler NOMA: A Framework for Random Access and Passive Activity Detection"
-  },
-  {
     "id": "2606.10164",
     "date": "2026-06-14",
     "title": "Curved Beam Enabled Wireless Communications: Modeling, Analysis and Optimization"
@@ -173,5 +113,80 @@
     "id": "2606.31400",
     "date": "2026-07-01",
     "title": "Transformer-Hypernetwork-Controlled Deep-Unfolded Phase-Aware Channel Estimation Refinement for Phase-Drift-Robust Backscatter Links"
+  },
+  {
+    "id": "2607.03389",
+    "date": "2026-07-10",
+    "title": "Deep-Unfolded Wideband ISAC Beamforming for DMA Under Frequency-Selective Lorentzian Model"
+  },
+  {
+    "id": "2607.04159",
+    "date": "2026-07-10",
+    "title": "Optimal Uplink Pinching-Antenna Activation"
+  },
+  {
+    "id": "2607.04748",
+    "date": "2026-07-10",
+    "title": "Dual Fluid Antenna-Assisted UAV MU-MIMO Networks"
+  },
+  {
+    "id": "2607.04889",
+    "date": "2026-07-10",
+    "title": "Energy Efficiency Maximization for Hybrid RIS-Aided Communications via Deep Unfolding"
+  },
+  {
+    "id": "2607.05931",
+    "date": "2026-07-10",
+    "title": "Rydberg Atomic Quantum Radio: A Comprehensive Survey From Wireless Communication Perspective"
+  },
+  {
+    "id": "2607.06294",
+    "date": "2026-07-10",
+    "title": "Bending Beam for THz Wireless Networks: Fundamental, Design Issue, and Prototype"
+  },
+  {
+    "id": "2607.06768",
+    "date": "2026-07-10",
+    "title": "AirPASS: Over-the-Air Federated Learning via Pinching Antenna Systems"
+  },
+  {
+    "id": "2607.06861",
+    "date": "2026-07-10",
+    "title": "Performance Limits of FRIS Systems in Nakagami-m Fading"
+  },
+  {
+    "id": "2607.07298",
+    "date": "2026-07-10",
+    "title": "Design and Deployment Guidelines for UAV-Mounted RIS Under Position Uncertainty"
+  },
+  {
+    "id": "2607.07333",
+    "date": "2026-07-10",
+    "title": "Spatial Limits of Fluid Antenna Systems"
+  },
+  {
+    "id": "2607.07447",
+    "date": "2026-07-10",
+    "title": "A Unified Fully Reconfigurable Architecture for Wireless Powered Communication Networks"
+  },
+  {
+    "id": "2607.07990",
+    "date": "2026-07-10",
+    "title": "Optimal Multi-RIS Placement: Coverage-Guaranteed Sum Rate Maximization Under Inhomogeneous User Distributions"
+  },
+  {
+    "id": "2607.08108",
+    "date": "2026-07-10",
+    "title": "Low-Complexity Gridless Single-Snapshot DoA Estimation via Truncated Hankel Newton-MUSIC"
+  },
+  {
+    "id": "2607.08624",
+    "date": "2026-07-10",
+    "title": "Parasitic MIMO Beamforming for Multi-Active Multi-Parasitic Antenna Arrays with Binary Control"
+  },
+  {
+    "id": "2607.08717",
+    "date": "2026-07-10",
+    "title": "Deep Learning for Joint Narrowband Interference Cancellation and Soft Demodulation in OFDM Systems"
   }
 ]
