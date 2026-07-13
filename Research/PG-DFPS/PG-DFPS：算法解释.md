@@ -19,4 +19,10 @@ $$
 10: \text{ Sort } \mathcal S_N \text{ in ascending order and form } \mathbf p_{\rm PG\text{-}DFPS}. \\
 \hline
 \end{array}
+
 $$
+
+1. 构造candidate pool
+  * 使用 $s_{\rm dual}(q_k)=H(q_k)(1-G(q_k))$ 进行评分
+  * 对所有评分的点进行排序 筛选出前Nc个
+1. 在已有的基础上 通过新的评分机制确定天线组合
