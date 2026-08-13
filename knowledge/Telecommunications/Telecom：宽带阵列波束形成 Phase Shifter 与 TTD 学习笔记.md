@@ -303,5 +303,7 @@ $$X(f) \rightarrow X(f)e^{-j2\pi f\tau}$$
 
 
 ## 四、 物理结构
-RF chain→TTD/PS 波束形成网络→天线阵列​
 
+$$\boxed{RF chain→ TTD/PS 波束形成网络→ 天线阵列​}$$
+更具体地说，传统 PS 阵列里，**每根天线支路前面通常有一个 PS**；而混合 TTD+PS 结构里，经常是 **一个 TTD 先控制一组天线的大尺度时延，再由每根天线前的 PS 做细调**。文献中的典型 delay-phase precoding 就是这种“RF chain → TTD network → PS network → antennas”的连接方式。
+![[Pasted image 20260813133619.png|233]]![[Pasted image 20260813133601.png|284]]
