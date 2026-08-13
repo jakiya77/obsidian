@@ -304,4 +304,3 @@ $$X(f) \rightarrow X(f)e^{-j2\pi f\tau}$$
 
 ## 四、 TTD的局限性
 
-考虑既然
