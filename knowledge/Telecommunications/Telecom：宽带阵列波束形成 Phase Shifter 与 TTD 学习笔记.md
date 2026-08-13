@@ -302,5 +302,6 @@ $$X(f) \rightarrow X(f)e^{-j2\pi f\tau}$$
 > 💡 **True Time Delay (TTD)** 是：“在硬件里直接**兑现**了这个时间差本身。”
 
 
-## 四、 TTD的局限性
+## 四、 物理结构
+RF chain→TTD/PS 波束形成网络→天线阵列​
 
