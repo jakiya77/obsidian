@@ -1,5 +1,5 @@
 ## TL;DR
-
+[[Telecom：傅立叶变化]]
 **核心主线**
 
   
@@ -976,9 +976,6 @@ $$\hat X[k] = W[k]Y[k]$$
 ### 十八、整个 OFDM 多径处理过程
 
 最后把整条链串起来：
-
-  
-
 Plaintext
 
 ```
@@ -1058,3 +1055,4 @@ $$\boxed{Y[k]=H[k]X[k]}$$
 这其实就是 OFDM 为什么特别适合宽带多径信道 的底层数学逻辑：
 
 $$\boxed{\begin{array}{c}\text{多径} \\ \downarrow\\ \text{延迟副本叠加} \\ \downarrow\\ \text{线性卷积} \\ \downarrow\quad\text{CP} \\ \text{循环卷积} \\ \downarrow\quad\text{FFT} \\ \text{逐子载波乘法} \\ \downarrow\\ Y[k]=H[k]X[k]\end{array}}$$
+[[Telecom：傅立叶变化]]
