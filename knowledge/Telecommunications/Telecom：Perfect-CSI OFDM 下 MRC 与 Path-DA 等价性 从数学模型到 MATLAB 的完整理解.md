@@ -729,7 +729,7 @@ $$\mathbf c = \boldsymbol\alpha.$$
 整个 structured receiver：
 
   
-
+g
 $$\boxed{z[k] = \mathbf c^H \mathbf D[k] \mathbf V^H \mathbf y[k].}$$
 
 流程可以理解成：
