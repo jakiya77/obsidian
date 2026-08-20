@@ -195,17 +195,13 @@ Plaintext
 
   
 
-## 3. 更典型的“真正多个 $w$”其实是多 stream
+## 3. 更典型的真正多个 $w$其实是多 stream
 
 这个最好理解。比如两个用户：
-
-  
 
 $$\mathbf y = \mathbf h_1x_1+\mathbf h_2x_2+\mathbf n.$$
 
 你希望同时恢复 $x_1$ 和 $x_2$。那么必须：
-
-  
 
 $$z_1=\mathbf w_1^H\mathbf y$$
 
@@ -221,19 +217,15 @@ $$z_2\rightarrow\hat x_2.$$
 
 这里你显然不能写成一个 $\mathbf w_{\rm eq}$ 然后说完事了，因为你要的是两个独立输出。所以：
 
-  
-
 $$\boxed{\text{多个独立数据流} \Rightarrow \text{多个真正的 receive beams}}$$
 
 这才是最标准的 multibeam。
 
-  
 
 ## 4. 回到我们这个项目，真正值得研究的是哪一种？
 
 这里我觉得你现在可以把之前有点混在一起的几个概念彻底分开。
 
-  
 
 Plaintext
 
@@ -253,19 +245,15 @@ Plaintext
 
 我们的目标如果只是：
 
-  
 
 > “我有两条 multipath，所以给每条 path 一个 beam。”
 > 
->   
 
 这个论据不够。应该是：
 
-  
 
 > 我要显式地获得不同的 path branch，因为之后我要对这些 branch 进行不同的 delay / weighting / interference / robustness processing。
 > 
->   
 
 那么：
 
@@ -281,36 +269,24 @@ $$\boxed{\mathbf w_1,\ldots,\mathbf w_L}$$
 
 MA 不应该简单解释成：
 
-  
-
-> “我移动天线，然后增大 channel gain。”
-> 
->   
-
+> 移动天线，然后增大 channel gain。
+>
 对于我们的这个方向，更漂亮的解释其实是：
-
-  
 
 $$\boxed{\text{MA 改变不同 path 的空间 signature}}$$
 
 即 $\mathbf a_{\mathbf P}(\theta_1), \mathbf a_{\mathbf P}(\theta_2)$。通过改变 $\mathbf P$，让 $\mathbf a_{\mathbf P}(\theta_1)$ 和 $\mathbf a_{\mathbf P}(\theta_2)$ 更加可分。
 
-  
-
 例如希望：
-
-  
 
 $$\boxed{\frac{\vert{}\mathbf a_1^H\mathbf a_2\vert{}}{\vert{}\mathbf a_1\vert{}\vert{}\mathbf a_2\vert{}} \downarrow}$$
 
 于是：
 
-  
-
 - Path 1 ──→ $w_1$ 更容易提取
     
       
-    
+
 - Path 2 ──→ $w_2$ 更容易提取
     
       
