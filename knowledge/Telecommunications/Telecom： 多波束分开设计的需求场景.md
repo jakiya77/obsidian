@@ -98,71 +98,43 @@ $$z_1[k]=\mathbf w_1^H[k]\mathbf y[k],$$
 $$z_2[k]=\mathbf w_2^H[k]\mathbf y[k].$$
 
 最后：
-
 $$z[k] = c_1[k]z_1[k]+c_2[k]z_2[k].$$
-
 代进去：
-
-  
 
 $$z[k] = c_1[k]\mathbf w_1^H[k]\mathbf y[k] + c_2[k]\mathbf w_2^H[k]\mathbf y[k].$$
 
 整理：
-
-  
-
 $$z[k] = \left( c_1[k]\mathbf w_1[k] + c_2[k]\mathbf w_2[k] \right)^H \mathbf y[k].$$
 
 定义：
-
-  
-
 $$\boxed{\mathbf w_{\rm eq}[k] = c_1[k]\mathbf w_1[k] + c_2[k]\mathbf w_2[k]}$$
 
 那么：
-
-  
-
 $$\boxed{z[k]=\mathbf w_{\rm eq}^H[k]\mathbf y[k]}$$
 
 所以你看：
 
-  
-
 - **表面上**：两个 beam。
-    
-      
     
 - **实际上**：
     
-      
-    
 - **数学上**：还是一个 beamforming vector。
     
-      
-    
-
 这就是我们刚才那个 MATLAB sanity experiment 想验证的事情。
-
-  
 
 ## 2. 那什么时候才真正需要多个 $w$？
 
 这里就是你现在最应该记住的判断标准：
 
-  
-
 $$\boxed{\text{多个输出分支在合并以前，必须分别做不同事情}}$$
 
 这时候 $\mathbf w_1,\mathbf w_2$ 才有真正存在的意义。
-
-  
 
 ### 2.1 不同 path 后面需要不同的 delay processing
 
 例如：
 
-  
+
 
 $$\text{Path 1}:(\theta_1,\tau_1)$$
 
