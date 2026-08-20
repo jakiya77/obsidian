@@ -160,19 +160,19 @@ $$
 表示理想情况下：
 
 $$  
-1,\mathrm{Hz}  
+1\mathrm{Hz}  
 $$
 
 频谱资源每秒能传：
 
 $$  
-4,\mathrm{bit}.  
+4\mathrm{bit}.  
 $$
 
 如果带宽：
 
 $$  
-B=100,\mathrm{MHz},  
+B=100\mathrm{MHz},  
 $$
 
 粗略理想容量：
@@ -183,12 +183,8 @@ $$
 
 所以：
 
-# $$  
-C
-
-# 100\times10^6\times4
-
-400\ \mathrm{Mbit/s}.  
+$$  
+C = 100\times10^6\times4=400 \mathrm {Mbit/s}.  
 $$
 
 ---
@@ -200,7 +196,7 @@ $$
 假设接收阵列收到：
 
 # $$  
-\mathbf y
+\mathbf y=
 
 \mathbf h x  
 +  
@@ -248,7 +244,7 @@ $$
 接收输出：
 
 # $$  
-z
+z=
 
 \mathbf w^H\mathbf y.  
 $$
@@ -256,7 +252,7 @@ $$
 代进去：
 
 # $$  
-z
+z=
 
 \mathbf w^H\mathbf h x  
 +  
@@ -324,7 +320,7 @@ $$
 经过波束形成以后：
 
 # $$  
-\mathbb E |\mathbf w^H\mathbf n|^2
+\mathbb E |\mathbf w^H\mathbf n|^2=
 
 \sigma^2|\mathbf w|^2.  
 $$
@@ -333,7 +329,7 @@ $$
 
 # $$  
 \boxed{  
-\mathrm{SINR}
+\mathrm{SINR}=
 
 \frac{  
 P_s|\mathbf w^H\mathbf h|^2  
@@ -361,7 +357,7 @@ $$
 
 # $$  
 \boxed{  
-\mathrm{SNR}
+\mathrm{SNR}=
 
 \frac{  
 P_s|\mathbf w^H\mathbf h|^2  
@@ -397,7 +393,7 @@ $$
 
 # $$  
 \boxed{  
-C
+C=
 
 B\log_2  
 \left(  
@@ -429,7 +425,7 @@ $$
 于是：
 
 # $$  
-\frac{C}{B}
+\frac{C}{B}=
 
 \log_2  
 (1+\mathrm{SNR}).  
@@ -439,7 +435,7 @@ $$
 
 # $$  
 \boxed{  
-\mathrm{SE}
+\mathrm{SE}=
 
 \log_2  
 (1+\mathrm{SNR})  
