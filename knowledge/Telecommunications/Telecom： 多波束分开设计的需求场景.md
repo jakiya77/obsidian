@@ -1,67 +1,23 @@
-```mermaid
-flowchart TD
-    A["接收场景"] --> B{"信号是窄带<br/>还是宽带?"}
-
-    %% Narrowband branch
-    B -->|窄带| N1{"是否只有一个期望数据流<br/>且接收端可直接设计单个 w ?"}
-    N1 -->|是| N2["通常不需要显式多波束<br/>一个空间波束 w 即可<br/>（MRC / MMSE / MVDR 等）"]
-    N1 -->|否| N3{"是否存在多个独立分支需求?"}
-
-    N3 -->|多用户 / 多流 / 需要分别检测| N4["需要多波束<br/>为不同用户/数据流分别设计 w1,w2,..."]
-    N3 -->|期望/干扰需要分开处理| N5["通常需要多波束或多分支处理<br/>先分离，再抑制/合并"]
-    N3 -->|只是多个 path 属于同一信号| N6["多数情况下仍可等效为一个 w<br/>不一定必须多波束"]
-
-    %% Wideband branch
-    B -->|宽带| W1{"采用 OFDM + CP +<br/>每个子载波可独立设计 w[k] ?"}
-    W1 -->|是| W2{"是否只想恢复同一个期望信号?"}
-    W2 -->|是| W3["通常不必显式多波束<br/>每个子载波用一个 w[k] 即可<br/>多径已包含在 H[k] 中"]
-    W2 -->|否| W4["若有多用户/多流/特殊结构约束<br/>则可能需要多波束或多分支"]
-
-    W1 -->|否| W5{"延迟扩展 / 多径是否重要?"}
-    W5 -->|不明显| W6["可近似按窄带处理<br/>单个空间波束可能就够"]
-    W5 -->|明显| W7{"不同 path 的 AoA 是否可分?"}
-
-    W7 -->|AoA 接近相同<br/>但 delay 不同| W8["空间上难分开<br/>多波束帮助有限<br/>重点需要 taps / 时域均衡 / 频域补偿"]
-    W7 -->|AoA 不同<br/>且 delay 不同| W9["最适合空-时联合处理<br/>多波束分路径 + delay/taps 对齐 + 合并"]
-    W7 -->|AoA 不同<br/>但 delay 很小| W10["主要是空间分离问题<br/>可优先靠波束形成处理"]
-
-    %% taps role
-    T0["taps 的作用"] --> T1["处理时延结构<br/>补偿 delay spread / ISI / 多径对齐"]
-    T0 --> T2["当 path 同角度不同延迟时<br/>taps 比空间波束更关键"]
-    T0 --> T3["taps 不是 MA，也不是空间 beam"]
-
-    %% MA role
-    M0["MA 的核心增益"] --> M1["改善空间增益<br/>把天线放到更有利位置"]
-    M0 --> M2["提高 path 可分离性<br/>让不同 AoA 更容易被分开"]
-    M0 --> M3["增强抗干扰能力<br/>改善 desired / interference 几何关系"]
-    M0 --> M4["但 MA 不能替代 taps<br/>它不会自动消除 delay"]
-
-    %% Summary hooks
-    N2 --> S1["结论：不必为了“有多径”而强行多波束"]
-    N4 --> S2["结论：需要多个独立输出分支 → 需要多波束"]
-    N5 --> S2
-    W3 --> S1
-    W8 --> S3["结论：同角度不同延迟 → 优先 taps/时域处理"]
-    W9 --> S4["结论：不同 AoA + 不同 delay → 多波束 + taps 最有意义"]
-    M4 --> S5["结论：MA 提供空间增益，不替代时延补偿"]
-
-    %% styles
-    classDef root fill:#f8f4ff,stroke:#7c5cff,stroke-width:2px,color:#222;
-    classDef decision fill:#fff7e6,stroke:#f0a500,stroke-width:2px,color:#222;
-    classDef good fill:#eafaf1,stroke:#2f9e44,stroke-width:2px,color:#222;
-    classDef warn fill:#fff0f0,stroke:#e03131,stroke-width:2px,color:#222;
-    classDef info fill:#eef5ff,stroke:#3b82f6,stroke-width:2px,color:#222;
-    classDef summary fill:#f3f0ff,stroke:#7048e8,stroke-width:2px,color:#222;
-
-    class A,T0,M0 root;
-    class B,N1,N3,W1,W2,W5,W7 decision;
-    class N2,N4,N5,N6,W3,W4,W6,W9,W10,T1,T2,T3,M1,M2,M3,M4 good;
-    class W8 warn;
-    class S1,S2,S3,S4,S5 summary;
-    class W7,W5,W1,W2,N1,N3,W10,N6,W6 info;
-
-
-```
+先问 1：窄带还是宽带？
+│
+├─ 窄带
+│   ├─ 只有一个期望流，且能直接设计单个 w
+│   │   → 通常不需要多波束
+│   └─ 需要多个独立输出分支
+│       → 需要多波束
+│
+└─ 宽带
+    ├─ OFDM + CP + 每子载波可设计 w[k]
+    │   ├─ 只恢复一个期望信号
+    │   │   → 通常不必显式多波束
+    │   └─ 多用户 / 多流 / 特殊结构约束
+    │       → 可能需要多波束
+    │
+    └─ 延迟扩展明显
+        ├─ AoA 接近相同、delay 不同
+        │   → 多波束帮助有限，重点靠 taps
+        └─ AoA 不同、delay 也不同
+            → 多波束 + taps / delay 对齐 最有意义
 $$\boxed{\text{真正需要多个波束} \neq \text{存在多个 path}}$$
 
 而更准确地说是：
