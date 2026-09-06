@@ -20,7 +20,7 @@ tags:
 aliases:
 - 天线极化 (Antenna Polarization)
 ---
-![[gif：天线极化三维.gif|286]]![[gif：天线极化方式.gif|302]]---
+![[obsidian note/GIF/gif：天线极化三维.gif|286]]![[gif：天线极化方式.gif|302]]---
 
 > [!abstract] 核心定义
 > **天线极化**是指天线在给定方向上所辐射的电磁波的**电场矢量 $\mathbf{E}$** 在空间随时间变化的轨迹形状、取向和旋转方向。
