@@ -6,13 +6,13 @@ citation_key: {{citationKey}}
 tags: [📝文献笔记, 🔖{{itemType}}]
 ---
 
-# {{title}}
+# PR：{{title}}
 
 **📚 元数据**
 - **作者**: {% for creator in creators %}[[{{creator.lastName}}]]{% if not loop.last %}, {% endif %}{% endfor %}
 - **年份**: [[{{date | format("YYYY")}}]]
 - **期刊/出版社**: {{publicationTitle}}
-- **Zotero 链接**: zotero://select/library/items/{{itemKey}}
+- **Zotero 链接**: [在 Zotero 中打开文献](zotero://select/library/items/{{itemKey}})
 
 **📄 摘要**
 > {{abstractNote}}
